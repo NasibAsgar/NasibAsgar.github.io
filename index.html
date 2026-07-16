@@ -115,7 +115,7 @@ nav {
 .hero {
   background: var(--ink);
   padding: 6.5rem 2.5rem 5.5rem;
-  min-height: 90vh;
+  min-height: 88vh;
   display: flex; align-items: center;
 }
 .hero-inner {
@@ -160,8 +160,9 @@ h1.hero-name {
   font-size: 1.1rem; color: #ababab;
   max-width: 560px; line-height: 1.9; margin-bottom: 2.5rem;
 }
+.hero-bio strong { color: #d8d8d8; font-weight: 400; }
 .hero-stats {
-  display: flex; gap: 2.5rem; margin-bottom: 2.5rem;
+  display: flex; gap: 2.25rem; margin-bottom: 2.5rem;
   padding-bottom: 2rem; border-bottom: 1px solid #2e2e2e;
   flex-wrap: wrap;
 }
@@ -186,6 +187,23 @@ h1.hero-name {
 .btn-primary:hover { background: #d5d5d5; }
 .btn-ghost { background: transparent; color: #8a8a8a; border: 1px solid #3a3a3a; }
 .btn-ghost:hover { border-color: #777; color: #ccc; }
+
+/* ── AT A GLANCE ── */
+#glance {
+  background: var(--white);
+  border-bottom: 1px solid var(--rule);
+  padding: 2.75rem 2.5rem;
+}
+.glance-grid {
+  max-width: 860px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 2rem;
+}
+.glance-label {
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink); font-weight: 500; margin-bottom: 0.35rem;
+}
+.glance-check { color: var(--accent); margin-right: 4px; }
+.glance-text { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
 
 /* ── SECTIONS ── */
 section { padding: 5rem 2.5rem; }
@@ -219,6 +237,9 @@ h2.section-title {
 }
 .statement-box p:last-child { margin-bottom: 0; }
 .statement-box em { font-style: italic; color: var(--ink); }
+.statement-box ul { padding-left: 1.2rem; margin-bottom: 0.5rem; }
+.statement-box ul li { font-size: 16px; color: var(--ink-mid); line-height: 1.8; margin-bottom: 0.5rem; }
+.statement-box ul li strong { color: var(--ink); font-weight: 500; }
 
 /* ── ABOUT ── */
 #about { background: var(--white); }
@@ -238,7 +259,7 @@ h2.section-title {
 .score-chip {
   font-size: 13px; padding: 2px 10px;
   border: 1px solid var(--rule); color: var(--ink-mid);
-  background: var(--surface);
+  background: var(--white);
 }
 .score-chip.highlight {
   border-color: var(--accent); color: var(--accent);
@@ -259,6 +280,12 @@ h2.section-title {
   font-size: 1.05rem; color: var(--ink);
   margin-bottom: 0.75rem;
 }
+.core-badge {
+  font-family: 'Calibri', 'Carlito', 'Segoe UI', sans-serif;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); border: 1px solid var(--accent); background: var(--accent-bg);
+  padding: 1px 7px; margin-left: 7px; vertical-align: 2px; white-space: nowrap;
+}
 .interest-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag {
   font-size: 12px; color: var(--ink-soft);
@@ -266,7 +293,7 @@ h2.section-title {
   background: var(--white);
 }
 
-/* ── RESEARCH & PROJECTS ── */
+/* ── RESEARCH & PUBLICATIONS ── */
 #research { background: var(--white); }
 .research-item {
   padding: 1.75rem 0;
@@ -295,6 +322,8 @@ h2.section-title {
   font-size: 14.5px; color: var(--ink-mid); font-style: italic;
 }
 .research-finding strong { font-style: normal; color: var(--ink); font-weight: 500; }
+.research-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 1rem; }
+.research-tags .tag { background: var(--surface); }
 .research-links { margin-top: 0.85rem; display: flex; gap: 1rem; flex-wrap: wrap; }
 .research-link {
   font-size: 13px; color: var(--accent); text-decoration: none;
@@ -467,6 +496,9 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   h1.hero-name { font-size: 2.75rem; }
   .hero-stats { gap: 1.75rem; }
 
+  #glance { padding: 2.5rem 1.25rem; }
+  .glance-grid { gap: 1.5rem; }
+
   section { padding: 4rem 1.25rem; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .refs-grid { grid-template-columns: 1fr; }
@@ -508,8 +540,8 @@ const LINKS = {
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
   <ul class="nav-links" id="navLinks">
     <li><a href="#statement">Statement</a></li>
-    <li><a href="#about">About</a></li>
     <li><a href="#research">Research</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv-btn">Download CV ↓</a></li>
@@ -524,14 +556,16 @@ const LINKS = {
       <h1 class="hero-name">Nasib Asgar</h1>
       <p class="hero-sub">B.Sc. Naval Architecture &amp; Marine Engineering · BUET, Dhaka</p>
       <p class="hero-bio">
-        Graduate engineer with published research in life cycle assessment, complex system design,
-        and experience in thermodynamic simulation. Seeking doctoral opportunities in Mechanical Engineering to advance
+        Engineering graduate with a <strong>peer-reviewed publication</strong> in life cycle
+        assessment of alternative fuels, hands-on simulation experience across
+        <strong>COMSOL, Abaqus, MATLAB, and Python</strong>, and a complete vessel design
+        delivered end-to-end. Seeking doctoral opportunities in Mechanical Engineering to advance
         sustainable energy systems, computational fluid dynamics, and thermal management.
       </p>
       <div class="hero-stats">
         <div class="stat">
-          <div class="stat-num">3.26 / 4.00</div>
-          <div class="stat-label">CGPA &nbsp;(3.5 final year)</div>
+          <div class="stat-num">MARTEC ’24</div>
+          <div class="stat-label">Peer-reviewed publication</div>
         </div>
         <div class="stat">
           <div class="stat-num">GRE &nbsp;<span class="quant-highlight">Q:165</span></div>
@@ -540,6 +574,10 @@ const LINKS = {
         <div class="stat">
           <div class="stat-num">IELTS 7.5</div>
           <div class="stat-label">L:9.0 · R:8.5 · S:7.0 · W:6.0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3.26 / 4.00</div>
+          <div class="stat-label">CGPA &nbsp;(3.5 final year)</div>
         </div>
       </div>
       <div class="hero-cta">
@@ -560,6 +598,28 @@ const LINKS = {
   </div>
 </section>
 
+<!-- AT A GLANCE — the 30-second case for a busy professor -->
+<div id="glance">
+  <div class="glance-grid">
+    <div class="glance-item">
+      <div class="glance-label"><span class="glance-check">✓</span> Published researcher</div>
+      <div class="glance-text">Co-authored a peer-reviewed conference paper (MARTEC 2024) on life cycle assessment of alternative marine fuels — completed during my undergraduate degree.</div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-label"><span class="glance-check">✓</span> Quantitative strength</div>
+      <div class="glance-text">GRE Quantitative 165 and IELTS 7.5 (Listening 9.0) — comfortable with the mathematical core of doctoral coursework.</div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-label"><span class="glance-check">✓</span> Simulation-ready</div>
+      <div class="glance-text">Hands-on with COMSOL, Abaqus, Maxsurf, MATLAB, Python, C++, and Fortran — able to contribute to computational work from day one.</div>
+    </div>
+    <div class="glance-item">
+      <div class="glance-label"><span class="glance-check">✓</span> Upward trajectory</div>
+      <div class="glance-text">3.5 final-year GPA at BUET, one of South Asia's most selective engineering schools. Available Spring or Fall 2027, ready for RA/TA duties.</div>
+    </div>
+  </div>
+</div>
+
 <!-- RESEARCH STATEMENT -->
 <section id="statement">
   <div class="section-inner reveal">
@@ -579,16 +639,174 @@ const LINKS = {
         cycle assessment of alternative fuels. This work demonstrated how local supply chain conditions
         drastically alter carbon footprints, highlighting the need for rigorous systems-level thinking
         in engineering. Moving forward into a Ph.D. program, I aim to shift from macroscopic lifecycle
-        models to microscopic, high-fidelity computational models. My goal is to couple
-        <em>CFD, heat transfer simulations, and combustion modeling</em> to design highly efficient
+        models to microscopic, high-fidelity computational models — coupling
+        <em>CFD, heat transfer simulation, and combustion modeling</em> to design highly efficient
         thermal and mechanical systems.
       </p>
+      <p>What I would bring to your research group:</p>
+      <ul>
+        <li><strong>A proven ability to finish and publish</strong> — I carried a research question from framing through modelling to a peer-reviewed paper while still an undergraduate.</li>
+        <li><strong>A robust quantitative toolkit</strong> — COMSOL, Abaqus, MATLAB, Python, and C/C++, applied to heat transfer, FEA, and stability problems.</li>
+        <li><strong>Systems-level judgment</strong> — experience synthesising environmental, economic, and regulatory data into engineering decisions, ready to be paired with high-fidelity simulation.</li>
+      </ul>
       <p>
-        I am particularly interested in collaborating with research groups focused on
-        multiphase flow, thermal management, additive manufacturing, or advanced control systems.
-        I bring a robust quantitative toolkit—including COMSOL, Abaqus, MATLAB, Python, and C/C++—and
-        a proven ability to synthesize complex environmental and mechanical data.
+        I am particularly interested in groups working on multiphase flow, thermal management,
+        additive manufacturing, or advanced control systems.
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH & PUBLICATIONS -->
+<section id="research">
+  <div class="section-inner reveal">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Research &amp; publications</h2>
+    </div>
+
+    <div class="research-item">
+      <span class="research-type">Undergraduate Thesis · Published</span>
+      <div class="research-title">
+        Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh
+      </div>
+      <div class="research-supervisor">
+        Supervised by Prof. Dr. N. M. Golam Zakaria · Department of NAME, BUET
+      </div>
+      <div class="research-desc">
+        Conducted a comprehensive life cycle assessment of candidate alternative
+        fuels — evaluated across environmental impact and economic feasibility dimensions.
+        Utilised SimaPro for LCA modelling and synthesised supply-chain data, regulatory standards, and emission inventories.
+        <div class="research-finding">
+          <strong>Outcome:</strong> Confidently identified the most environmentally friendly and economically viable
+          alternative fuel option for local shipping frameworks. Results published at MARTEC 2024.
+        </div>
+      </div>
+      <div class="research-tags">
+        <span class="tag">Life cycle assessment</span>
+        <span class="tag">Well-to-wake analysis</span>
+        <span class="tag">SimaPro</span>
+        <span class="tag">Techno-economic evaluation</span>
+        <span class="tag">Emission inventories</span>
+      </div>
+      <div class="research-links">
+        <a data-link="paper" href="#" target="_blank" rel="noopener" class="research-link">Read the paper on ResearchGate ↗</a>
+      </div>
+    </div>
+
+    <div class="research-item">
+      <span class="research-type">Capstone Design Project</span>
+      <div class="research-title">Design of a 148 TEU Inland Container Vessel</div>
+      <div class="research-supervisor">
+        Supervised by Prof. Dr. Md. Mashud Karim · Department of NAME, BUET
+      </div>
+      <div class="research-desc">
+        <ul>
+          <li>Determined principal particulars through rigorous iteration, balancing
+              cargo capacity, hydrostatic stability, resistance, weight, and installed power.</li>
+          <li>Performed complex stability and hydrostatic analysis using Maxsurf.</li>
+          <li>Produced full structural and general arrangement drawings in AutoCAD and Rhinoceros 3D.</li>
+        </ul>
+      </div>
+      <div class="research-tags">
+        <span class="tag">Maxsurf</span>
+        <span class="tag">Hydrostatic stability</span>
+        <span class="tag">Resistance &amp; powering</span>
+        <span class="tag">Structural design</span>
+        <span class="tag">AutoCAD</span>
+        <span class="tag">Rhinoceros 3D</span>
+      </div>
+    </div>
+
+    <!-- ✏️ TEMPLATE — copy this block above to add a new project later:
+    <div class="research-item">
+      <span class="research-type">Project type · Status</span>
+      <div class="research-title">Project title</div>
+      <div class="research-supervisor">Supervised by … (optional)</div>
+      <div class="research-desc">
+        One or two sentences describing what you did and what tools you used.
+      </div>
+      <div class="research-tags">
+        <span class="tag">Method or tool</span>
+        <span class="tag">Method or tool</span>
+      </div>
+    </div>
+    -->
+
+    <!-- PUBLICATION — clicking this card opens the paper on ResearchGate -->
+    <a data-link="paper" href="#" target="_blank" rel="noopener" class="publication-block">
+      <div class="pub-venue">Peer-reviewed Conference Paper · International Conference on Marine Technology (MARTEC 2024)</div>
+      <div class="pub-title">
+        Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh
+      </div>
+      <div class="pub-authors">Jannatul Ambia Shorna, <strong>Nasib Asgar</strong>, N. M. Golam Zakaria</div>
+      <span class="pub-cta">View on ResearchGate ↗</span>
+    </a>
+
+    <!-- ✏️ TEMPLATE — copy this block above to add a new publication later
+         (replace the href with the paper URL):
+    <a href="https://..." target="_blank" rel="noopener" class="publication-block">
+      <div class="pub-venue">Venue · Year</div>
+      <div class="pub-title">Paper title</div>
+      <div class="pub-authors">Author 1, <strong>Nasib Asgar</strong>, Author 3</div>
+      <span class="pub-cta">View on ResearchGate ↗</span>
+    </a>
+    -->
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="interests">
+  <div class="section-inner reveal">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Research interests</h2>
+    </div>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <div class="interest-title">Fluid Dynamics <span class="core-badge">core focus</span></div>
+        <div class="interest-tags">
+          <span class="tag">CFD</span>
+          <span class="tag">Multiphase flow</span>
+          <span class="tag">Aerodynamics</span>
+          <span class="tag">Hydrodynamics</span>
+        </div>
+      </div>
+      <div class="interest-card">
+        <div class="interest-title">Thermodynamics <span class="core-badge">core focus</span></div>
+        <div class="interest-tags">
+          <span class="tag">Heat transfer</span>
+          <span class="tag">Thermal management</span>
+          <span class="tag">Combustion</span>
+          <span class="tag">Thermal efficiency</span>
+        </div>
+      </div>
+      <div class="interest-card">
+        <div class="interest-title">Renewable Energy <span class="core-badge">core focus</span></div>
+        <div class="interest-tags">
+          <span class="tag">Net-zero systems &amp; Decarbonisation</span>
+          <span class="tag">Energy storage</span>
+          <span class="tag">Hybrid energy</span>
+          <span class="tag">Power generation</span>
+        </div>
+      </div>
+      <div class="interest-card">
+        <div class="interest-title">Additive Manufacturing</div>
+        <div class="interest-tags">
+          <span class="tag">Failure analysis</span>
+          <span class="tag">Composite materials</span>
+          <span class="tag">Nanomaterials</span>
+          <span class="tag">Mechanics of materials</span>
+        </div>
+      </div>
+      <div class="interest-card">
+        <div class="interest-title">Control Systems</div>
+        <div class="interest-tags">
+          <span class="tag">Adaptive control</span>
+          <span class="tag">Nonlinear systems</span>
+          <span class="tag">Optimal control</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -597,7 +815,7 @@ const LINKS = {
 <section id="about">
   <div class="section-inner reveal">
     <div class="section-header">
-      <span class="section-num">02</span>
+      <span class="section-num">04</span>
       <h2 class="section-title">About</h2>
     </div>
     <div class="about-grid">
@@ -659,141 +877,6 @@ const LINKS = {
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- RESEARCH INTERESTS -->
-<section id="interests">
-  <div class="section-inner reveal">
-    <div class="section-header">
-      <span class="section-num">03</span>
-      <h2 class="section-title">Research interests</h2>
-    </div>
-    <div class="interests-grid">
-      <div class="interest-card">
-        <div class="interest-title">Fluid Dynamics</div>
-        <div class="interest-tags">
-          <span class="tag">CFD</span>
-          <span class="tag">Multiphase flow</span>
-          <span class="tag">Aerodynamics</span>
-          <span class="tag">Hydrodynamics</span>
-        </div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-title">Thermodynamics</div>
-        <div class="interest-tags">
-          <span class="tag">Heat transfer</span>
-          <span class="tag">Thermal management</span>
-          <span class="tag">Combustion</span>
-          <span class="tag">Thermal efficiency</span>
-        </div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-title">Additive Manufacturing</div>
-        <div class="interest-tags">
-          <span class="tag">Failure analysis</span>
-          <span class="tag">Composite materials</span>
-          <span class="tag">Nanomaterials</span>
-          <span class="tag">Mechanics of materials</span>
-        </div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-title">Renewable Energy</div>
-        <div class="interest-tags">
-          <span class="tag">Net-zero systems &amp; Decarbonisation</span>
-          <span class="tag">Energy storage</span>
-          <span class="tag">Hybrid energy</span>
-          <span class="tag">Power generation</span>
-        </div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-title">Control Systems</div>
-        <div class="interest-tags">
-          <span class="tag">Adaptive control</span>
-          <span class="tag">Nonlinear systems</span>
-          <span class="tag">Optimal control</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESEARCH & PROJECTS -->
-<section id="research">
-  <div class="section-inner reveal">
-    <div class="section-header">
-      <span class="section-num">04</span>
-      <h2 class="section-title">Research &amp; projects</h2>
-    </div>
-
-    <div class="research-item">
-      <span class="research-type">Undergraduate Thesis · Published</span>
-      <div class="research-title">
-        Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh
-      </div>
-      <div class="research-supervisor">
-        Supervised by Prof. Dr. N. M. Golam Zakaria · Department of NAME, BUET
-      </div>
-      <div class="research-desc">
-        Conducted a comprehensive life cycle assessment of candidate alternative
-        fuels — evaluated across environmental impact and economic feasibility dimensions.
-        Utilised SimaPro for LCA modelling and synthesised supply-chain data, regulatory standards, and emission inventories.
-        <div class="research-finding">
-          <strong>Outcome:</strong> Confidently identified the most environmentally friendly and economically viable
-          alternative fuel option for local shipping frameworks. Results published at MARTEC 2024.
-        </div>
-      </div>
-      <div class="research-links">
-        <a data-link="paper" href="#" target="_blank" rel="noopener" class="research-link">Read the paper on ResearchGate ↗</a>
-      </div>
-    </div>
-
-    <div class="research-item">
-      <span class="research-type">Capstone Design Project</span>
-      <div class="research-title">Design of a 148 TEU Inland Container Vessel</div>
-      <div class="research-supervisor">
-        Supervised by Prof. Dr. Md. Mashud Karim · Department of NAME, BUET
-      </div>
-      <div class="research-desc">
-        <ul>
-          <li>Determined principal particulars through rigorous iteration, balancing
-              cargo capacity, hydrostatic stability, resistance, weight, and installed power.</li>
-          <li>Performed complex stability and hydrostatic analysis using Maxsurf.</li>
-          <li>Produced full structural and general arrangement drawings in AutoCAD and Rhinoceros 3D.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- ✏️ TEMPLATE — copy this block above to add a new project later:
-    <div class="research-item">
-      <span class="research-type">Project type · Status</span>
-      <div class="research-title">Project title</div>
-      <div class="research-supervisor">Supervised by … (optional)</div>
-      <div class="research-desc">
-        One or two sentences describing what you did and what tools you used.
-      </div>
-    </div>
-    -->
-
-    <!-- PUBLICATION — clicking this card opens the paper on ResearchGate -->
-    <a data-link="paper" href="#" target="_blank" rel="noopener" class="publication-block">
-      <div class="pub-venue">Peer-reviewed Conference Paper · MARTEC 2024</div>
-      <div class="pub-title">
-        Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh
-      </div>
-      <div class="pub-authors">Jannatul Ambia Shorna, <strong>Nasib Asgar</strong>, N. M. Golam Zakaria</div>
-      <span class="pub-cta">View on ResearchGate ↗</span>
-    </a>
-
-    <!-- ✏️ TEMPLATE — copy this block above to add a new publication later
-         (replace the href with the paper URL):
-    <a href="https://..." target="_blank" rel="noopener" class="publication-block">
-      <div class="pub-venue">Venue · Year</div>
-      <div class="pub-title">Paper title</div>
-      <div class="pub-authors">Author 1, <strong>Nasib Asgar</strong>, Author 3</div>
-      <span class="pub-cta">View on ResearchGate ↗</span>
-    </a>
-    -->
   </div>
 </section>
 
@@ -1007,7 +1090,9 @@ document.querySelectorAll('[data-link]').forEach(el => {
   const key = el.dataset.link;
   const value = LINKS[key];
   if (!value) return;
-  el.href = key === 'email' ? 'mailto:' + value : value;
+  el.href = key === 'email'
+    ? 'mailto:' + value + '?subject=' + encodeURIComponent('Ph.D. opportunity — Nasib Asgar')
+    : value;
 });
 // Elements tagged data-link-text also display the email address as text
 document.querySelectorAll('[data-link-text]').forEach(el => {
