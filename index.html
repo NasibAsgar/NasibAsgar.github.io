@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Nasib Asgar — Ph.D. applicant in Mechanical Engineering. Published research in life cycle assessment; interests in CFD, thermal sciences, and renewable energy systems. BUET graduate." />
+<meta name="description" content="Nasib Asgar — Ph.D. applicant in Mechanical Engineering. Peer-reviewed research in life cycle assessment of alternative fuels; interests in CFD, thermal sciences, and sustainable energy systems. BUET graduate." />
 <meta name="author" content="Nasib Asgar" />
-<meta name="theme-color" content="#1a1a1a" />
+<meta name="theme-color" content="#f3f4f0" />
 
 <!-- Social preview (shows when the link is shared in emails / LinkedIn / messengers) -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Nasib Asgar — Ph.D. Applicant · Mechanical Engineering" />
-<meta property="og:description" content="Published research in life cycle assessment · CFD · Thermal sciences · Renewable energy. Seeking Ph.D. positions for Spring/Fall 2027." />
+<meta property="og:description" content="Peer-reviewed research in life cycle assessment · CFD · Thermal sciences · Sustainable energy. Seeking Ph.D. positions for Spring/Fall 2027." />
 <meta property="og:url" content="https://nasibasgar.github.io/" />
 <meta name="twitter:card" content="summary" />
 
 <title>Nasib Asgar — Ph.D. Applicant · Mechanical Engineering</title>
 
-<!-- Favicon: simple "NA" monogram (no extra file needed) -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a1a1a'/%3E%3Ctext x='32' y='42' font-family='Times New Roman, serif' font-size='30' fill='%23ffffff' text-anchor='middle'%3ENA%3C/text%3E%3C/svg%3E" />
+<!-- Favicon: a small load-line (Plimsoll) mark — the naval architect's symbol, no extra file needed -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f3f4f0'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%232c5a68' stroke-width='4'/%3E%3Cline x1='8' y1='32' x2='56' y2='32' stroke='%232c5a68' stroke-width='4'/%3E%3C/svg%3E" />
 
 <!-- Structured data: helps search engines identify you -->
 <script type="application/ld+json">
@@ -27,445 +27,483 @@
   "name": "Nasib Asgar",
   "url": "https://nasibasgar.github.io/",
   "jobTitle": "Ph.D. Applicant — Mechanical Engineering",
-  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Bangladesh University of Engineering and Technology (BUET)" },
-  "knowsAbout": ["Computational Fluid Dynamics", "Thermodynamics", "Heat Transfer", "Life Cycle Assessment", "Renewable Energy Systems", "Naval Architecture"]
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Bangladesh University of Engineering and Technology (BUET)" },
+    { "@type": "CollegeOrUniversity", "name": "Institute of Business Administration, University of Dhaka" }
+  ],
+  "knowsAbout": ["Computational Fluid Dynamics", "Thermodynamics", "Heat Transfer", "Life Cycle Assessment", "Sustainable Energy Systems", "Naval Architecture", "Techno-economic Analysis"]
 }
 </script>
 
-<!-- Carlito is a metric-compatible web equivalent of Calibri -->
+<!-- Type pairing: STIX Two Text (the serif of scientific publishing) for headings,
+     Public Sans (calm, civic, highly legible) for body text -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── Palette: “sea fog · deep water · slate · brass” ──
+   fog   — calm neutral background            #f3f4f0
+   card  — raised paper for boxes and cards   #fbfcf9
+   ink   — deep-water slate for text          #1f2d35
+   deep  — desaturated teal-blue accent       #2c5a68  (blue = trust, desaturated = calm)
+   brass — sparing warm accent for highlights #9a7b3f
+*/
 :root {
-  --ink:        #1a1a1a;
-  --ink-mid:    #3d3d3d;
-  --ink-soft:   #6b6b6b;
-  --ink-faint:  #9a9a9a;
-  --rule:       #d8d8d8;
-  --surface:    #f4f3f0;
-  --white:      #ffffff;
-  --accent:     #1c3f6e;
-  --accent-bg:  #eef2f7;
-  --nav-h:      52px;
+  --fog:        #f3f4f0;
+  --card:       #fbfcf9;
+  --ink:        #1f2d35;
+  --ink-mid:    #42525c;
+  --ink-soft:   #67767f;
+  --ink-faint:  #93a0a7;
+  --rule:       #d7dbd3;
+  --rule-soft:  #e3e6df;
+  --deep:       #2c5a68;
+  --deep-dark:  #234a56;
+  --deep-tint:  #e6edec;
+  --brass:      #9a7b3f;
+  --brass-tint: #f2ecdd;
+  --nav-h:      56px;
+  --serif:      'STIX Two Text', 'Times New Roman', serif;
+  --sans:       'Public Sans', 'Segoe UI', system-ui, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Calibri', 'Carlito', 'Segoe UI', sans-serif;
-  background: var(--white);
+  font-family: var(--sans);
+  background: var(--fog);
   color: var(--ink);
-  line-height: 1.65;
-  font-size: 17px;
+  line-height: 1.7;
+  font-size: 16.5px;
+  -webkit-font-smoothing: antialiased;
 }
 
-section { scroll-margin-top: calc(var(--nav-h) + 8px); }
+::selection { background: var(--deep-tint); color: var(--deep-dark); }
 
-/* ── SEEKING BANNER ── */
+a { color: var(--deep); }
+:focus-visible { outline: 2px solid var(--deep); outline-offset: 3px; }
+
+section { scroll-margin-top: calc(var(--nav-h) + 10px); }
+
+/* ── SEEKING STRIP — quiet, informative, not shouty ── */
 .seeking-banner {
-  background: var(--accent);
-  color: #fff;
+  background: var(--deep-tint);
+  color: var(--deep-dark);
+  border-bottom: 1px solid var(--rule);
   text-align: center;
-  padding: 0.65rem 2rem;
-  font-size: 13.5px;
-  letter-spacing: 0.06em;
+  padding: 0.6rem 2rem;
+  font-size: 13px;
+  letter-spacing: 0.05em;
   position: relative; z-index: 200;
 }
-.seeking-banner strong { font-weight: 500; }
+.seeking-banner strong { font-weight: 600; }
 
 /* ── NAV ── */
 nav {
-  position: sticky; top: 0; left: 0; right: 0; z-index: 100;
-  background: var(--white);
+  position: sticky; top: 0; z-index: 100;
+  background: var(--fog);
+  background: color-mix(in srgb, var(--fog) 92%, transparent);
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--rule);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 2.5rem; height: var(--nav-h);
 }
 .nav-brand {
-  font-family: 'Times New Roman', 'Times', serif;
-  font-size: 20px; font-weight: 400; color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px; font-weight: 500; color: var(--ink);
   text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
 }
-.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.brand-mark { flex-shrink: 0; display: block; }
+.nav-links { display: flex; gap: 1.9rem; list-style: none; align-items: center; }
 .nav-links a {
-  font-size: 13px; color: var(--ink-soft); text-decoration: none;
-  letter-spacing: 0.1em; text-transform: uppercase;
+  font-size: 12px; color: var(--ink-soft); text-decoration: none;
+  letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
   transition: color 0.15s;
 }
-.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover { color: var(--deep-dark); }
 .nav-cv-btn {
-  font-size: 12px !important; letter-spacing: 0.1em; text-transform: uppercase;
-  background: var(--ink); color: #fff !important;
-  padding: 0.35rem 1rem;
+  font-size: 11.5px !important; letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--deep); color: var(--card) !important;
+  padding: 0.4rem 1rem; border-radius: 2px;
   transition: background 0.15s;
 }
-.nav-cv-btn:hover { background: var(--accent); }
+.nav-cv-btn:hover { background: var(--deep-dark); }
 .nav-toggle {
   display: none;
   background: none; border: 1px solid var(--rule);
-  font-size: 18px; line-height: 1; color: var(--ink);
-  padding: 4px 10px; cursor: pointer;
+  font-size: 17px; line-height: 1; color: var(--ink);
+  padding: 5px 11px; cursor: pointer; border-radius: 2px;
 }
 
-/* ── HERO ── */
+/* ── HERO — light, airy, with faint flow-lines (a nod to CFD) ── */
 .hero {
-  background: var(--ink);
-  padding: 6.5rem 2.5rem 5.5rem;
-  min-height: 88vh;
-  display: flex; align-items: center;
+  position: relative;
+  padding: 5.5rem 2.5rem 4.5rem;
+  overflow: hidden;
+}
+.hero-flow {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
 }
 .hero-inner {
-  max-width: 860px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start;
-}
-.hero-photo-col {
-  display: flex; flex-direction: column; align-items: center; gap: 1rem;
-  padding-top: 0.5rem;
-}
-.hero-photo {
-  width: 150px; height: 150px;
-  border-radius: 50%;
-  border: 2px solid #333;
-  background: #2a2a2a;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
-.hero-photo-placeholder {
-  font-family: 'Times New Roman', 'Times', serif;
-  font-size: 42px; color: #555; text-align: center;
+  position: relative;
+  max-width: 880px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto; gap: 3.5rem; align-items: start;
 }
 .hero-kicker {
-  font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--ink-faint); margin-bottom: 1.25rem;
+  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--deep); font-weight: 600; margin-bottom: 1.4rem;
 }
 h1.hero-name {
-  font-family: 'Times New Roman', 'Times', serif;
-  font-size: clamp(2.8rem, 5.5vw, 5rem);
-  font-weight: 400; color: var(--white);
-  line-height: 1.05;
-  margin-bottom: 0.6rem;
+  font-family: var(--serif);
+  font-size: clamp(2.7rem, 5.2vw, 4.2rem);
+  font-weight: 500; color: var(--ink);
+  line-height: 1.06; letter-spacing: -0.01em;
+  margin-bottom: 0.7rem;
 }
 .hero-sub {
-  font-size: 15px; color: #8a8a8a;
-  letter-spacing: 0.04em;
-  margin-bottom: 2rem; border-left: 2px solid #333; padding-left: 1rem;
+  font-size: 15px; color: var(--ink-soft);
+  letter-spacing: 0.03em;
+  margin-bottom: 1.5rem;
 }
+
+/* The signature: a waterline with the load-line mark */
+.waterline {
+  display: flex; align-items: center; gap: 14px;
+  margin: 0 0 1.6rem;
+}
+.waterline::before, .waterline::after {
+  content: ""; height: 1px; background: var(--rule); flex: 1;
+}
+.waterline::before { max-width: 64px; flex: none; width: 64px; }
+.waterline svg { flex-shrink: 0; display: block; }
+
 .hero-bio {
-  font-size: 1.1rem; color: #ababab;
-  max-width: 560px; line-height: 1.9; margin-bottom: 2.5rem;
+  font-size: 1.06rem; color: var(--ink-mid);
+  max-width: 580px; line-height: 1.85; margin-bottom: 2.2rem;
 }
-.hero-bio strong { color: #d8d8d8; font-weight: 400; }
+.hero-bio strong { color: var(--ink); font-weight: 600; }
+
 .hero-stats {
-  display: flex; gap: 2.25rem; margin-bottom: 2.5rem;
-  padding-bottom: 2rem; border-bottom: 1px solid #2e2e2e;
+  display: flex; gap: 2.4rem; margin-bottom: 2.4rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
   flex-wrap: wrap;
 }
 .stat-num {
-  font-family: 'Times New Roman', 'Times', serif;
-  font-size: 2rem; color: var(--white); line-height: 1;
+  font-family: var(--serif);
+  font-size: 1.75rem; font-weight: 500; color: var(--ink); line-height: 1.15;
 }
-.stat-num .quant-highlight { color: #9ab8d8; }
+.stat-num .quant-highlight { color: var(--deep); }
 .stat-label {
-  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: #666; margin-top: 4px;
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-faint); margin-top: 4px; font-weight: 500;
 }
-.hero-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+.hero-cta { display: flex; gap: 0.7rem; flex-wrap: wrap; }
 .btn {
   display: inline-flex; align-items: center; gap: 6px;
-  padding: 0.55rem 1.4rem;
-  font-size: 13px; letter-spacing: 0.1em;
+  padding: 0.6rem 1.35rem;
+  font-size: 12.5px; letter-spacing: 0.1em; font-weight: 500;
   text-decoration: none; text-transform: uppercase;
+  border-radius: 2px;
   transition: all 0.15s; cursor: pointer; border: none;
 }
-.btn-primary { background: var(--white); color: var(--ink); }
-.btn-primary:hover { background: #d5d5d5; }
-.btn-ghost { background: transparent; color: #8a8a8a; border: 1px solid #3a3a3a; }
-.btn-ghost:hover { border-color: #777; color: #ccc; }
+.btn-primary { background: var(--ink); color: var(--card); }
+.btn-primary:hover { background: var(--deep-dark); }
+.btn-ghost { background: transparent; color: var(--ink-mid); border: 1px solid var(--rule); }
+.btn-ghost:hover { border-color: var(--deep); color: var(--deep-dark); }
 
-/* ── AT A GLANCE ── */
-#glance {
-  background: var(--white);
-  border-bottom: 1px solid var(--rule);
-  padding: 2.75rem 2.5rem;
+.hero-photo-col {
+  display: flex; flex-direction: column; align-items: center;
+  padding-top: 2.4rem;
 }
-.glance-grid {
-  max-width: 860px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 2rem;
+.hero-photo {
+  width: 156px; height: 156px;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  outline: 6px solid var(--card);
+  background: var(--card);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(31,45,53,0.06);
 }
-.glance-label {
-  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--ink); font-weight: 500; margin-bottom: 0.35rem;
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.hero-photo-placeholder {
+  font-family: var(--serif);
+  font-size: 40px; color: var(--ink-faint); text-align: center;
 }
-.glance-check { color: var(--accent); margin-right: 4px; }
-.glance-text { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
 
 /* ── SECTIONS ── */
-section { padding: 5rem 2.5rem; }
-.section-inner { max-width: 860px; margin: 0 auto; }
+section { padding: 4.5rem 2.5rem; }
+.section-inner { max-width: 880px; margin: 0 auto; }
 
 .section-header {
-  display: flex; align-items: baseline; gap: 1.25rem;
-  margin-bottom: 2.75rem;
-  border-bottom: 1px solid var(--rule); padding-bottom: 1rem;
+  display: flex; align-items: center; gap: 1.1rem;
+  margin-bottom: 2.5rem;
 }
-.section-num {
-  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint); flex-shrink: 0;
+.section-eyebrow {
+  font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--deep); font-weight: 600; flex-shrink: 0;
 }
 h2.section-title {
-  font-family: 'Times New Roman', 'Times', serif;
-  font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 400;
-  color: var(--ink); line-height: 1.1;
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.6vw, 1.85rem); font-weight: 500;
+  color: var(--ink); line-height: 1.15; flex-shrink: 0;
+}
+.section-header::after {
+  content: ""; flex: 1; height: 1px; background: var(--rule);
 }
 
 /* ── RESEARCH STATEMENT ── */
-#statement { background: var(--surface); }
 .statement-box {
-  border-left: 3px solid var(--accent);
-  padding: 1.75rem 2rem;
-  background: var(--white);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--deep);
+  padding: 1.9rem 2.1rem;
+  background: var(--card);
+  border-radius: 0 2px 2px 0;
 }
 .statement-box p {
-  font-size: 17px; color: var(--ink-mid); line-height: 1.9;
+  font-size: 16.5px; color: var(--ink-mid); line-height: 1.9;
   margin-bottom: 1rem;
 }
 .statement-box p:last-child { margin-bottom: 0; }
-.statement-box em { font-style: italic; color: var(--ink); }
-.statement-box ul { padding-left: 1.2rem; margin-bottom: 0.5rem; }
-.statement-box ul li { font-size: 16px; color: var(--ink-mid); line-height: 1.8; margin-bottom: 0.5rem; }
-.statement-box ul li strong { color: var(--ink); font-weight: 500; }
-
-/* ── ABOUT ── */
-#about { background: var(--white); }
-.about-grid {
-  display: grid; grid-template-columns: 3fr 2fr; gap: 4rem; align-items: start;
-}
-.about-text p { color: var(--ink-mid); margin-bottom: 1rem; font-size: 15.5px; }
-.meta-block { margin-bottom: 1.5rem; border-bottom: 1px solid var(--rule); padding-bottom: 1.25rem; }
-.meta-block:last-child { border-bottom: none; }
-.meta-label {
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint); margin-bottom: 0.35rem;
-}
-.meta-value { font-size: 15px; color: var(--ink-mid); }
-.meta-value a { color: var(--accent); text-decoration: none; }
-.score-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.4rem; }
-.score-chip {
-  font-size: 13px; padding: 2px 10px;
-  border: 1px solid var(--rule); color: var(--ink-mid);
-  background: var(--white);
-}
-.score-chip.highlight {
-  border-color: var(--accent); color: var(--accent);
-  background: var(--accent-bg); font-weight: 500;
-}
-
-/* ── RESEARCH INTERESTS ── */
-#interests { background: var(--surface); }
-.interests-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px;
-  border: 1px solid var(--rule); background: var(--rule);
-}
-.interest-card { background: var(--white); padding: 1.5rem; }
-/* fills the leftover grid cell when the card count doesn't divide evenly */
-.interests-grid::after { content: ""; background: var(--white); }
-.interest-title {
-  font-family: 'Times New Roman', 'Times', serif;
-  font-size: 1.05rem; color: var(--ink);
-  margin-bottom: 0.75rem;
-}
-.core-badge {
-  font-family: 'Calibri', 'Carlito', 'Segoe UI', sans-serif;
-  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent); border: 1px solid var(--accent); background: var(--accent-bg);
-  padding: 1px 7px; margin-left: 7px; vertical-align: 2px; white-space: nowrap;
-}
-.interest-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.tag {
-  font-size: 12px; color: var(--ink-soft);
-  border: 1px solid var(--rule); padding: 1px 8px;
-  background: var(--white);
-}
+.statement-box em { font-style: italic; font-family: var(--serif); color: var(--ink); }
+.statement-box ul { padding-left: 1.2rem; margin-bottom: 1rem; }
+.statement-box ul li { font-size: 15.5px; color: var(--ink-mid); line-height: 1.8; margin-bottom: 0.55rem; }
+.statement-box ul li strong { color: var(--ink); font-weight: 600; }
 
 /* ── RESEARCH & PUBLICATIONS ── */
-#research { background: var(--white); }
 .research-item {
-  padding: 1.75rem 0;
+  padding: 1.9rem 0;
   border-bottom: 1px solid var(--rule);
 }
-.research-item:last-of-type { border-bottom: none; }
+.research-item:first-of-type { padding-top: 0.25rem; }
+.research-item:last-of-type { border-bottom: none; padding-bottom: 0.5rem; }
 .research-type {
   display: inline-block;
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 0.6rem;
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--deep); font-weight: 600; margin-bottom: 0.65rem;
 }
 .research-title {
-  font-family: 'Times New Roman', 'Times', serif;
-  font-size: 1.3rem; color: var(--ink); margin-bottom: 0.4rem;
+  font-family: var(--serif);
+  font-size: 1.32rem; font-weight: 500; color: var(--ink); margin-bottom: 0.45rem;
+  line-height: 1.3;
 }
-.research-supervisor {
-  font-size: 14px; color: var(--ink-faint); margin-bottom: 0.75rem;
+.research-authors {
+  font-size: 14px; color: var(--ink-soft); margin-bottom: 0.2rem;
   font-style: italic;
+}
+.research-authors strong { font-weight: 600; font-style: italic; color: var(--ink-mid); }
+.research-supervisor {
+  font-size: 13.5px; color: var(--ink-faint); margin-bottom: 0.85rem;
 }
 .research-desc { font-size: 15.5px; color: var(--ink-mid); }
 .research-desc ul { padding-left: 1.1rem; margin-top: 0.5rem; }
-.research-desc ul li { margin-bottom: 0.4rem; }
+.research-desc ul li { margin-bottom: 0.45rem; }
 .research-finding {
-  margin-top: 1rem; padding: 0.75rem 1rem;
-  background: var(--surface); border-left: 2px solid var(--rule);
-  font-size: 14.5px; color: var(--ink-mid); font-style: italic;
+  margin-top: 1rem; padding: 0.85rem 1.1rem;
+  background: var(--deep-tint); border-left: 2px solid var(--deep);
+  font-size: 14.5px; color: var(--ink-mid);
+  border-radius: 0 2px 2px 0;
 }
-.research-finding strong { font-style: normal; color: var(--ink); font-weight: 500; }
-.research-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 1rem; }
-.research-tags .tag { background: var(--surface); }
-.research-links { margin-top: 0.85rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.research-finding strong { color: var(--deep-dark); font-weight: 600; }
+.research-note {
+  margin-top: 0.85rem;
+  font-size: 13.5px; color: var(--ink-faint); font-style: italic;
+}
+.research-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.05rem; }
+.tag {
+  font-size: 12px; color: var(--ink-soft);
+  border: 1px solid var(--rule); padding: 2px 9px;
+  background: var(--card); border-radius: 2px;
+}
+.research-links { margin-top: 0.95rem; display: flex; gap: 1.2rem; flex-wrap: wrap; }
 .research-link {
-  font-size: 13px; color: var(--accent); text-decoration: none;
-  letter-spacing: 0.04em; border-bottom: 1px solid transparent;
-  transition: border-color 0.15s;
+  font-size: 13.5px; color: var(--deep); text-decoration: none; font-weight: 500;
+  letter-spacing: 0.03em; border-bottom: 1px solid var(--rule);
+  transition: border-color 0.15s, color 0.15s;
+  padding-bottom: 1px;
 }
-.research-link:hover { border-color: var(--accent); }
+.research-link:hover { border-color: var(--deep); color: var(--deep-dark); }
 
-/* PUBLICATION — the whole card is a link to the paper */
-a.publication-block {
-  display: block;
-  margin-top: 2.5rem;
-  border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem;
-  background: var(--accent-bg);
-  text-decoration: none;
-  transition: background 0.15s, transform 0.15s;
+/* ── RESEARCH INTERESTS ── */
+.interests-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px;
+  border: 1px solid var(--rule); background: var(--rule);
+  border-radius: 2px; overflow: hidden;
 }
-a.publication-block:hover { background: #e2eaf4; transform: translateX(3px); }
-.pub-venue {
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 0.5rem;
+.interest-card { background: var(--card); padding: 1.5rem 1.6rem; }
+.interest-title {
+  font-family: var(--serif);
+  font-size: 1.08rem; font-weight: 500; color: var(--ink);
+  margin-bottom: 0.8rem;
 }
-.pub-title {
-  font-family: 'Times New Roman', 'Times', serif;
-  font-size: 1.2rem; color: var(--ink); margin-bottom: 0.4rem;
+.core-badge {
+  font-family: var(--sans);
+  font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+  color: var(--brass); border: 1px solid var(--brass); background: var(--brass-tint);
+  padding: 1px 7px; margin-left: 8px; vertical-align: 2px; white-space: nowrap;
+  border-radius: 2px;
 }
-.pub-authors { font-size: 14px; color: var(--ink-soft); font-style: italic; }
-.pub-authors strong { font-weight: 700; font-style: italic; color: var(--ink-mid); }
-.pub-cta {
-  display: inline-block; margin-top: 0.7rem;
-  font-size: 13px; color: var(--accent);
-  letter-spacing: 0.04em; border-bottom: 1px solid var(--accent);
+.interest-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.interest-tags .tag { background: var(--fog); }
+.interests-foot {
+  margin-top: 1.1rem;
+  font-size: 14px; color: var(--ink-soft); font-style: italic;
+}
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid; grid-template-columns: 3fr 2fr; gap: 3.5rem; align-items: start;
+}
+.about-text p { color: var(--ink-mid); margin-bottom: 1rem; font-size: 15.5px; line-height: 1.85; }
+.about-meta {
+  border: 1px solid var(--rule); background: var(--card);
+  padding: 1.5rem 1.6rem; border-radius: 2px;
+}
+.meta-block { margin-bottom: 1.3rem; border-bottom: 1px solid var(--rule-soft); padding-bottom: 1.15rem; }
+.meta-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.meta-label {
+  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
+  color: var(--ink-faint); margin-bottom: 0.35rem;
+}
+.meta-value { font-size: 14.5px; color: var(--ink-mid); }
+.meta-value a { color: var(--deep); text-decoration: none; }
+.meta-value a:hover { text-decoration: underline; }
+.score-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.45rem; }
+.score-chip {
+  font-size: 12.5px; padding: 2px 10px;
+  border: 1px solid var(--rule); color: var(--ink-mid);
+  background: var(--fog); border-radius: 2px;
+}
+.score-chip.highlight {
+  border-color: var(--deep); color: var(--deep-dark);
+  background: var(--deep-tint); font-weight: 500;
 }
 
 /* ── SKILLS ── */
-#skills { background: var(--surface); }
 .skills-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 1px;
   border: 1px solid var(--rule); background: var(--rule);
+  border-radius: 2px; overflow: hidden;
 }
-.skill-group { background: var(--white); padding: 1.25rem 1.5rem; }
+.skill-group { background: var(--card); padding: 1.3rem 1.5rem; }
 .skill-group-label {
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
   color: var(--ink-faint); margin-bottom: 0.85rem;
 }
 .skill-item {
-  font-size: 15px; color: var(--ink-mid);
-  padding: 5px 0; border-bottom: 1px solid var(--rule);
+  font-size: 14.5px; color: var(--ink-mid);
+  padding: 6px 0; border-bottom: 1px solid var(--rule-soft);
   display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
 }
 .skill-item:last-child { border-bottom: none; }
 .skill-name { display: flex; align-items: center; gap: 8px; }
 .skill-dash { color: var(--rule); font-size: 10px; }
 .skill-used {
-  font-size: 11px; color: var(--accent); letter-spacing: 0.06em;
-  font-style: italic;
+  font-size: 11px; color: var(--deep); letter-spacing: 0.04em;
+  font-style: italic; text-align: right;
 }
 
 /* ── COURSES ── */
-#courses { background: var(--white); }
 .courses-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .course-pill {
-  font-size: 14px; padding: 0.3rem 0.9rem;
-  border: 1px solid var(--rule); color: var(--ink-mid); background: var(--white);
+  font-size: 13.5px; padding: 0.32rem 0.9rem;
+  border: 1px solid var(--rule); color: var(--ink-mid); background: var(--card);
+  border-radius: 2px;
   transition: border-color 0.15s, color 0.15s;
 }
-.course-pill:hover { border-color: var(--accent); color: var(--accent); }
+.course-pill:hover { border-color: var(--deep); color: var(--deep-dark); }
 
 /* ── EXPERIENCE ── */
-#experience { background: var(--surface); }
 .experience-item {
-  display: grid; grid-template-columns: 170px 1fr; gap: 2rem;
-  padding: 1.75rem 0; border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: 175px 1fr; gap: 2rem;
+  padding: 1.6rem 0; border-bottom: 1px solid var(--rule);
 }
-.experience-item:last-child { border-bottom: none; }
-.exp-org { font-size: 14px; font-weight: 500; color: var(--ink); }
+.experience-item:first-of-type { padding-top: 0.25rem; }
+.experience-item:last-of-type { border-bottom: none; }
+.exp-org { font-size: 14px; font-weight: 600; color: var(--ink); }
 .exp-date { font-size: 13px; color: var(--ink-faint); margin-top: 4px; font-style: italic; }
-.exp-role { font-family: 'Times New Roman', 'Times', serif; font-size: 1.2rem; color: var(--ink); margin-bottom: 0.5rem; }
+.exp-role { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: var(--ink); margin-bottom: 0.45rem; }
 .exp-desc { font-size: 15px; color: var(--ink-mid); }
 .exp-desc ul { padding-left: 1.1rem; }
-.exp-desc ul li { margin-bottom: 0.3rem; }
+.exp-desc ul li { margin-bottom: 0.35rem; }
 
 /* ── CONTACT ── */
-#contact { background: var(--white); }
 .contact-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; align-items: start;
 }
-.contact-intro p { font-size: 16px; color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.85; }
+.contact-intro p { font-size: 15.5px; color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.85; }
+.contact-intro strong { color: var(--ink); font-weight: 600; }
+.refs-label {
+  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
+  color: var(--ink-faint); margin: 1.8rem 0 0.7rem;
+}
 .refs-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-  border: 1px solid var(--rule); background: var(--rule); margin-top: 2rem;
+  display: grid; grid-template-columns: 1fr; gap: 1px;
+  border: 1px solid var(--rule); background: var(--rule);
+  border-radius: 2px; overflow: hidden;
 }
-.ref-card { background: var(--surface); padding: 1.1rem 1.25rem; }
-.ref-name { font-family: 'Times New Roman', 'Times', serif; font-size: 1rem; color: var(--ink); margin-bottom: 3px; }
-.ref-role { font-size: 12px; color: var(--ink-faint); margin-bottom: 6px; font-style: italic; }
-.ref-contact a { font-size: 13px; color: var(--accent); text-decoration: none; word-break: break-all; }
-.contact-links { display: flex; flex-direction: column; }
+.ref-card { background: var(--card); padding: 1rem 1.2rem; }
+.ref-name { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+.ref-role { font-size: 12.5px; color: var(--ink-faint); margin-bottom: 5px; font-style: italic; }
+.ref-contact { font-size: 13px; color: var(--ink-soft); }
+.ref-contact a { color: var(--deep); text-decoration: none; word-break: break-all; }
+.ref-contact a:hover { text-decoration: underline; }
+
+.contact-links { display: flex; flex-direction: column; border: 1px solid var(--rule); background: var(--card); border-radius: 2px; padding: 0.4rem 1.3rem; }
 .contact-link {
   display: flex; align-items: center; gap: 1rem;
-  padding: 1rem 0; border-bottom: 1px solid var(--rule);
+  padding: 0.95rem 0; border-bottom: 1px solid var(--rule-soft);
   text-decoration: none; transition: opacity 0.15s;
 }
-.contact-link:last-child { border-bottom: none; }
-.contact-link:hover { opacity: 0.65; }
+.contact-link:last-of-type { border-bottom: none; }
+.contact-link:hover { opacity: 0.7; }
 .cl-label {
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
   color: var(--ink-faint); margin-bottom: 2px;
 }
-.cl-value { font-size: 16px; color: var(--ink); word-break: break-all; }
+.cl-value { font-size: 15px; color: var(--ink); word-break: break-all; }
 .cl-icon {
-  width: 32px; height: 32px; border: 1px solid var(--rule);
+  width: 34px; height: 34px; border: 1px solid var(--rule);
   display: flex; align-items: center; justify-content: center;
   font-size: 13px; color: var(--ink-soft); flex-shrink: 0;
-  background: var(--surface);
+  background: var(--fog); border-radius: 2px;
 }
-.cv-download-block {
-  margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--rule);
-}
+.cv-download-block { margin-top: 1.6rem; }
 .cv-download-label {
-  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint); margin-bottom: 0.6rem;
+  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
+  color: var(--ink-faint); margin-bottom: 0.55rem;
 }
 .cv-download-link {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 15px; color: var(--accent); text-decoration: none;
-  border-bottom: 1px solid transparent; transition: border-color 0.15s;
+  font-size: 15px; color: var(--deep); text-decoration: none; font-weight: 500;
+  border-bottom: 1px solid var(--rule); padding-bottom: 1px;
+  transition: border-color 0.15s;
 }
-.cv-download-link:hover { border-color: var(--accent); }
+.cv-download-link:hover { border-color: var(--deep); }
 
 /* ── FOOTER ── */
 footer {
-  background: var(--ink); padding: 1.5rem 2.5rem;
-  text-align: center; font-size: 13px;
-  color: #6a6a6a; letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--ink); padding: 1.6rem 2.5rem;
+  text-align: center; font-size: 12.5px;
+  color: #8b98a0; letter-spacing: 0.08em; text-transform: uppercase;
 }
-footer a { color: #8a8a8a; text-decoration: none; }
-footer a:hover { color: #ccc; }
+footer .foot-line { display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
+footer a { color: #aab6bd; text-decoration: none; }
+footer a:hover { color: #e2e8ea; }
 
 /* ── SCROLL REVEAL (subtle; only hides content once JS is confirmed running) ── */
 html.js .reveal {
-  opacity: 0; transform: translateY(14px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 html.js .reveal.visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
@@ -480,7 +518,7 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   .nav-links {
     display: none;
     position: absolute; top: var(--nav-h); left: 0; right: 0;
-    background: var(--white); border-bottom: 1px solid var(--rule);
+    background: var(--card); border-bottom: 1px solid var(--rule);
     flex-direction: column; align-items: flex-start;
     gap: 0; padding: 0.5rem 1.25rem;
   }
@@ -489,20 +527,17 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   .nav-links a { display: block; padding: 0.7rem 0; }
   .nav-links .nav-cv-btn { display: inline-block; margin: 0.5rem 0 0.75rem; padding: 0.45rem 1.1rem; }
 
-  .hero { padding: 4.5rem 1.25rem 4rem; min-height: 0; }
-  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .hero { padding: 3.5rem 1.25rem 3rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 1.8rem; }
   .hero-photo-col { order: -1; flex-direction: row; justify-content: flex-start; padding-top: 0; }
-  .hero-photo { width: 110px; height: 110px; }
-  h1.hero-name { font-size: 2.75rem; }
-  .hero-stats { gap: 1.75rem; }
+  .hero-photo { width: 104px; height: 104px; outline-width: 4px; }
+  h1.hero-name { font-size: 2.6rem; }
+  .hero-stats { gap: 1.6rem; }
 
-  #glance { padding: 2.5rem 1.25rem; }
-  .glance-grid { gap: 1.5rem; }
-
-  section { padding: 4rem 1.25rem; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .refs-grid { grid-template-columns: 1fr; }
-  .experience-item { grid-template-columns: 1fr; gap: 0.4rem; }
+  section { padding: 3.5rem 1.25rem; }
+  .section-header { flex-wrap: wrap; row-gap: 0.2rem; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+  .experience-item { grid-template-columns: 1fr; gap: 0.5rem; }
   .seeking-banner { font-size: 12px; padding: 0.6rem 1rem; }
 }
 </style>
@@ -517,7 +552,12 @@ html.js .reveal.visible { opacity: 1; transform: none; }
      • paper ......... ResearchGate page of your MARTEC 2024 paper
      • researchgate .. your ResearchGate profile
      • linkedin ...... your LinkedIn profile
+     • scholar ....... (optional) Google Scholar profile, once your paper is indexed
      • email ......... your contact email
+
+     Any link still containing "PASTE" is automatically HIDDEN on the live
+     page — so nothing broken is ever shown to a professor. Fill them in
+     and they appear.
      ═══════════════════════════════════════════════════════════════════ -->
 <script>
 const LINKS = {
@@ -525,18 +565,25 @@ const LINKS = {
   cv:           "Nasib_Asgar_CV.pdf",
   paper:        "https://www.researchgate.net/publication/PASTE-YOUR-PAPER-LINK-HERE",
   researchgate: "https://www.researchgate.net/profile/PASTE-YOUR-PROFILE-LINK-HERE",
-  linkedin:     "https://www.linkedin.com/in/PASTE-YOUR-PROFILE-LINK-HERE"
+  linkedin:     "https://www.linkedin.com/in/PASTE-YOUR-PROFILE-LINK-HERE",
+  scholar:      "https://scholar.google.com/citations?user=PASTE-YOUR-ID-HERE"
 };
 </script>
 
-<!-- SEEKING BANNER -->
+<!-- SEEKING STRIP -->
 <div class="seeking-banner">
-  <strong>Actively seeking Ph.D. positions &amp; RA/TA opportunities</strong> — Spring 2027 / Fall 2027 intake · Fluid Dynamics · Thermal Sciences · Renewable Energy Systems
+  <strong>Seeking Ph.D. &amp; RA/TA positions in Mechanical Engineering</strong> — Spring / Fall 2027 · Fluid dynamics · Thermal sciences · Sustainable energy
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-brand">Nasib Asgar</a>
+  <a href="#top" class="nav-brand">
+    <svg class="brand-mark" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="6.5" fill="none" stroke="#2c5a68" stroke-width="1.6"/>
+      <line x1="0" y1="12" x2="24" y2="12" stroke="#2c5a68" stroke-width="1.6"/>
+    </svg>
+    Nasib Asgar
+  </a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
   <ul class="nav-links" id="navLinks">
     <li><a href="#statement">Statement</a></li>
@@ -549,37 +596,57 @@ const LINKS = {
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="top">
+<header class="hero" id="top">
+  <!-- Faint flow-lines: a quiet reference to CFD / streamlines around a hull -->
+  <svg class="hero-flow" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <g fill="none" stroke="#2c5a68" stroke-width="1">
+      <path d="M-40,395 C240,385 420,355 620,362 C830,370 1000,398 1260,388" opacity="0.10"/>
+      <path d="M-40,430 C260,424 450,402 640,408 C850,414 1020,434 1260,428" opacity="0.08"/>
+      <path d="M-40,465 C280,462 480,448 660,452 C860,456 1040,468 1260,464" opacity="0.06"/>
+      <path d="M-40,500 C300,499 520,492 700,494 C880,496 1060,502 1260,500" opacity="0.045"/>
+    </g>
+  </svg>
+
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-kicker">Ph.D. Applicant · Portfolio</div>
+      <div class="hero-kicker">Ph.D. Applicant · Mechanical Engineering</div>
       <h1 class="hero-name">Nasib Asgar</h1>
-      <p class="hero-sub">B.Sc. Naval Architecture &amp; Marine Engineering · BUET, Dhaka</p>
+      <p class="hero-sub">B.Sc. Naval Architecture &amp; Marine Engineering — BUET, Dhaka · Class of 2024</p>
+
+      <div class="waterline" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="7" fill="none" stroke="#9a7b3f" stroke-width="1.5"/>
+          <line x1="0" y1="12" x2="24" y2="12" stroke="#9a7b3f" stroke-width="1.5"/>
+        </svg>
+      </div>
+
       <p class="hero-bio">
-        Engineering graduate with a <strong>peer-reviewed publication</strong> in life cycle
-        assessment of alternative fuels, hands-on simulation experience across
-        <strong>COMSOL, Abaqus, MATLAB, and Python</strong>, and a complete vessel design
-        delivered end-to-end. Seeking doctoral opportunities in Mechanical Engineering to advance
-        sustainable energy systems, computational fluid dynamics, and thermal management.
+        I study the mechanical and thermal systems behind sustainable transport and energy.
+        My undergraduate research on alternative marine fuels was
+        <strong>published at MARTEC 2024</strong>; my capstone delivered a complete
+        148&nbsp;TEU vessel design end-to-end. I now want to move from systems-level
+        lifecycle models to <strong>high-fidelity CFD and heat-transfer simulation</strong>.
       </p>
+
       <div class="hero-stats">
         <div class="stat">
           <div class="stat-num">MARTEC ’24</div>
-          <div class="stat-label">Peer-reviewed publication</div>
+          <div class="stat-label">Peer-reviewed paper</div>
         </div>
         <div class="stat">
-          <div class="stat-num">GRE &nbsp;<span class="quant-highlight">Q:165</span></div>
-          <div class="stat-label">Total 312 · Verbal 147 · AWA 3.5</div>
+          <div class="stat-num">GRE <span class="quant-highlight">Q 165</span></div>
+          <div class="stat-label">312 total · Oct 2024</div>
         </div>
         <div class="stat">
           <div class="stat-num">IELTS 7.5</div>
-          <div class="stat-label">L:9.0 · R:8.5 · S:7.0 · W:6.0</div>
+          <div class="stat-label">Listening 9.0 · Reading 8.5</div>
         </div>
         <div class="stat">
-          <div class="stat-num">3.26 / 4.00</div>
-          <div class="stat-label">CGPA &nbsp;(3.5 final year)</div>
+          <div class="stat-num">GPA 3.50</div>
+          <div class="stat-label">Final year · BUET</div>
         </div>
       </div>
+
       <div class="hero-cta">
         <a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="btn btn-primary">Download CV ↓</a>
         <a data-link="email" href="mailto:rahiasgar77@gmail.com" class="btn btn-ghost">Email me</a>
@@ -587,6 +654,7 @@ const LINKS = {
         <a data-link="linkedin" href="#" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
       </div>
     </div>
+
     <div class="hero-photo-col">
       <div class="hero-photo">
         <!-- PHOTO: upload a square headshot named 'profile.jpg' to the repo root.
@@ -596,62 +664,41 @@ const LINKS = {
       </div>
     </div>
   </div>
-</section>
-
-<!-- AT A GLANCE — the 30-second case for a busy professor -->
-<div id="glance">
-  <div class="glance-grid">
-    <div class="glance-item">
-      <div class="glance-label"><span class="glance-check">✓</span> Published researcher</div>
-      <div class="glance-text">Co-authored a peer-reviewed conference paper (MARTEC 2024) on life cycle assessment of alternative marine fuels — completed during my undergraduate degree.</div>
-    </div>
-    <div class="glance-item">
-      <div class="glance-label"><span class="glance-check">✓</span> Quantitative strength</div>
-      <div class="glance-text">GRE Quantitative 165 and IELTS 7.5 (Listening 9.0) — comfortable with the mathematical core of doctoral coursework.</div>
-    </div>
-    <div class="glance-item">
-      <div class="glance-label"><span class="glance-check">✓</span> Simulation-ready</div>
-      <div class="glance-text">Hands-on with COMSOL, Abaqus, Maxsurf, MATLAB, Python, C++, and Fortran — able to contribute to computational work from day one.</div>
-    </div>
-    <div class="glance-item">
-      <div class="glance-label"><span class="glance-check">✓</span> Upward trajectory</div>
-      <div class="glance-text">3.5 final-year GPA at BUET, one of South Asia's most selective engineering schools. Available Spring or Fall 2027, ready for RA/TA duties.</div>
-    </div>
-  </div>
-</div>
+</header>
 
 <!-- RESEARCH STATEMENT -->
 <section id="statement">
   <div class="section-inner reveal">
     <div class="section-header">
-      <span class="section-num">01</span>
+      <span class="section-eyebrow">Focus</span>
       <h2 class="section-title">Research statement</h2>
     </div>
     <div class="statement-box">
       <p>
         My research interest lies at the intersection of <em>computational fluid dynamics,
-        thermodynamics, and sustainable energy systems</em>. While my background is rooted in
-        naval architecture, my core focus has always been on the fundamental mechanical and
-        thermal processes that drive large-scale transportation and energy networks.
+        thermal sciences, and sustainable energy systems</em>. Naval architecture trained me in
+        mechanical fundamentals applied to one of the hardest operating environments there is —
+        large structures moving through water, under thermal, structural, and economic constraints
+        at the same time.
       </p>
       <p>
-        In my published undergraduate research (MARTEC 2024), I conducted a well-to-wake life
-        cycle assessment of alternative fuels. This work demonstrated how local supply chain conditions
-        drastically alter carbon footprints, highlighting the need for rigorous systems-level thinking
-        in engineering. Moving forward into a Ph.D. program, I aim to shift from macroscopic lifecycle
-        models to microscopic, high-fidelity computational models — coupling
-        <em>CFD, heat transfer simulation, and combustion modeling</em> to design highly efficient
-        thermal and mechanical systems.
+        My undergraduate thesis, published at MARTEC 2024, was a well-to-wake life cycle
+        assessment of alternative fuels for Bangladesh’s inland fleet. Its central lesson was that
+        fuel rankings are not portable: local supply-chain conditions materially reorder carbon
+        footprints, so decarbonisation decisions demand rigorous, systems-level analysis. In a
+        Ph.D. program, I want to move down in scale and up in fidelity — coupling
+        <em>CFD, conjugate heat transfer, and combustion modelling</em> to design efficient
+        thermal and energy-conversion systems.
       </p>
-      <p>What I would bring to your research group:</p>
+      <p>What I would bring to a research group:</p>
       <ul>
-        <li><strong>A proven ability to finish and publish</strong> — I carried a research question from framing through modelling to a peer-reviewed paper while still an undergraduate.</li>
-        <li><strong>A robust quantitative toolkit</strong> — COMSOL, Abaqus, MATLAB, Python, and C/C++, applied to heat transfer, FEA, and stability problems.</li>
+        <li><strong>A demonstrated ability to finish and publish</strong> — I carried a research question from framing through modelling to a peer-reviewed paper while still an undergraduate.</li>
+        <li><strong>A working quantitative toolkit</strong> — COMSOL, Abaqus, MATLAB, Python, and C++, applied to heat transfer, FEA, hydrostatics, and data-analysis problems.</li>
         <li><strong>Systems-level judgment</strong> — experience synthesising environmental, economic, and regulatory data into engineering decisions, ready to be paired with high-fidelity simulation.</li>
       </ul>
       <p>
-        I am particularly interested in groups working on multiphase flow, thermal management,
-        additive manufacturing, or advanced control systems.
+        I am particularly drawn to groups working on multiphase flow, thermal management,
+        and clean combustion or energy conversion.
       </p>
     </div>
   </div>
@@ -661,25 +708,34 @@ const LINKS = {
 <section id="research">
   <div class="section-inner reveal">
     <div class="section-header">
-      <span class="section-num">02</span>
+      <span class="section-eyebrow">Evidence</span>
       <h2 class="section-title">Research &amp; publications</h2>
     </div>
 
+    <!-- Thesis and publication are the SAME work — presented once, as one entry -->
     <div class="research-item">
-      <span class="research-type">Undergraduate Thesis · Published</span>
+      <span class="research-type">Undergraduate thesis → Peer-reviewed publication · MARTEC 2024</span>
       <div class="research-title">
         Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh
       </div>
+      <div class="research-authors">
+        Jannatul Ambia Shorna, <strong>Nasib Asgar</strong>, N. M. Golam Zakaria —
+        Proc. International Conference on Marine Technology (MARTEC 2024)
+      </div>
       <div class="research-supervisor">
-        Supervised by Prof. Dr. N. M. Golam Zakaria · Department of NAME, BUET
+        Supervised by Prof. Dr. N. M. Golam Zakaria · Dept. of NAME, BUET
       </div>
       <div class="research-desc">
-        Conducted a comprehensive life cycle assessment of candidate alternative
-        fuels — evaluated across environmental impact and economic feasibility dimensions.
-        Utilised SimaPro for LCA modelling and synthesised supply-chain data, regulatory standards, and emission inventories.
+        Well-to-wake life cycle assessment of candidate alternative fuels for Bangladesh’s
+        inland shipping, modelled in SimaPro against environmental-impact and techno-economic
+        criteria — synthesising supply-chain data, emission inventories, and regulatory standards.
+        <!-- ✏️ MUCH STRONGER with numbers. Replace the finding below with specifics from
+             your paper, e.g.: "LNG/methanol/… showed a XX% lower well-to-wake GWP than
+             conventional HFO under local supply-chain conditions." Committees skim for figures. -->
         <div class="research-finding">
-          <strong>Outcome:</strong> Confidently identified the most environmentally friendly and economically viable
-          alternative fuel option for local shipping frameworks. Results published at MARTEC 2024.
+          <strong>Key finding:</strong> fuel rankings are not portable — local supply-chain
+          conditions materially reorder well-to-wake carbon intensity. The study identifies the
+          pathway with the strongest combined environmental and economic case for the inland fleet.
         </div>
       </div>
       <div class="research-tags">
@@ -695,17 +751,21 @@ const LINKS = {
     </div>
 
     <div class="research-item">
-      <span class="research-type">Capstone Design Project</span>
+      <span class="research-type">Capstone design project</span>
       <div class="research-title">Design of a 148 TEU Inland Container Vessel</div>
       <div class="research-supervisor">
-        Supervised by Prof. Dr. Md. Mashud Karim · Department of NAME, BUET
+        Supervised by Prof. Dr. Md. Mashud Karim · Dept. of NAME, BUET
       </div>
       <div class="research-desc">
         <ul>
-          <li>Determined principal particulars through rigorous iteration, balancing
-              cargo capacity, hydrostatic stability, resistance, weight, and installed power.</li>
-          <li>Performed complex stability and hydrostatic analysis using Maxsurf.</li>
-          <li>Produced full structural and general arrangement drawings in AutoCAD and Rhinoceros 3D.</li>
+          <li>Determined principal particulars through iterative optimisation, balancing cargo
+              capacity, hydrostatic stability, resistance, weight, and installed power.</li>
+          <li>Performed full stability and hydrostatic analysis in Maxsurf; estimated resistance
+              and powering requirements.</li>
+          <li>Produced complete structural and general-arrangement drawings in AutoCAD and
+              Rhinoceros&nbsp;3D.</li>
+          <!-- ✏️ If you can, add one number here (e.g. principal dimensions, design speed,
+               installed kW, or number of design iterations) — it makes the entry concrete. -->
         </ul>
       </div>
       <div class="research-tags">
@@ -718,96 +778,92 @@ const LINKS = {
       </div>
     </div>
 
-    <!-- ✏️ TEMPLATE — copy this block above to add a new project later:
+    <!-- ✏️ OPTIONAL ENTRY — evidence behind the "Python" claim. Professors running
+         computational groups value proof of sustained programming, even outside ME.
+         If you'd rather keep a purely mechanical-engineering narrative, delete this block. -->
+    <div class="research-item">
+      <span class="research-type">Independent projects · Scientific computing</span>
+      <div class="research-title">Multilingual NLP &amp; statistical data-analysis pipelines</div>
+      <div class="research-desc">
+        Designed and iterated a GPU-accelerated, multilingual sentiment-analysis pipeline in
+        Python — a three-model transformer ensemble (XLM-RoBERTa family with an mDeBERTa
+        tiebreaker) over large app-review corpora — alongside reproducible pandas/SciPy
+        statistical workflows (non-parametric hypothesis testing, IQR outlier detection) and
+        interactive analytics dashboards.
+        <div class="research-note">
+          Included as evidence of sustained programming practice: the domain sits outside
+          mechanical engineering, but the numerical habits and software discipline transfer
+          directly to simulation research.
+        </div>
+      </div>
+      <div class="research-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Transformer models</span>
+        <span class="tag">pandas · SciPy</span>
+        <span class="tag">Statistical testing</span>
+        <span class="tag">GPU workflows</span>
+      </div>
+    </div>
+
+    <!-- ✏️ TEMPLATE — copy this block above to add a new project or publication later:
     <div class="research-item">
       <span class="research-type">Project type · Status</span>
       <div class="research-title">Project title</div>
+      <div class="research-authors">Author 1, <strong>Nasib Asgar</strong>, Author 3 — Venue, Year</div>
       <div class="research-supervisor">Supervised by … (optional)</div>
       <div class="research-desc">
-        One or two sentences describing what you did and what tools you used.
+        One or two sentences on what you did, the tools you used, and — ideally — one number.
       </div>
       <div class="research-tags">
         <span class="tag">Method or tool</span>
-        <span class="tag">Method or tool</span>
+      </div>
+      <div class="research-links">
+        <a href="https://..." target="_blank" rel="noopener" class="research-link">Read the paper ↗</a>
       </div>
     </div>
-    -->
-
-    <!-- PUBLICATION — clicking this card opens the paper on ResearchGate -->
-    <a data-link="paper" href="#" target="_blank" rel="noopener" class="publication-block">
-      <div class="pub-venue">Peer-reviewed Conference Paper · International Conference on Marine Technology (MARTEC 2024)</div>
-      <div class="pub-title">
-        Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh
-      </div>
-      <div class="pub-authors">Jannatul Ambia Shorna, <strong>Nasib Asgar</strong>, N. M. Golam Zakaria</div>
-      <span class="pub-cta">View on ResearchGate ↗</span>
-    </a>
-
-    <!-- ✏️ TEMPLATE — copy this block above to add a new publication later
-         (replace the href with the paper URL):
-    <a href="https://..." target="_blank" rel="noopener" class="publication-block">
-      <div class="pub-venue">Venue · Year</div>
-      <div class="pub-title">Paper title</div>
-      <div class="pub-authors">Author 1, <strong>Nasib Asgar</strong>, Author 3</div>
-      <span class="pub-cta">View on ResearchGate ↗</span>
-    </a>
     -->
   </div>
 </section>
 
-<!-- RESEARCH INTERESTS -->
+<!-- RESEARCH INTERESTS — three evidenced pillars; keep it focused -->
 <section id="interests">
   <div class="section-inner reveal">
     <div class="section-header">
-      <span class="section-num">03</span>
+      <span class="section-eyebrow">Direction</span>
       <h2 class="section-title">Research interests</h2>
     </div>
     <div class="interests-grid">
       <div class="interest-card">
-        <div class="interest-title">Fluid Dynamics <span class="core-badge">core focus</span></div>
+        <div class="interest-title">Fluid dynamics <span class="core-badge">Core</span></div>
         <div class="interest-tags">
           <span class="tag">CFD</span>
           <span class="tag">Multiphase flow</span>
-          <span class="tag">Aerodynamics</span>
           <span class="tag">Hydrodynamics</span>
+          <span class="tag">Aerodynamics</span>
         </div>
       </div>
       <div class="interest-card">
-        <div class="interest-title">Thermodynamics <span class="core-badge">core focus</span></div>
+        <div class="interest-title">Thermal sciences <span class="core-badge">Core</span></div>
         <div class="interest-tags">
           <span class="tag">Heat transfer</span>
           <span class="tag">Thermal management</span>
           <span class="tag">Combustion</span>
-          <span class="tag">Thermal efficiency</span>
+          <span class="tag">Thermodynamic efficiency</span>
         </div>
       </div>
       <div class="interest-card">
-        <div class="interest-title">Renewable Energy <span class="core-badge">core focus</span></div>
+        <div class="interest-title">Sustainable energy <span class="core-badge">Core</span></div>
         <div class="interest-tags">
-          <span class="tag">Net-zero systems &amp; Decarbonisation</span>
+          <span class="tag">Decarbonisation</span>
+          <span class="tag">Alternative fuels</span>
           <span class="tag">Energy storage</span>
-          <span class="tag">Hybrid energy</span>
           <span class="tag">Power generation</span>
         </div>
       </div>
-      <div class="interest-card">
-        <div class="interest-title">Additive Manufacturing</div>
-        <div class="interest-tags">
-          <span class="tag">Failure analysis</span>
-          <span class="tag">Composite materials</span>
-          <span class="tag">Nanomaterials</span>
-          <span class="tag">Mechanics of materials</span>
-        </div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-title">Control Systems</div>
-        <div class="interest-tags">
-          <span class="tag">Adaptive control</span>
-          <span class="tag">Nonlinear systems</span>
-          <span class="tag">Optimal control</span>
-        </div>
-      </div>
     </div>
+    <p class="interests-foot">
+      Also open to adjacent problems in additive manufacturing and the control of energy systems.
+    </p>
   </div>
 </section>
 
@@ -815,64 +871,68 @@ const LINKS = {
 <section id="about">
   <div class="section-inner reveal">
     <div class="section-header">
-      <span class="section-num">04</span>
+      <span class="section-eyebrow">Background</span>
       <h2 class="section-title">About</h2>
     </div>
     <div class="about-grid">
       <div class="about-text">
         <p>
           I completed my B.Sc. in Naval Architecture and Marine Engineering at the Bangladesh
-          University of Engineering and Technology (BUET) in 2024 — one of the leading
-          engineering institutions in South Asia, with a rigorous curriculum grounded in mechanical principles.
+          University of Engineering and Technology (BUET) in 2024 — one of South Asia’s most
+          selective engineering schools, with a curriculum grounded in mechanics, fluids, and
+          thermal engineering. My final-year GPA of 3.50 reflects a consistent upward trajectory
+          through the programme.
         </p>
         <p>
-          My undergraduate thesis investigated the life cycle assessment (LCA) of alternative
-          marine fuels, a study subsequently published at MARTEC 2024. The research required
-          synthesising environmental impact modelling, supply-chain economics, and regulatory frameworks
-          to produce actionable guidance on decarbonisation.
+          My thesis on the life cycle assessment of alternative marine fuels was published at
+          MARTEC 2024, and my capstone project — a 148 TEU inland container vessel — took a
+          design from principal particulars through stability analysis to full structural
+          drawings.
         </p>
+        <!-- ✏️ Verify the MBA framing and dates below. An unexplained 2024→2027 gap is a red
+             flag to committees; this paragraph turns it into deliberate preparation. -->
         <p>
-          Alongside my thesis, I completed a capstone vessel design project (148 TEU inland
-          container vessel), gaining hands-on experience with iterative structural optimisation,
-          hydrostatic stability analysis, resistance and power estimation, and professional
-          CAD toolchains. My final-year GPA of 3.5 reflects a consistent upward academic
-          trajectory across the rigorous engineering programme.
+          Since graduating I have been reading for an MBA at the Institute of Business
+          Administration (IBA), University of Dhaka, concentrating on quantitative coursework —
+          statistical methods, analytics, and techno-economic case work. It deepens the
+          economic half of my LCA research and keeps me solving data-heavy problems daily
+          while I prepare for doctoral study.
         </p>
       </div>
       <div class="about-meta">
         <div class="meta-block">
           <div class="meta-label">Degree</div>
-          <div class="meta-value">B.Sc. Naval Architecture &amp; Marine Engineering</div>
+          <div class="meta-value">B.Sc. Naval Architecture &amp; Marine Engineering<br />BUET, Dhaka — Class of 2024</div>
         </div>
         <div class="meta-block">
-          <div class="meta-label">Institution</div>
-          <div class="meta-value">BUET, Dhaka, Bangladesh — Class of 2024</div>
+          <div class="meta-label">Current</div>
+          <div class="meta-value">MBA candidate, Institute of Business Administration (IBA), University of Dhaka</div>
         </div>
         <div class="meta-block">
-          <div class="meta-label">Email</div>
-          <div class="meta-value"><a data-link="email" data-link-text href="mailto:rahiasgar77@gmail.com">rahiasgar77@gmail.com</a></div>
+          <div class="meta-label">Academic record</div>
+          <div class="meta-value">CGPA 3.26 / 4.00 overall · 3.50 final year — rising trend</div>
         </div>
         <div class="meta-block">
-          <div class="meta-label">GRE Scores (Oct 2024)</div>
+          <div class="meta-label">GRE (Oct 2024)</div>
           <div class="score-row">
-            <span class="score-chip">Total: 312</span>
-            <span class="score-chip highlight">Quant: 165</span>
-            <span class="score-chip">Verbal: 147</span>
-            <span class="score-chip">AWA: 3.5</span>
+            <span class="score-chip highlight">Quant 165</span>
+            <span class="score-chip">Total 312</span>
+            <span class="score-chip">Verbal 147</span>
+            <span class="score-chip">AWA 3.5</span>
           </div>
         </div>
         <div class="meta-block">
           <div class="meta-label">IELTS (Sep 2024)</div>
           <div class="score-row">
-            <span class="score-chip highlight">Overall: 7.5</span>
-            <span class="score-chip">Listening: 9.0</span>
-            <span class="score-chip">Reading: 8.5</span>
-            <span class="score-chip">Speaking: 7.0</span>
-            <span class="score-chip">Writing: 6.0</span>
+            <span class="score-chip highlight">Overall 7.5</span>
+            <span class="score-chip highlight">Listening 9.0</span>
+            <span class="score-chip">Reading 8.5</span>
+            <span class="score-chip">Speaking 7.0</span>
+            <span class="score-chip">Writing 6.0</span>
           </div>
         </div>
         <div class="meta-block">
-          <div class="meta-label">Target Intake</div>
+          <div class="meta-label">Target intake</div>
           <div class="meta-value">Spring 2027 / Fall 2027</div>
         </div>
       </div>
@@ -884,14 +944,20 @@ const LINKS = {
 <section id="skills">
   <div class="section-inner reveal">
     <div class="section-header">
-      <span class="section-num">05</span>
+      <span class="section-eyebrow">Toolkit</span>
       <h2 class="section-title">Skills &amp; tools</h2>
     </div>
     <div class="skills-grid">
       <div class="skill-group">
         <div class="skill-group-label">Programming &amp; Math</div>
-        <div class="skill-item"><span class="skill-name"><span class="skill-dash">—</span> MATLAB</span></div>
-        <div class="skill-item"><span class="skill-name"><span class="skill-dash">—</span> Python</span></div>
+        <div class="skill-item">
+          <span class="skill-name"><span class="skill-dash">—</span> Python</span>
+          <span class="skill-used">data &amp; ML pipelines</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name"><span class="skill-dash">—</span> MATLAB</span>
+          <span class="skill-used">numerical methods</span>
+        </div>
         <div class="skill-item"><span class="skill-name"><span class="skill-dash">—</span> C++</span></div>
         <div class="skill-item"><span class="skill-name"><span class="skill-dash">—</span> Fortran</span></div>
       </div>
@@ -912,8 +978,14 @@ const LINKS = {
       </div>
       <div class="skill-group">
         <div class="skill-group-label">CAD &amp; Modelling</div>
-        <div class="skill-item"><span class="skill-name"><span class="skill-dash">—</span> Rhinoceros 3D</span></div>
-        <div class="skill-item"><span class="skill-name"><span class="skill-dash">—</span> AutoCAD</span></div>
+        <div class="skill-item">
+          <span class="skill-name"><span class="skill-dash">—</span> Rhinoceros 3D</span>
+          <span class="skill-used">vessel design</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name"><span class="skill-dash">—</span> AutoCAD</span>
+          <span class="skill-used">GA drawings</span>
+        </div>
       </div>
       <div class="skill-group">
         <div class="skill-group-label">Specialist Tools</div>
@@ -930,22 +1002,22 @@ const LINKS = {
 <section id="courses">
   <div class="section-inner reveal">
     <div class="section-header">
-      <span class="section-num">06</span>
+      <span class="section-eyebrow">Foundations</span>
       <h2 class="section-title">Relevant coursework</h2>
     </div>
     <div class="courses-cloud">
-      <span class="course-pill">Control Engineering</span>
-      <span class="course-pill">Optimization Methods</span>
-      <span class="course-pill">Mechanics of Structure</span>
       <span class="course-pill">Fluid Mechanics</span>
       <span class="course-pill">Heat Transfer</span>
       <span class="course-pill">Basic Thermal Engineering</span>
-      <span class="course-pill">Marine Hydrodynamics</span>
       <span class="course-pill">Marine Engines &amp; Fuels</span>
+      <span class="course-pill">Marine Hydrodynamics</span>
+      <span class="course-pill">Control Engineering</span>
+      <span class="course-pill">Optimization Methods</span>
+      <span class="course-pill">Mechanics of Structures</span>
+      <span class="course-pill">Ship Design</span>
       <span class="course-pill">Ship Structure</span>
       <span class="course-pill">Shipbuilding Materials</span>
       <span class="course-pill">Welding Technology</span>
-      <span class="course-pill">Ship Design</span>
     </div>
   </div>
 </section>
@@ -954,20 +1026,23 @@ const LINKS = {
 <section id="experience">
   <div class="section-inner reveal">
     <div class="section-header">
-      <span class="section-num">07</span>
+      <span class="section-eyebrow">Practice</span>
       <h2 class="section-title">Experience &amp; engagement</h2>
     </div>
     <div class="experience-item">
       <div class="exp-meta">
         <div class="exp-org">Chittagong Dry Dock Ltd.</div>
-        <div class="exp-date">Industrial Attachment</div>
+        <div class="exp-date">Industrial attachment</div>
       </div>
       <div class="exp-content">
         <div class="exp-role">Industrial Trainee</div>
         <div class="exp-desc">
           <ul>
-            <li>Observed and documented major mechanical and manufacturing operations — welding, cutting, docking, and mooring — under senior engineers.</li>
-            <li>Successfully led a month-long project focusing on the implementation of Industrial Revolution 4.0 paradigms in heavy maritime infrastructure.</li>
+            <li>Documented core fabrication and docking operations — welding, cutting, docking,
+                and mooring — working under senior engineers on the yard floor.</li>
+            <li>Authored a month-long study on Industry 4.0 adoption in heavy maritime
+                infrastructure, mapping candidate processes for sensing and automation.</li>
+            <!-- ✏️ If the study produced a concrete recommendation or figure, add it here. -->
           </ul>
         </div>
       </div>
@@ -975,29 +1050,32 @@ const LINKS = {
     <div class="experience-item">
       <div class="exp-meta">
         <div class="exp-org">MARTEC 2022</div>
-        <div class="exp-date">Conference Volunteer</div>
+        <div class="exp-date">Conference volunteer</div>
       </div>
       <div class="exp-content">
         <div class="exp-role">Volunteer — International Conference on Marine Technology</div>
         <div class="exp-desc">
-          Assisted with the organisation of the conference at BUET, engaging with researchers and gaining early exposure to peer-reviewed academic scholarship.
+          Helped run the conference at BUET — an early, first-hand look at peer-reviewed
+          scholarship, two years before publishing at the same venue.
         </div>
       </div>
     </div>
     <div class="experience-item">
       <div class="exp-meta">
-        <div class="exp-org">BUET Clubs</div>
+        <div class="exp-org">BUET</div>
         <div class="exp-date">Co-curricular</div>
       </div>
       <div class="exp-content">
-        <div class="exp-role">Former Member — Photography &amp; Origami Clubs</div>
+        <div class="exp-role">Member — Photography &amp; Origami Clubs</div>
         <div class="exp-desc">
-          Cultivated spatial reasoning, patience, and community engagement alongside intensive engineering study.
+          Co-curricular life alongside an intensive engineering programme.
         </div>
       </div>
     </div>
 
-    <!-- ✏️ TEMPLATE — copy this block above to add new experience later:
+    <!-- ✏️ TA FUNDING TIP — if you have EVER tutored, mentored juniors, led lab sessions,
+         or taught in any capacity, add it here using the template below. It is the single
+         most persuasive item for Teaching Assistantship decisions.
     <div class="experience-item">
       <div class="exp-meta">
         <div class="exp-org">Organisation</div>
@@ -1005,7 +1083,7 @@ const LINKS = {
       </div>
       <div class="exp-content">
         <div class="exp-role">Your role</div>
-        <div class="exp-desc">What you did.</div>
+        <div class="exp-desc">What you did, for whom, and any outcome.</div>
       </div>
     </div>
     -->
@@ -1016,29 +1094,38 @@ const LINKS = {
 <section id="contact">
   <div class="section-inner reveal">
     <div class="section-header">
-      <span class="section-num">08</span>
+      <span class="section-eyebrow">Next step</span>
       <h2 class="section-title">Contact</h2>
     </div>
     <div class="contact-grid">
       <div class="contact-intro">
         <p>
-          I am actively seeking Ph.D. positions and Research or Teaching Assistantships
-          for the <strong>Spring 2027 and Fall 2027</strong> intake cycles, particularly in programs focused on Mechanical Engineering, thermal sciences, and sustainable systems.
+          I am seeking Ph.D. positions and Research or Teaching Assistantships for the
+          <strong>Spring 2027 and Fall 2027</strong> intakes, in programs focused on
+          mechanical engineering, thermal-fluid sciences, and sustainable energy systems.
         </p>
         <p>
-          If your laboratory's research aligns with my interests, I would welcome the
-          opportunity to discuss potential collaboration. I am happy to provide official transcripts,
-          a formal statement of purpose, or writing samples upon request.
+          If your laboratory’s work aligns with my interests, I would welcome a conversation.
+          Official transcripts, a formal statement of purpose, and writing samples are
+          available on request.
         </p>
 
+        <div class="refs-label">References</div>
         <div class="refs-grid">
           <div class="ref-card">
-            <div class="ref-name">Dr. N. M. Golam Zakaria</div>
-            <div class="ref-role">Professor, BUET · Thesis Supervisor</div>
+            <div class="ref-name">Prof. Dr. N. M. Golam Zakaria</div>
+            <div class="ref-role">Professor, BUET · Thesis supervisor &amp; co-author</div>
             <div class="ref-contact"><a href="mailto:gzakaria@name.buet.ac.bd">gzakaria@name.buet.ac.bd</a></div>
           </div>
+          <!-- ✏️ Confirm Dr. Karim is willing to be a referee, then replace
+               "Email on request" with his address. Three referees is the standard. -->
           <div class="ref-card">
-            <div class="ref-name">Dr. Md. Shahidul Islam</div>
+            <div class="ref-name">Prof. Dr. Md. Mashud Karim</div>
+            <div class="ref-role">Professor, BUET · Capstone supervisor</div>
+            <div class="ref-contact">Email on request</div>
+          </div>
+          <div class="ref-card">
+            <div class="ref-name">Prof. Dr. Md. Shahidul Islam</div>
             <div class="ref-role">Professor, BUET</div>
             <div class="ref-contact"><a href="mailto:shahid777@name.buet.ac.bd">shahid777@name.buet.ac.bd</a></div>
           </div>
@@ -1058,7 +1145,14 @@ const LINKS = {
             <div class="cl-icon" style="font-weight:600; font-size:11px; color:#00CCBB;">RG</div>
             <div>
               <div class="cl-label">ResearchGate</div>
-              <div class="cl-value">View profile &amp; publications ↗</div>
+              <div class="cl-value">Profile &amp; publications ↗</div>
+            </div>
+          </a>
+          <a data-link="scholar" href="#" target="_blank" rel="noopener" class="contact-link">
+            <div class="cl-icon" style="font-weight:600; font-size:11px; color:#4a6fa5;">GS</div>
+            <div>
+              <div class="cl-label">Google Scholar</div>
+              <div class="cl-value">Citations profile ↗</div>
             </div>
           </a>
           <a data-link="linkedin" href="#" target="_blank" rel="noopener" class="contact-link">
@@ -1080,16 +1174,25 @@ const LINKS = {
 </section>
 
 <footer>
-  Nasib Asgar &nbsp;·&nbsp; Mechanical &amp; Marine Engineering Graduate &nbsp;·&nbsp; BUET
-  &nbsp;·&nbsp; <a href="#top">Back to top ↑</a>
+  <span class="foot-line">
+    <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="7" fill="none" stroke="#8b98a0" stroke-width="1.6"/>
+      <line x1="0" y1="12" x2="24" y2="12" stroke="#8b98a0" stroke-width="1.6"/>
+    </svg>
+    Nasib Asgar · Mechanical &amp; Marine Engineering · BUET
+    · <a href="#top">Back to top ↑</a>
+  </span>
 </footer>
 
 <script>
-// ── Apply the LINKS config to every element tagged with data-link ──
+// ── Apply the LINKS config to every element tagged with data-link.
+//    Links whose value is missing or still contains "PASTE" are hidden,
+//    so an unfinished link is never shown broken to a visitor. ──
 document.querySelectorAll('[data-link]').forEach(el => {
   const key = el.dataset.link;
   const value = LINKS[key];
-  if (!value) return;
+  const unset = !value || /PASTE/i.test(value);
+  if (unset) { el.style.display = 'none'; return; }
   el.href = key === 'email'
     ? 'mailto:' + value + '?subject=' + encodeURIComponent('Ph.D. opportunity — Nasib Asgar')
     : value;
