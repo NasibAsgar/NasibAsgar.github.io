@@ -10,7 +10,7 @@
 <!-- Social preview (shows when the link is shared in emails / LinkedIn / messengers) -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Nasib Asgar — Ph.D. Applicant · Mechanical Engineering" />
-<meta property="og:description" content="Peer-reviewed research in life cycle assessment · CFD · Thermal sciences · Sustainable energy. Seeking Ph.D. positions for Spring/Fall 2027." />
+<meta property="og:description" content="Peer-reviewed research in life cycle assessment · CFD · Thermal sciences · Sustainable energy. Seeking Ph.D. positions for 2027." />
 <meta property="og:url" content="https://nasibasgar.github.io/" />
 <meta name="twitter:card" content="summary" />
 
@@ -26,6 +26,7 @@
   "@type": "Person",
   "name": "Nasib Asgar",
   "url": "https://nasibasgar.github.io/",
+  "sameAs": ["https://www.linkedin.com/in/nasib-asgar-8985a22b2"],
   "jobTitle": "Ph.D. Applicant — Mechanical Engineering",
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "Bangladesh University of Engineering and Technology (BUET)" },
@@ -44,26 +45,20 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Palette: “sea fog · deep water · slate · brass” ──
-   fog   — calm neutral background            #f3f4f0
-   card  — raised paper for boxes and cards   #fbfcf9
-   ink   — deep-water slate for text          #1f2d35
-   deep  — desaturated teal-blue accent       #2c5a68  (blue = trust, desaturated = calm)
-   brass — sparing warm accent for highlights #9a7b3f
-*/
+/* ── Palette: “sea fog · deep water · slate · brass” ── */
 :root {
   --fog:        #f3f4f0;
   --card:       #fbfcf9;
   --ink:        #1f2d35;
   --ink-mid:    #42525c;
   --ink-soft:   #67767f;
-  --ink-faint:  #93a0a7;
+  --ink-faint:  #6f7d85;
   --rule:       #d7dbd3;
   --rule-soft:  #e3e6df;
   --deep:       #2c5a68;
   --deep-dark:  #234a56;
   --deep-tint:  #e6edec;
-  --brass:      #9a7b3f;
+  --brass:      #7f6430;
   --brass-tint: #f2ecdd;
   --nav-h:      56px;
   --serif:      'STIX Two Text', 'Times New Roman', serif;
@@ -88,7 +83,7 @@ a { color: var(--deep); }
 
 section { scroll-margin-top: calc(var(--nav-h) + 10px); }
 
-/* ── SEEKING STRIP — quiet, informative, not shouty ── */
+/* ── SEEKING STRIP ── */
 .seeking-banner {
   background: var(--deep-tint);
   color: var(--deep-dark);
@@ -118,20 +113,21 @@ nav {
   display: inline-flex; align-items: center; gap: 10px;
 }
 .brand-mark { flex-shrink: 0; display: block; }
-.nav-links { display: flex; gap: 1.9rem; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: 1.7rem; list-style: none; align-items: center; }
 .nav-links a {
   font-size: 12px; color: var(--ink-soft); text-decoration: none;
   letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
   transition: color 0.15s;
 }
-.nav-links a:hover { color: var(--deep-dark); }
-.nav-cv-btn {
-  font-size: 11.5px !important; letter-spacing: 0.12em; text-transform: uppercase;
-  background: var(--deep); color: var(--card) !important;
-  padding: 0.4rem 1rem; border-radius: 2px;
+.nav-links a:hover, .nav-links a.active { color: var(--deep-dark); }
+.nav-links a.active:not(.nav-cv-btn) { box-shadow: 0 2px 0 var(--deep); padding-bottom: 4px; }
+.nav-links a.nav-cv-btn {
+  font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--deep); color: var(--card);
+  padding: 0.4rem 1rem; border-radius: 2px; box-shadow: none;
   transition: background 0.15s;
 }
-.nav-cv-btn:hover { background: var(--deep-dark); }
+.nav-links a.nav-cv-btn:hover { background: var(--deep-dark); color: var(--card); }
 .nav-toggle {
   display: none;
   background: none; border: 1px solid var(--rule);
@@ -139,10 +135,10 @@ nav {
   padding: 5px 11px; cursor: pointer; border-radius: 2px;
 }
 
-/* ── HERO — light, airy, with faint flow-lines (a nod to CFD) ── */
+/* ── HERO ── */
 .hero {
   position: relative;
-  padding: 5.5rem 2.5rem 4.5rem;
+  padding: 5rem 2.5rem 4rem;
   overflow: hidden;
 }
 .hero-flow {
@@ -152,7 +148,7 @@ nav {
 }
 .hero-inner {
   position: relative;
-  max-width: 880px; margin: 0 auto;
+  max-width: 920px; margin: 0 auto;
   display: grid; grid-template-columns: 1fr auto; gap: 3.5rem; align-items: start;
 }
 .hero-kicker {
@@ -171,34 +167,34 @@ h1.hero-name {
   letter-spacing: 0.03em;
   margin-bottom: 1.5rem;
 }
-
-/* The signature: a waterline with the load-line mark */
-.waterline {
-  display: flex; align-items: center; gap: 14px;
-  margin: 0 0 1.6rem;
-}
-.waterline::before, .waterline::after {
-  content: ""; height: 1px; background: var(--rule); flex: 1;
-}
+.waterline { display: flex; align-items: center; gap: 14px; margin: 0 0 1.6rem; }
+.waterline::before, .waterline::after { content: ""; height: 1px; background: var(--rule); flex: 1; }
 .waterline::before { max-width: 64px; flex: none; width: 64px; }
 .waterline svg { flex-shrink: 0; display: block; }
 
 .hero-bio {
   font-size: 1.06rem; color: var(--ink-mid);
-  max-width: 580px; line-height: 1.85; margin-bottom: 2.2rem;
+  max-width: 600px; line-height: 1.85; margin-bottom: 1.8rem;
 }
 .hero-bio strong { color: var(--ink); font-weight: 600; }
 
+.hero-now {
+  display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 1.2rem;
+  font-size: 14px; color: var(--ink-mid);
+  margin-bottom: 2rem; max-width: 600px;
+}
+.hero-now dt {
+  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
+  color: var(--ink-faint); padding-top: 3px;
+}
+
 .hero-stats {
-  display: flex; gap: 2.4rem; margin-bottom: 2.4rem;
-  padding: 1.4rem 0;
+  display: flex; gap: 2.4rem; margin-bottom: 2.2rem;
+  padding: 1.3rem 0;
   border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
   flex-wrap: wrap;
 }
-.stat-num {
-  font-family: var(--serif);
-  font-size: 1.75rem; font-weight: 500; color: var(--ink); line-height: 1.15;
-}
+.stat-num { font-family: var(--serif); font-size: 1.75rem; font-weight: 500; color: var(--ink); line-height: 1.15; }
 .stat-num .quant-highlight { color: var(--deep); }
 .stat-label {
   font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
@@ -219,10 +215,7 @@ h1.hero-name {
 .btn-ghost { background: transparent; color: var(--ink-mid); border: 1px solid var(--rule); }
 .btn-ghost:hover { border-color: var(--deep); color: var(--deep-dark); }
 
-.hero-photo-col {
-  display: flex; flex-direction: column; align-items: center;
-  padding-top: 2.4rem;
-}
+.hero-photo-col { display: flex; flex-direction: column; align-items: center; padding-top: 2.4rem; }
 .hero-photo {
   width: 156px; height: 156px;
   border-radius: 50%;
@@ -230,24 +223,18 @@ h1.hero-name {
   outline: 6px solid var(--card);
   background: var(--card);
   display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
+  overflow: hidden; flex-shrink: 0;
   box-shadow: 0 1px 2px rgba(31,45,53,0.06);
 }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
-.hero-photo-placeholder {
-  font-family: var(--serif);
-  font-size: 40px; color: var(--ink-faint); text-align: center;
-}
+.hero-photo-placeholder { font-family: var(--serif); font-size: 40px; color: var(--ink-faint); text-align: center; }
 
 /* ── SECTIONS ── */
-section { padding: 4.5rem 2.5rem; }
-.section-inner { max-width: 880px; margin: 0 auto; }
+section { padding: 4.25rem 2.5rem; }
+section.alt { background: var(--card); border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
+.section-inner { max-width: 920px; margin: 0 auto; }
 
-.section-header {
-  display: flex; align-items: center; gap: 1.1rem;
-  margin-bottom: 2.5rem;
-}
+.section-header { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 2.4rem; }
 .section-eyebrow {
   font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--deep); font-weight: 600; flex-shrink: 0;
@@ -257,9 +244,7 @@ h2.section-title {
   font-size: clamp(1.5rem, 2.6vw, 1.85rem); font-weight: 500;
   color: var(--ink); line-height: 1.15; flex-shrink: 0;
 }
-.section-header::after {
-  content: ""; flex: 1; height: 1px; background: var(--rule);
-}
+.section-header::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
 
 /* ── RESEARCH STATEMENT ── */
 .statement-box {
@@ -269,69 +254,12 @@ h2.section-title {
   background: var(--card);
   border-radius: 0 2px 2px 0;
 }
-.statement-box p {
-  font-size: 16.5px; color: var(--ink-mid); line-height: 1.9;
-  margin-bottom: 1rem;
-}
+.statement-box p { font-size: 16.5px; color: var(--ink-mid); line-height: 1.9; margin-bottom: 1rem; }
 .statement-box p:last-child { margin-bottom: 0; }
 .statement-box em { font-style: italic; font-family: var(--serif); color: var(--ink); }
 .statement-box ul { padding-left: 1.2rem; margin-bottom: 1rem; }
 .statement-box ul li { font-size: 15.5px; color: var(--ink-mid); line-height: 1.8; margin-bottom: 0.55rem; }
 .statement-box ul li strong { color: var(--ink); font-weight: 600; }
-
-/* ── RESEARCH & PUBLICATIONS ── */
-.research-item {
-  padding: 1.9rem 0;
-  border-bottom: 1px solid var(--rule);
-}
-.research-item:first-of-type { padding-top: 0.25rem; }
-.research-item:last-of-type { border-bottom: none; padding-bottom: 0.5rem; }
-.research-type {
-  display: inline-block;
-  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--deep); font-weight: 600; margin-bottom: 0.65rem;
-}
-.research-title {
-  font-family: var(--serif);
-  font-size: 1.32rem; font-weight: 500; color: var(--ink); margin-bottom: 0.45rem;
-  line-height: 1.3;
-}
-.research-authors {
-  font-size: 14px; color: var(--ink-soft); margin-bottom: 0.2rem;
-  font-style: italic;
-}
-.research-authors strong { font-weight: 600; font-style: italic; color: var(--ink-mid); }
-.research-supervisor {
-  font-size: 13.5px; color: var(--ink-faint); margin-bottom: 0.85rem;
-}
-.research-desc { font-size: 15.5px; color: var(--ink-mid); }
-.research-desc ul { padding-left: 1.1rem; margin-top: 0.5rem; }
-.research-desc ul li { margin-bottom: 0.45rem; }
-.research-finding {
-  margin-top: 1rem; padding: 0.85rem 1.1rem;
-  background: var(--deep-tint); border-left: 2px solid var(--deep);
-  font-size: 14.5px; color: var(--ink-mid);
-  border-radius: 0 2px 2px 0;
-}
-.research-finding strong { color: var(--deep-dark); font-weight: 600; }
-.research-note {
-  margin-top: 0.85rem;
-  font-size: 13.5px; color: var(--ink-faint); font-style: italic;
-}
-.research-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.05rem; }
-.tag {
-  font-size: 12px; color: var(--ink-soft);
-  border: 1px solid var(--rule); padding: 2px 9px;
-  background: var(--card); border-radius: 2px;
-}
-.research-links { margin-top: 0.95rem; display: flex; gap: 1.2rem; flex-wrap: wrap; }
-.research-link {
-  font-size: 13.5px; color: var(--deep); text-decoration: none; font-weight: 500;
-  letter-spacing: 0.03em; border-bottom: 1px solid var(--rule);
-  transition: border-color 0.15s, color 0.15s;
-  padding-bottom: 1px;
-}
-.research-link:hover { border-color: var(--deep); color: var(--deep-dark); }
 
 /* ── RESEARCH INTERESTS ── */
 .interests-grid {
@@ -340,53 +268,87 @@ h2.section-title {
   border-radius: 2px; overflow: hidden;
 }
 .interest-card { background: var(--card); padding: 1.5rem 1.6rem; }
-.interest-title {
-  font-family: var(--serif);
-  font-size: 1.08rem; font-weight: 500; color: var(--ink);
-  margin-bottom: 0.8rem;
-}
-.core-badge {
-  font-family: var(--sans);
-  font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
-  color: var(--brass); border: 1px solid var(--brass); background: var(--brass-tint);
-  padding: 1px 7px; margin-left: 8px; vertical-align: 2px; white-space: nowrap;
-  border-radius: 2px;
-}
+.interest-title { font-family: var(--serif); font-size: 1.08rem; font-weight: 500; color: var(--ink); margin-bottom: 0.8rem; }
+.interest-from { font-size: 13.5px; color: var(--ink-soft); margin-top: 0.9rem; line-height: 1.55; }
+.interest-from a { font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--rule); }
+.interest-from a:hover { border-color: var(--deep); }
 .interest-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.interest-tags .tag { background: var(--fog); }
-.interests-foot {
-  margin-top: 1.1rem;
-  font-size: 14px; color: var(--ink-soft); font-style: italic;
-}
+.interests-foot { margin-top: 1.1rem; font-size: 14px; color: var(--ink-soft); font-style: italic; }
 
-/* ── ABOUT ── */
-.about-grid {
-  display: grid; grid-template-columns: 3fr 2fr; gap: 3.5rem; align-items: start;
+.tag {
+  font-size: 12px; color: var(--ink-soft);
+  border: 1px solid var(--rule); padding: 2px 9px;
+  background: var(--card); border-radius: 2px;
 }
+.interest-tags .tag { background: var(--fog); }
+
+/* ── PUBLICATIONS ── */
+.pub { padding: 1.6rem 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: 74px 1fr; gap: 1.5rem; }
+.pub:first-of-type { padding-top: 0.25rem; }
+.pub:last-of-type { border-bottom: none; padding-bottom: 0.4rem; }
+.pub-year { font-family: var(--serif); font-size: 1.5rem; color: var(--deep); line-height: 1.2; }
+.pub-kind {
+  display: inline-block;
+  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ink-faint); font-weight: 600; margin-bottom: 0.45rem;
+}
+.pub-title { font-family: var(--serif); font-size: 1.28rem; font-weight: 500; color: var(--ink); line-height: 1.3; margin-bottom: 0.45rem; }
+.pub-authors { font-size: 14.5px; color: var(--ink-mid); margin-bottom: 0.15rem; }
+.pub-authors strong { font-weight: 600; color: var(--ink); }
+.pub-venue { font-size: 14px; color: var(--ink-soft); font-style: italic; margin-bottom: 0.9rem; }
+.pub-desc { font-size: 15.5px; color: var(--ink-mid); }
+.pub-finding {
+  margin-top: 0.95rem; padding: 0.8rem 1.1rem;
+  background: var(--deep-tint); border-left: 2px solid var(--deep);
+  font-size: 14.5px; color: var(--ink-mid);
+  border-radius: 0 2px 2px 0;
+}
+.pub-finding strong { color: var(--deep-dark); font-weight: 600; }
+.pub-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; }
+.pub-actions { margin-top: 0.95rem; display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center; }
+.pub-link, .cite-btn {
+  font: inherit; font-size: 13px; font-weight: 500; letter-spacing: 0.03em;
+  color: var(--deep); text-decoration: none; background: none; cursor: pointer;
+  border: 1px solid var(--rule); border-radius: 2px; padding: 0.3rem 0.85rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+.pub-link:hover, .cite-btn:hover { border-color: var(--deep); color: var(--deep-dark); }
+.pub-pipeline { margin-top: 1.2rem; font-size: 14px; color: var(--ink-soft); font-style: italic; }
+
+/* ── PROJECTS ── */
+.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+.project-card {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 2px;
+  padding: 1.5rem 1.6rem; display: flex; flex-direction: column;
+}
+section.alt .project-card { background: var(--fog); }
+.project-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 0.8rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
+.project-type { font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--deep); font-weight: 600; }
+.status {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+  color: var(--brass); border: 1px solid var(--brass); background: var(--brass-tint);
+  padding: 1px 8px; border-radius: 2px; white-space: nowrap;
+}
+.status.done { color: var(--deep-dark); border-color: var(--deep); background: var(--deep-tint); }
+.project-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--ink); line-height: 1.3; margin-bottom: 0.3rem; }
+.project-sup { font-size: 13px; color: var(--ink-faint); margin-bottom: 0.8rem; }
+.project-desc { font-size: 15px; color: var(--ink-mid); line-height: 1.7; }
+.project-desc ul { padding-left: 1.1rem; }
+.project-desc li { margin-bottom: 0.4rem; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 1.1rem; }
+section.alt .project-tags .tag { background: var(--card); }
+
+/* ── ABOUT / EDUCATION ── */
+.about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 3.5rem; align-items: start; }
 .about-text p { color: var(--ink-mid); margin-bottom: 1rem; font-size: 15.5px; line-height: 1.85; }
-.about-meta {
-  border: 1px solid var(--rule); background: var(--card);
-  padding: 1.5rem 1.6rem; border-radius: 2px;
-}
+.about-meta { border: 1px solid var(--rule); background: var(--card); padding: 1.5rem 1.6rem; border-radius: 2px; }
 .meta-block { margin-bottom: 1.3rem; border-bottom: 1px solid var(--rule-soft); padding-bottom: 1.15rem; }
 .meta-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.meta-label {
-  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
-  color: var(--ink-faint); margin-bottom: 0.35rem;
-}
+.meta-label { font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); margin-bottom: 0.35rem; }
 .meta-value { font-size: 14.5px; color: var(--ink-mid); }
-.meta-value a { color: var(--deep); text-decoration: none; }
-.meta-value a:hover { text-decoration: underline; }
 .score-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.45rem; }
-.score-chip {
-  font-size: 12.5px; padding: 2px 10px;
-  border: 1px solid var(--rule); color: var(--ink-mid);
-  background: var(--fog); border-radius: 2px;
-}
-.score-chip.highlight {
-  border-color: var(--deep); color: var(--deep-dark);
-  background: var(--deep-tint); font-weight: 500;
-}
+.score-chip { font-size: 12.5px; padding: 2px 10px; border: 1px solid var(--rule); color: var(--ink-mid); background: var(--fog); border-radius: 2px; }
+.score-chip.highlight { border-color: var(--deep); color: var(--deep-dark); background: var(--deep-tint); font-weight: 500; }
 
 /* ── SKILLS ── */
 .skills-grid {
@@ -395,38 +357,26 @@ h2.section-title {
   border-radius: 2px; overflow: hidden;
 }
 .skill-group { background: var(--card); padding: 1.3rem 1.5rem; }
-.skill-group-label {
-  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
-  color: var(--ink-faint); margin-bottom: 0.85rem;
-}
+.skill-group-label { font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); margin-bottom: 0.85rem; }
 .skill-item {
   font-size: 14.5px; color: var(--ink-mid);
   padding: 6px 0; border-bottom: 1px solid var(--rule-soft);
   display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
 }
 .skill-item:last-child { border-bottom: none; }
-.skill-name { display: flex; align-items: center; gap: 8px; }
-.skill-dash { color: var(--rule); font-size: 10px; }
-.skill-used {
-  font-size: 11px; color: var(--deep); letter-spacing: 0.04em;
-  font-style: italic; text-align: right;
-}
+.skill-used { font-size: 11.5px; color: var(--deep); letter-spacing: 0.04em; font-style: italic; text-align: right; }
 
 /* ── COURSES ── */
 .courses-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .course-pill {
   font-size: 13.5px; padding: 0.32rem 0.9rem;
   border: 1px solid var(--rule); color: var(--ink-mid); background: var(--card);
-  border-radius: 2px;
-  transition: border-color 0.15s, color 0.15s;
+  border-radius: 2px; transition: border-color 0.15s, color 0.15s;
 }
 .course-pill:hover { border-color: var(--deep); color: var(--deep-dark); }
 
 /* ── EXPERIENCE ── */
-.experience-item {
-  display: grid; grid-template-columns: 175px 1fr; gap: 2rem;
-  padding: 1.6rem 0; border-bottom: 1px solid var(--rule);
-}
+.experience-item { display: grid; grid-template-columns: 175px 1fr; gap: 2rem; padding: 1.6rem 0; border-bottom: 1px solid var(--rule); }
 .experience-item:first-of-type { padding-top: 0.25rem; }
 .experience-item:last-of-type { border-bottom: none; }
 .exp-org { font-size: 14px; font-weight: 600; color: var(--ink); }
@@ -437,20 +387,11 @@ h2.section-title {
 .exp-desc ul li { margin-bottom: 0.35rem; }
 
 /* ── CONTACT ── */
-.contact-grid {
-  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; align-items: start;
-}
+.contact-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; align-items: start; }
 .contact-intro p { font-size: 15.5px; color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.85; }
 .contact-intro strong { color: var(--ink); font-weight: 600; }
-.refs-label {
-  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
-  color: var(--ink-faint); margin: 1.8rem 0 0.7rem;
-}
-.refs-grid {
-  display: grid; grid-template-columns: 1fr; gap: 1px;
-  border: 1px solid var(--rule); background: var(--rule);
-  border-radius: 2px; overflow: hidden;
-}
+.refs-label { font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); margin: 1.8rem 0 0.7rem; }
+.refs-grid { display: grid; grid-template-columns: 1fr; gap: 1px; border: 1px solid var(--rule); background: var(--rule); border-radius: 2px; overflow: hidden; }
 .ref-card { background: var(--card); padding: 1rem 1.2rem; }
 .ref-name { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
 .ref-role { font-size: 12.5px; color: var(--ink-faint); margin-bottom: 5px; font-style: italic; }
@@ -459,17 +400,10 @@ h2.section-title {
 .ref-contact a:hover { text-decoration: underline; }
 
 .contact-links { display: flex; flex-direction: column; border: 1px solid var(--rule); background: var(--card); border-radius: 2px; padding: 0.4rem 1.3rem; }
-.contact-link {
-  display: flex; align-items: center; gap: 1rem;
-  padding: 0.95rem 0; border-bottom: 1px solid var(--rule-soft);
-  text-decoration: none; transition: opacity 0.15s;
-}
+.contact-link { display: flex; align-items: center; gap: 1rem; padding: 0.95rem 0; border-bottom: 1px solid var(--rule-soft); text-decoration: none; transition: opacity 0.15s; }
 .contact-link:last-of-type { border-bottom: none; }
 .contact-link:hover { opacity: 0.7; }
-.cl-label {
-  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
-  color: var(--ink-faint); margin-bottom: 2px;
-}
+.cl-label { font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); margin-bottom: 2px; }
 .cl-value { font-size: 15px; color: var(--ink); word-break: break-all; }
 .cl-icon {
   width: 34px; height: 34px; border: 1px solid var(--rule);
@@ -478,15 +412,11 @@ h2.section-title {
   background: var(--fog); border-radius: 2px;
 }
 .cv-download-block { margin-top: 1.6rem; }
-.cv-download-label {
-  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;
-  color: var(--ink-faint); margin-bottom: 0.55rem;
-}
+.cv-download-label { font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); margin-bottom: 0.55rem; }
 .cv-download-link {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 15px; color: var(--deep); text-decoration: none; font-weight: 500;
-  border-bottom: 1px solid var(--rule); padding-bottom: 1px;
-  transition: border-color 0.15s;
+  border-bottom: 1px solid var(--rule); padding-bottom: 1px; transition: border-color 0.15s;
 }
 .cv-download-link:hover { border-color: var(--deep); }
 
@@ -494,25 +424,34 @@ h2.section-title {
 footer {
   background: var(--ink); padding: 1.6rem 2.5rem;
   text-align: center; font-size: 12.5px;
-  color: #8b98a0; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #98a5ac; letter-spacing: 0.08em; text-transform: uppercase;
 }
 footer .foot-line { display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
-footer a { color: #aab6bd; text-decoration: none; }
+footer a { color: #b6c1c7; text-decoration: none; }
 footer a:hover { color: #e2e8ea; }
 
-/* ── SCROLL REVEAL (subtle; only hides content once JS is confirmed running) ── */
-html.js .reveal {
-  opacity: 0; transform: translateY(12px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
+/* ── SCROLL REVEAL ── */
+html.js .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.55s ease, transform 0.55s ease; }
 html.js .reveal.visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   html.js .reveal { opacity: 1; transform: none; transition: none; }
 }
 
+/* ── PRINT: a clean one-page-per-section paper copy ── */
+@media print {
+  .seeking-banner, nav, .hero-flow, .cite-btn, .hero-cta { display: none !important; }
+  html.js .reveal { opacity: 1; transform: none; }
+  body { background: #fff; font-size: 11pt; }
+  section { padding: 1.4rem 0; }
+  .pub, .project-card, .experience-item { break-inside: avoid; }
+}
+
 /* ── RESPONSIVE ── */
-@media (max-width: 720px) {
+@media (max-width: 900px) {
+  .nav-links { gap: 1.2rem; }
+}
+@media (max-width: 820px) {
   nav { padding: 0 1.25rem; }
   .nav-toggle { display: block; }
   .nav-links {
@@ -525,20 +464,27 @@ html.js .reveal.visible { opacity: 1; transform: none; }
   .nav-links.open { display: flex; }
   .nav-links li { width: 100%; }
   .nav-links a { display: block; padding: 0.7rem 0; }
+  .nav-links a.active:not(.nav-cv-btn) { box-shadow: none; padding-bottom: 0.7rem; }
   .nav-links .nav-cv-btn { display: inline-block; margin: 0.5rem 0 0.75rem; padding: 0.45rem 1.1rem; }
-
+}
+@media (max-width: 720px) {
   .hero { padding: 3.5rem 1.25rem 3rem; }
   .hero-inner { grid-template-columns: 1fr; gap: 1.8rem; }
   .hero-photo-col { order: -1; flex-direction: row; justify-content: flex-start; padding-top: 0; }
   .hero-photo { width: 104px; height: 104px; outline-width: 4px; }
   h1.hero-name { font-size: 2.6rem; }
   .hero-stats { gap: 1.6rem; }
+  .hero-now { grid-template-columns: 1fr; gap: 0; }
+  .hero-now dd { margin-bottom: 0.6rem; }
 
-  section { padding: 3.5rem 1.25rem; }
+  section { padding: 3.25rem 1.25rem; }
   .section-header { flex-wrap: wrap; row-gap: 0.2rem; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+  .project-grid { grid-template-columns: 1fr; }
+  .pub { grid-template-columns: 1fr; gap: 0.3rem; }
   .experience-item { grid-template-columns: 1fr; gap: 0.5rem; }
   .seeking-banner { font-size: 12px; padding: 0.6rem 1rem; }
+  .statement-box { padding: 1.5rem 1.3rem; }
 }
 </style>
 </head>
@@ -565,14 +511,14 @@ const LINKS = {
   cv:           "Nasib_Asgar_CV.pdf",
   paper:        "https://www.researchgate.net/publication/PASTE-YOUR-PAPER-LINK-HERE",
   researchgate: "https://www.researchgate.net/profile/PASTE-YOUR-PROFILE-LINK-HERE",
-  linkedin:     "https://www.linkedin.com/in/PASTE-YOUR-PROFILE-LINK-HERE",
+  linkedin:     "https://www.linkedin.com/in/nasib-asgar-8985a22b2",
   scholar:      "https://scholar.google.com/citations?user=PASTE-YOUR-ID-HERE"
 };
 </script>
 
 <!-- SEEKING STRIP -->
 <div class="seeking-banner">
-  <strong>Seeking Ph.D. &amp; RA/TA positions in Mechanical Engineering</strong> — Spring / Fall 2027 · Fluid dynamics · Thermal sciences · Sustainable energy
+  <strong>Seeking Ph.D. &amp; RA/TA positions in Mechanical Engineering</strong> — Fall 2027 · Fluid dynamics · Thermal sciences · Sustainable energy
 </div>
 
 <!-- NAV -->
@@ -586,9 +532,10 @@ const LINKS = {
   </a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#statement">Statement</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#statement">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">Background</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv-btn">Download CV ↓</a></li>
@@ -597,7 +544,6 @@ const LINKS = {
 
 <!-- HERO -->
 <header class="hero" id="top">
-  <!-- Faint flow-lines: a quiet reference to CFD / streamlines around a hull -->
   <svg class="hero-flow" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <g fill="none" stroke="#2c5a68" stroke-width="1">
       <path d="M-40,395 C240,385 420,355 620,362 C830,370 1000,398 1260,388" opacity="0.10"/>
@@ -623,10 +569,17 @@ const LINKS = {
       <p class="hero-bio">
         I study the mechanical and thermal systems behind sustainable transport and energy.
         My undergraduate research on alternative marine fuels was
-        <strong>published at MARTEC 2024</strong>; my capstone delivered a complete
-        148&nbsp;TEU vessel design end-to-end. I now want to move from systems-level
+        <strong>published at MARTEC 2024</strong>, and my capstone took a 148&nbsp;TEU vessel
+        from principal particulars to full drawings. I now want to move from systems-level
         lifecycle models to <strong>high-fidelity CFD and heat-transfer simulation</strong>.
       </p>
+
+      <dl class="hero-now">
+        <dt>Now</dt>
+        <dd>MBA candidate, IBA, University of Dhaka (2025–2027) · running Python-based research projects</dd>
+        <dt>Looking for</dt>
+        <dd>Funded Ph.D. in thermal-fluid sciences or sustainable energy, Fall 2027</dd>
+      </dl>
 
       <div class="hero-stats">
         <div class="stat">
@@ -666,7 +619,7 @@ const LINKS = {
   </div>
 </header>
 
-<!-- RESEARCH STATEMENT -->
+<!-- RESEARCH STATEMENT + INTERESTS -->
 <section id="statement">
   <div class="section-inner reveal">
     <div class="section-header">
@@ -692,173 +645,48 @@ const LINKS = {
       </p>
       <p>What I would bring to a research group:</p>
       <ul>
-        <li><strong>A demonstrated ability to finish and publish</strong> — I carried a research question from framing through modelling to a peer-reviewed paper while still an undergraduate.</li>
-        <li><strong>A working quantitative toolkit</strong> — COMSOL, Abaqus, MATLAB, Python, and C++, applied to heat transfer, FEA, hydrostatics, and data-analysis problems.</li>
-        <li><strong>Systems-level judgment</strong> — experience synthesising environmental, economic, and regulatory data into engineering decisions, ready to be paired with high-fidelity simulation.</li>
+        <li><strong>A record of finishing and publishing</strong> — I carried a research question from framing through modelling to a peer-reviewed paper as an undergraduate.</li>
+        <li><strong>A working quantitative toolkit</strong> — COMSOL, Abaqus, MATLAB, Python, and C++, applied to heat transfer, FEA, hydrostatics, and large-scale data analysis.</li>
+        <li><strong>Systems-level judgment</strong> — experience turning environmental, economic, and regulatory data into engineering decisions, ready to be paired with high-fidelity simulation.</li>
       </ul>
       <p>
         I am particularly drawn to groups working on multiphase flow, thermal management,
         and clean combustion or energy conversion.
       </p>
     </div>
-  </div>
-</section>
 
-<!-- RESEARCH & PUBLICATIONS -->
-<section id="research">
-  <div class="section-inner reveal">
-    <div class="section-header">
-      <span class="section-eyebrow">Evidence</span>
-      <h2 class="section-title">Research &amp; publications</h2>
-    </div>
+    <div style="height: 2.2rem"></div>
 
-    <!-- Thesis and publication are the SAME work — presented once, as one entry -->
-    <div class="research-item">
-      <span class="research-type">Undergraduate thesis → Peer-reviewed publication · MARTEC 2024</span>
-      <div class="research-title">
-        Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh
-      </div>
-      <div class="research-authors">
-        Jannatul Ambia Shorna, <strong>Nasib Asgar</strong>, N. M. Golam Zakaria —
-        Proc. International Conference on Marine Technology (MARTEC 2024)
-      </div>
-      <div class="research-supervisor">
-        Supervised by Prof. Dr. N. M. Golam Zakaria · Dept. of NAME, BUET
-      </div>
-      <div class="research-desc">
-        Well-to-wake life cycle assessment of candidate alternative fuels for Bangladesh’s
-        inland shipping, modelled in SimaPro against environmental-impact and techno-economic
-        criteria — synthesising supply-chain data, emission inventories, and regulatory standards.
-        <!-- ✏️ MUCH STRONGER with numbers. Replace the finding below with specifics from
-             your paper, e.g.: "LNG/methanol/… showed a XX% lower well-to-wake GWP than
-             conventional HFO under local supply-chain conditions." Committees skim for figures. -->
-        <div class="research-finding">
-          <strong>Key finding:</strong> fuel rankings are not portable — local supply-chain
-          conditions materially reorder well-to-wake carbon intensity. The study identifies the
-          pathway with the strongest combined environmental and economic case for the inland fleet.
-        </div>
-      </div>
-      <div class="research-tags">
-        <span class="tag">Life cycle assessment</span>
-        <span class="tag">Well-to-wake analysis</span>
-        <span class="tag">SimaPro</span>
-        <span class="tag">Techno-economic evaluation</span>
-        <span class="tag">Emission inventories</span>
-      </div>
-      <div class="research-links">
-        <a data-link="paper" href="#" target="_blank" rel="noopener" class="research-link">Read the paper on ResearchGate ↗</a>
-      </div>
-    </div>
-
-    <div class="research-item">
-      <span class="research-type">Capstone design project</span>
-      <div class="research-title">Design of a 148 TEU Inland Container Vessel</div>
-      <div class="research-supervisor">
-        Supervised by Prof. Dr. Md. Mashud Karim · Dept. of NAME, BUET
-      </div>
-      <div class="research-desc">
-        <ul>
-          <li>Determined principal particulars through iterative optimisation, balancing cargo
-              capacity, hydrostatic stability, resistance, weight, and installed power.</li>
-          <li>Performed full stability and hydrostatic analysis in Maxsurf; estimated resistance
-              and powering requirements.</li>
-          <li>Produced complete structural and general-arrangement drawings in AutoCAD and
-              Rhinoceros&nbsp;3D.</li>
-          <!-- ✏️ If you can, add one number here (e.g. principal dimensions, design speed,
-               installed kW, or number of design iterations) — it makes the entry concrete. -->
-        </ul>
-      </div>
-      <div class="research-tags">
-        <span class="tag">Maxsurf</span>
-        <span class="tag">Hydrostatic stability</span>
-        <span class="tag">Resistance &amp; powering</span>
-        <span class="tag">Structural design</span>
-        <span class="tag">AutoCAD</span>
-        <span class="tag">Rhinoceros 3D</span>
-      </div>
-    </div>
-
-    <!-- ✏️ OPTIONAL ENTRY — evidence behind the "Python" claim. Professors running
-         computational groups value proof of sustained programming, even outside ME.
-         If you'd rather keep a purely mechanical-engineering narrative, delete this block. -->
-    <div class="research-item">
-      <span class="research-type">Independent projects · Scientific computing</span>
-      <div class="research-title">Multilingual NLP &amp; statistical data-analysis pipelines</div>
-      <div class="research-desc">
-        Designed and iterated a GPU-accelerated, multilingual sentiment-analysis pipeline in
-        Python — a three-model transformer ensemble (XLM-RoBERTa family with an mDeBERTa
-        tiebreaker) over large app-review corpora — alongside reproducible pandas/SciPy
-        statistical workflows (non-parametric hypothesis testing, IQR outlier detection) and
-        interactive analytics dashboards.
-        <div class="research-note">
-          Included as evidence of sustained programming practice: the domain sits outside
-          mechanical engineering, but the numerical habits and software discipline transfer
-          directly to simulation research.
-        </div>
-      </div>
-      <div class="research-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Transformer models</span>
-        <span class="tag">pandas · SciPy</span>
-        <span class="tag">Statistical testing</span>
-        <span class="tag">GPU workflows</span>
-      </div>
-    </div>
-
-    <!-- ✏️ TEMPLATE — copy this block above to add a new project or publication later:
-    <div class="research-item">
-      <span class="research-type">Project type · Status</span>
-      <div class="research-title">Project title</div>
-      <div class="research-authors">Author 1, <strong>Nasib Asgar</strong>, Author 3 — Venue, Year</div>
-      <div class="research-supervisor">Supervised by … (optional)</div>
-      <div class="research-desc">
-        One or two sentences on what you did, the tools you used, and — ideally — one number.
-      </div>
-      <div class="research-tags">
-        <span class="tag">Method or tool</span>
-      </div>
-      <div class="research-links">
-        <a href="https://..." target="_blank" rel="noopener" class="research-link">Read the paper ↗</a>
-      </div>
-    </div>
-    -->
-  </div>
-</section>
-
-<!-- RESEARCH INTERESTS — three evidenced pillars; keep it focused -->
-<section id="interests">
-  <div class="section-inner reveal">
-    <div class="section-header">
-      <span class="section-eyebrow">Direction</span>
-      <h2 class="section-title">Research interests</h2>
-    </div>
     <div class="interests-grid">
       <div class="interest-card">
-        <div class="interest-title">Fluid dynamics <span class="core-badge">Core</span></div>
+        <div class="interest-title">Fluid dynamics</div>
         <div class="interest-tags">
           <span class="tag">CFD</span>
           <span class="tag">Multiphase flow</span>
           <span class="tag">Hydrodynamics</span>
           <span class="tag">Aerodynamics</span>
         </div>
+        <p class="interest-from">Grounded in <a href="#projects">the capstone hull design</a> and marine hydrodynamics coursework.</p>
       </div>
       <div class="interest-card">
-        <div class="interest-title">Thermal sciences <span class="core-badge">Core</span></div>
+        <div class="interest-title">Thermal sciences</div>
         <div class="interest-tags">
           <span class="tag">Heat transfer</span>
           <span class="tag">Thermal management</span>
           <span class="tag">Combustion</span>
           <span class="tag">Thermodynamic efficiency</span>
         </div>
+        <p class="interest-from">Grounded in heat-transfer modelling in COMSOL and marine engines &amp; fuels coursework.</p>
       </div>
       <div class="interest-card">
-        <div class="interest-title">Sustainable energy <span class="core-badge">Core</span></div>
+        <div class="interest-title">Sustainable energy</div>
         <div class="interest-tags">
           <span class="tag">Decarbonisation</span>
           <span class="tag">Alternative fuels</span>
           <span class="tag">Energy storage</span>
           <span class="tag">Power generation</span>
         </div>
+        <p class="interest-from">Grounded in <a href="#publications">the MARTEC 2024 life cycle assessment</a>.</p>
       </div>
     </div>
     <p class="interests-foot">
@@ -867,36 +695,209 @@ const LINKS = {
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- PUBLICATIONS -->
+<section id="publications" class="alt">
+  <div class="section-inner reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">Evidence</span>
+      <h2 class="section-title">Publications</h2>
+    </div>
+
+    <div class="pub">
+      <div class="pub-year">2024</div>
+      <div>
+        <span class="pub-kind">Conference paper · Peer-reviewed · From undergraduate thesis</span>
+        <div class="pub-title">Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh</div>
+        <div class="pub-authors">Jannatul Ambia Shorna, <strong>Nasib Asgar</strong>, N. M. Golam Zakaria</div>
+        <div class="pub-venue">Proceedings of the International Conference on Marine Technology (MARTEC 2024)</div>
+        <div class="pub-desc">
+          Well-to-wake life cycle assessment of candidate alternative fuels for Bangladesh’s
+          inland shipping, modelled in SimaPro against environmental-impact and techno-economic
+          criteria, using supply-chain data, emission inventories, and regulatory standards.
+        </div>
+        <!-- ✏️ STRONGER WITH NUMBERS. Replace the finding below with specifics from your paper,
+             e.g. "Fuel X showed a YY% lower well-to-wake GWP than HFO under local supply-chain
+             conditions." Committees skim for figures. -->
+        <div class="pub-finding">
+          <strong>Key finding:</strong> fuel rankings are not portable — local supply-chain
+          conditions materially reorder well-to-wake carbon intensity. The study identifies the
+          pathway with the strongest combined environmental and economic case for the inland fleet.
+        </div>
+        <div class="pub-tags">
+          <span class="tag">Life cycle assessment</span>
+          <span class="tag">Well-to-wake analysis</span>
+          <span class="tag">SimaPro</span>
+          <span class="tag">Techno-economic evaluation</span>
+          <span class="tag">Emission inventories</span>
+        </div>
+        <div class="pub-actions">
+          <a data-link="paper" href="#" target="_blank" rel="noopener" class="pub-link">Read on ResearchGate ↗</a>
+          <button type="button" class="cite-btn" data-cite="Shorna, J. A., Asgar, N., &amp; Zakaria, N. M. G. (2024). Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh. Proceedings of the International Conference on Marine Technology (MARTEC 2024).">Copy citation</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✏️ TEMPLATE — copy this block to add a publication, preprint, or manuscript in preparation:
+    <div class="pub">
+      <div class="pub-year">2026</div>
+      <div>
+        <span class="pub-kind">Manuscript in preparation</span>
+        <div class="pub-title">Title</div>
+        <div class="pub-authors">Author 1, <strong>Nasib Asgar</strong>, Author 3</div>
+        <div class="pub-venue">Venue or status</div>
+        <div class="pub-desc">One or two sentences on what you did and what you found.</div>
+        <div class="pub-actions"><a href="https://..." target="_blank" rel="noopener" class="pub-link">Link ↗</a></div>
+      </div>
+    </div>
+    -->
+
+    <p class="pub-pipeline">
+      Further manuscripts will be listed here as they reach submission.
+    </p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner reveal">
+    <div class="section-header">
+      <span class="section-eyebrow">Work</span>
+      <h2 class="section-title">Research &amp; design projects</h2>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card">
+        <div class="project-meta">
+          <span class="project-type">Capstone design · BUET</span>
+          <span class="status done">Completed</span>
+        </div>
+        <h3 class="project-title">Design of a 148 TEU Inland Container Vessel</h3>
+        <div class="project-sup">Supervised by Prof. Dr. Md. Mashud Karim · Dept. of NAME, BUET</div>
+        <div class="project-desc">
+          <ul>
+            <li>Found principal particulars through iterative optimisation, balancing cargo capacity, hydrostatic stability, resistance, weight, and installed power.</li>
+            <li>Ran stability and hydrostatic analysis in Maxsurf and estimated resistance and powering requirements.</li>
+            <li>Produced structural and general-arrangement drawings in AutoCAD and Rhinoceros&nbsp;3D.</li>
+            <!-- ✏️ Add one number here (principal dimensions, design speed, installed kW, or number
+                 of design iterations) — it makes the entry concrete. -->
+          </ul>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Maxsurf</span>
+          <span class="tag">Hydrostatic stability</span>
+          <span class="tag">Resistance &amp; powering</span>
+          <span class="tag">AutoCAD</span>
+          <span class="tag">Rhinoceros 3D</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-meta">
+          <span class="project-type">Computational research</span>
+          <span class="status">In progress</span>
+        </div>
+        <h3 class="project-title">Multilingual Sentiment Pipeline for Mobile-Finance App Reviews</h3>
+        <div class="project-sup">Independent project · Python</div>
+        <div class="project-desc">
+          <ul>
+            <li>Built a GPU-accelerated, three-model transformer ensemble (XLM-RoBERTa family with an mDeBERTa tiebreaker) over app-review corpora for five mobile-financial-service apps in Bangladesh.</li>
+            <li>Hardened it over several versions: stratified scraping, MinHash LSH deduplication, inter-rater reliability (Fleiss’ κ, Krippendorff’s α), post-stratification, and difference-in-differences.</li>
+          </ul>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Transformer models</span>
+          <span class="tag">Reproducible pipelines</span>
+          <span class="tag">Causal inference</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-meta">
+          <span class="project-type">Quantitative research</span>
+          <span class="status">In progress</span>
+        </div>
+        <h3 class="project-title">Mobile Financial Services and Unplanned Spending in Bangladesh</h3>
+        <div class="project-sup">Group research project · survey of 256 respondents</div>
+        <div class="project-desc">
+          <ul>
+            <li>Analysed survey data in Python using exploratory factor analysis, regression, mediation, and segmentation.</li>
+            <li>Examines present bias, financial literacy, and buy-now-pay-later use as drivers of unplanned spending.</li>
+          </ul>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Factor analysis</span>
+          <span class="tag">Regression &amp; mediation</span>
+          <span class="tag">Survey design</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-meta">
+          <span class="project-type">Industrial study</span>
+          <span class="status done">Completed</span>
+        </div>
+        <h3 class="project-title">Industry 4.0 in Heavy Maritime Infrastructure</h3>
+        <div class="project-sup">Chittagong Dry Dock Ltd. · industrial attachment</div>
+        <div class="project-desc">
+          <ul>
+            <li>Month-long study mapping candidate yard processes for sensing and automation, alongside documentation of welding, cutting, docking, and mooring operations.</li>
+            <!-- ✏️ If the study produced a concrete recommendation or figure, add it here. -->
+          </ul>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Industry 4.0</span>
+          <span class="tag">Process mapping</span>
+          <span class="tag">Shipyard operations</span>
+        </div>
+      </article>
+
+      <!-- ✏️ TEMPLATE — copy this block to add a project:
+      <article class="project-card">
+        <div class="project-meta">
+          <span class="project-type">Type · Context</span>
+          <span class="status">In progress</span>   (use class="status done" and "Completed" when finished)
+        </div>
+        <h3 class="project-title">Project title</h3>
+        <div class="project-sup">Supervisor or setting</div>
+        <div class="project-desc">One or two sentences on what you did, the tools you used, and — ideally — one number.</div>
+        <div class="project-tags"><span class="tag">Method or tool</span></div>
+      </article>
+      -->
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section id="about" class="alt">
   <div class="section-inner reveal">
     <div class="section-header">
       <span class="section-eyebrow">Background</span>
-      <h2 class="section-title">About</h2>
+      <h2 class="section-title">Education</h2>
     </div>
     <div class="about-grid">
       <div class="about-text">
         <p>
           I completed my B.Sc. in Naval Architecture and Marine Engineering at the Bangladesh
-          University of Engineering and Technology (BUET) in 2024 — one of South Asia’s most
-          selective engineering schools, with a curriculum grounded in mechanics, fluids, and
-          thermal engineering. My final-year GPA of 3.50 reflects a consistent upward trajectory
-          through the programme.
+          University of Engineering and Technology (BUET) in 2024, with a curriculum grounded in
+          mechanics, fluids, and thermal engineering. My final-year GPA of 3.50 followed a steady
+          upward trend through the programme.
         </p>
         <p>
           My thesis on the life cycle assessment of alternative marine fuels was published at
-          MARTEC 2024, and my capstone project — a 148 TEU inland container vessel — took a
-          design from principal particulars through stability analysis to full structural
-          drawings.
+          MARTEC 2024, and my capstone, a 148 TEU inland container vessel, took a design from
+          principal particulars through stability analysis to full structural drawings.
         </p>
-        <!-- ✏️ Verify the MBA framing and dates below. An unexplained 2024→2027 gap is a red
-             flag to committees; this paragraph turns it into deliberate preparation. -->
+        <!-- ✏️ Verify the MBA framing and dates below. An unexplained gap after graduation is a
+             red flag to committees; this paragraph presents it as deliberate preparation. -->
         <p>
-          Since graduating I have been reading for an MBA at the Institute of Business
-          Administration (IBA), University of Dhaka, concentrating on quantitative coursework —
-          statistical methods, analytics, and techno-economic case work. It deepens the
-          economic half of my LCA research and keeps me solving data-heavy problems daily
-          while I prepare for doctoral study.
+          Since March 2025 I have been studying for an MBA at the Institute of Business
+          Administration (IBA), University of Dhaka, expected in 2027. The quantitative coursework
+          (statistical methods, analytics, techno-economic case work) strengthens the economic
+          half of my LCA research and keeps me working with data every day while I prepare for
+          doctoral study.
         </p>
       </div>
       <div class="about-meta">
@@ -906,11 +907,11 @@ const LINKS = {
         </div>
         <div class="meta-block">
           <div class="meta-label">Current</div>
-          <div class="meta-value">MBA candidate, Institute of Business Administration (IBA), University of Dhaka</div>
+          <div class="meta-value">MBA candidate, Institute of Business Administration (IBA), University of Dhaka · 2025–2027</div>
         </div>
         <div class="meta-block">
           <div class="meta-label">Academic record</div>
-          <div class="meta-value">CGPA 3.26 / 4.00 overall · 3.50 final year — rising trend</div>
+          <div class="meta-value">CGPA 3.26 / 4.00 overall · 3.50 final year</div>
         </div>
         <div class="meta-block">
           <div class="meta-label">GRE (Oct 2024)</div>
@@ -933,14 +934,14 @@ const LINKS = {
         </div>
         <div class="meta-block">
           <div class="meta-label">Target intake</div>
-          <div class="meta-value">Spring 2027 / Fall 2027</div>
+          <div class="meta-value">Fall 2027</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- SKILLS + COURSEWORK -->
 <section id="skills">
   <div class="section-inner reveal">
     <div class="section-header">
@@ -950,57 +951,31 @@ const LINKS = {
     <div class="skills-grid">
       <div class="skill-group">
         <div class="skill-group-label">Programming &amp; Math</div>
-        <div class="skill-item">
-          <span class="skill-name"><span class="skill-dash">—</span> Python</span>
-          <span class="skill-used">data &amp; ML pipelines</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name"><span class="skill-dash">—</span> MATLAB</span>
-          <span class="skill-used">numerical methods</span>
-        </div>
-        <div class="skill-item"><span class="skill-name"><span class="skill-dash">—</span> C++</span></div>
-        <div class="skill-item"><span class="skill-name"><span class="skill-dash">—</span> Fortran</span></div>
+        <div class="skill-item"><span>Python</span><span class="skill-used">data &amp; ML pipelines</span></div>
+        <div class="skill-item"><span>MATLAB</span><span class="skill-used">numerical methods</span></div>
+        <div class="skill-item"><span>C++</span></div>
+        <div class="skill-item"><span>Fortran</span></div>
       </div>
       <div class="skill-group">
         <div class="skill-group-label">Simulation &amp; FEA</div>
-        <div class="skill-item">
-          <span class="skill-name"><span class="skill-dash">—</span> COMSOL</span>
-          <span class="skill-used">heat transfer</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name"><span class="skill-dash">—</span> Abaqus</span>
-          <span class="skill-used">FEA</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name"><span class="skill-dash">—</span> Maxsurf</span>
-          <span class="skill-used">stability</span>
-        </div>
+        <div class="skill-item"><span>COMSOL</span><span class="skill-used">heat transfer</span></div>
+        <div class="skill-item"><span>Abaqus</span><span class="skill-used">FEA</span></div>
+        <div class="skill-item"><span>Maxsurf</span><span class="skill-used">stability</span></div>
       </div>
       <div class="skill-group">
         <div class="skill-group-label">CAD &amp; Modelling</div>
-        <div class="skill-item">
-          <span class="skill-name"><span class="skill-dash">—</span> Rhinoceros 3D</span>
-          <span class="skill-used">vessel design</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name"><span class="skill-dash">—</span> AutoCAD</span>
-          <span class="skill-used">GA drawings</span>
-        </div>
+        <div class="skill-item"><span>Rhinoceros 3D</span><span class="skill-used">vessel design</span></div>
+        <div class="skill-item"><span>AutoCAD</span><span class="skill-used">GA drawings</span></div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-label">Specialist Tools</div>
-        <div class="skill-item">
-          <span class="skill-name"><span class="skill-dash">—</span> SimaPro</span>
-          <span class="skill-used">LCA</span>
-        </div>
+        <div class="skill-group-label">Analysis &amp; Statistics</div>
+        <div class="skill-item"><span>SimaPro</span><span class="skill-used">LCA</span></div>
+        <div class="skill-item"><span>pandas · SciPy</span><span class="skill-used">statistical testing</span></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- COURSES -->
-<section id="courses">
-  <div class="section-inner reveal">
+    <div style="height: 2.6rem"></div>
+
     <div class="section-header">
       <span class="section-eyebrow">Foundations</span>
       <h2 class="section-title">Relevant coursework</h2>
@@ -1023,7 +998,7 @@ const LINKS = {
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
+<section id="experience" class="alt">
   <div class="section-inner reveal">
     <div class="section-header">
       <span class="section-eyebrow">Practice</span>
@@ -1038,11 +1013,8 @@ const LINKS = {
         <div class="exp-role">Industrial Trainee</div>
         <div class="exp-desc">
           <ul>
-            <li>Documented core fabrication and docking operations — welding, cutting, docking,
-                and mooring — working under senior engineers on the yard floor.</li>
-            <li>Authored a month-long study on Industry 4.0 adoption in heavy maritime
-                infrastructure, mapping candidate processes for sensing and automation.</li>
-            <!-- ✏️ If the study produced a concrete recommendation or figure, add it here. -->
+            <li>Documented core fabrication and docking operations (welding, cutting, docking, mooring) under senior engineers on the yard floor.</li>
+            <li>Authored a month-long study on Industry 4.0 adoption in heavy maritime infrastructure.</li>
           </ul>
         </div>
       </div>
@@ -1055,8 +1027,7 @@ const LINKS = {
       <div class="exp-content">
         <div class="exp-role">Volunteer — International Conference on Marine Technology</div>
         <div class="exp-desc">
-          Helped run the conference at BUET — an early, first-hand look at peer-reviewed
-          scholarship, two years before publishing at the same venue.
+          Helped run the conference at BUET, an early look at peer-reviewed scholarship two years before publishing at the same venue.
         </div>
       </div>
     </div>
@@ -1067,9 +1038,7 @@ const LINKS = {
       </div>
       <div class="exp-content">
         <div class="exp-role">Member — Photography &amp; Origami Clubs</div>
-        <div class="exp-desc">
-          Co-curricular life alongside an intensive engineering programme.
-        </div>
+        <div class="exp-desc">Co-curricular life alongside an intensive engineering programme.</div>
       </div>
     </div>
 
@@ -1100,9 +1069,9 @@ const LINKS = {
     <div class="contact-grid">
       <div class="contact-intro">
         <p>
-          I am seeking Ph.D. positions and Research or Teaching Assistantships for the
-          <strong>Spring 2027 and Fall 2027</strong> intakes, in programs focused on
-          mechanical engineering, thermal-fluid sciences, and sustainable energy systems.
+          I am applying for Ph.D. positions and Research or Teaching Assistantships for the
+          <strong>Fall 2027</strong> intake, in programs focused on mechanical engineering,
+          thermal-fluid sciences, and sustainable energy systems.
         </p>
         <p>
           If your laboratory’s work aligns with my interests, I would welcome a conversation.
@@ -1142,7 +1111,7 @@ const LINKS = {
             </div>
           </a>
           <a data-link="researchgate" href="#" target="_blank" rel="noopener" class="contact-link">
-            <div class="cl-icon" style="font-weight:600; font-size:11px; color:#00CCBB;">RG</div>
+            <div class="cl-icon" style="font-weight:600; font-size:11px; color:#007d72;">RG</div>
             <div>
               <div class="cl-label">ResearchGate</div>
               <div class="cl-value">Profile &amp; publications ↗</div>
@@ -1176,8 +1145,8 @@ const LINKS = {
 <footer>
   <span class="foot-line">
     <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="7" fill="none" stroke="#8b98a0" stroke-width="1.6"/>
-      <line x1="0" y1="12" x2="24" y2="12" stroke="#8b98a0" stroke-width="1.6"/>
+      <circle cx="12" cy="12" r="7" fill="none" stroke="#98a5ac" stroke-width="1.6"/>
+      <line x1="0" y1="12" x2="24" y2="12" stroke="#98a5ac" stroke-width="1.6"/>
     </svg>
     Nasib Asgar · Mechanical &amp; Marine Engineering · BUET
     · <a href="#top">Back to top ↑</a>
@@ -1197,7 +1166,6 @@ document.querySelectorAll('[data-link]').forEach(el => {
     ? 'mailto:' + value + '?subject=' + encodeURIComponent('Ph.D. opportunity — Nasib Asgar')
     : value;
 });
-// Elements tagged data-link-text also display the email address as text
 document.querySelectorAll('[data-link-text]').forEach(el => {
   el.textContent = LINKS.email;
 });
@@ -1215,6 +1183,45 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', 'false');
   navToggle.textContent = '☰';
 }));
+
+// ── Copy citation ──
+document.querySelectorAll('.cite-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const text = btn.dataset.cite;
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (e) {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (_) {}
+      document.body.removeChild(ta);
+    }
+    const old = btn.textContent;
+    btn.textContent = 'Copied ✓';
+    setTimeout(() => { btn.textContent = old; }, 1600);
+  });
+});
+
+// ── Highlight the current section in the nav ──
+const navAnchors = [...navLinks.querySelectorAll('a[href^="#"]')];
+const sectionMap = new Map();
+navAnchors.forEach(a => {
+  const id = a.getAttribute('href').slice(1);
+  const sec = document.getElementById(id);
+  if (sec) sectionMap.set(sec, a);
+});
+if ('IntersectionObserver' in window) {
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navAnchors.forEach(a => a.classList.remove('active'));
+        const a = sectionMap.get(e.target);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sectionMap.forEach((_, sec) => spy.observe(sec));
+}
 
 // ── Subtle reveal-on-scroll (disabled automatically for reduced motion) ──
 document.documentElement.classList.add('js');

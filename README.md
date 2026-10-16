@@ -36,8 +36,8 @@ Use that URL in your emails to professors, e.g. in your signature:
 
 `index.html` contains ready-to-copy commented templates (search for **"✏️ TEMPLATE"**):
 
-- **New publication** — in the *Research & projects* section; copy the template, paste the paper URL into its `href`
-- **New research project** — same section
+- **New publication or manuscript** — in the *Publications* section; copy the template, paste the paper URL into its `href`
+- **New project** — in the *Research & design projects* section; copy the card template
 - **New experience** — in the *Experience & engagement* section
 
 Edit the file directly on GitHub (open `index.html` → pencil icon → commit), and the live site
