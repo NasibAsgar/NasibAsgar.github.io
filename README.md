@@ -15,6 +15,7 @@ Personal academic portfolio, hosted with GitHub Pages at **https://nasibasgar.gi
 3. **Add your links** — open `index.html` and find the block near the top of `<body>` marked
    **"✏️ EDIT YOUR LINKS HERE"**. Paste in:
    - `paper` — the ResearchGate URL of your MARTEC 2024 paper (clicking the publication card opens this)
+   - `preprint` — the Research Square page of the mobile-money preprint (hidden until you paste it)
    - `researchgate` — your ResearchGate profile URL
    - `linkedin` — your LinkedIn profile URL
    - `email` — change it here if your contact email ever changes (updates everywhere on the page)

@@ -214,6 +214,9 @@ h3.sub {
 .entry .tools { font: 14px/1.55 var(--sans); color: var(--ink-soft); }
 .entry .tools b { font-weight: 600; color: var(--ink-mid); }
 .finding { margin-top: 0.4rem; }
+.entry figure { margin: 1.4rem 0 1.2rem; }
+.entry figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule-soft); border-radius: 3px; background: #fdfdfb; }
+.entry figcaption { font: 13.5px/1.5 var(--sans); color: var(--ink-soft); margin-top: 0.55rem; }
 
 .state { display: inline-flex; align-items: center; gap: 7px; margin-right: 0.35rem; color: var(--ink-mid); font-weight: 500; }
 .state::before { content: ""; width: 9px; height: 9px; border-radius: 50%; flex: none; }
@@ -325,6 +328,7 @@ footer a { color: #cfd9de; text-decoration: none; }
 
      • cv ............ file name of your CV PDF (upload it to the repo root)
      • paper ......... ResearchGate page of your MARTEC 2024 paper
+     • preprint ...... Research Square page of the mobile-money preprint
      • researchgate .. your ResearchGate profile
      • linkedin ...... your LinkedIn profile
      • scholar ....... (optional) Google Scholar profile, once your paper is indexed
@@ -339,6 +343,7 @@ const LINKS = {
   email:        "rahiasgar77@gmail.com",
   cv:           "Nasib_Asgar_CV.pdf",
   paper:        "https://www.researchgate.net/publication/PASTE-YOUR-PAPER-LINK-HERE",
+  preprint:     "https://PASTE-YOUR-RESEARCH-SQUARE-PREPRINT-LINK-HERE",
   researchgate: "https://www.researchgate.net/profile/PASTE-YOUR-PROFILE-LINK-HERE",
   linkedin:     "https://www.linkedin.com/in/nasib-asgar-8985a22b2",
   scholar:      "https://scholar.google.com/citations?user=PASTE-YOUR-ID-HERE"
@@ -395,6 +400,7 @@ const LINKS = {
     <dl class="glance">
       <div><dt>Applying for</dt><dd>Ph.D. in mechanical engineering, Fall 2027</dd></div>
       <div><dt>Published</dt><dd><a href="#publications">Life cycle assessment of alternative marine fuels</a>, MARTEC 2024</dd></div>
+      <div><dt>Preprint</dt><dd><a href="#preprint">Digital financial inclusion, institutional quality and income inequality</a>, Research Square</dd></div>
       <div><dt>Degree</dt><dd>B.Sc. Naval Architecture and Marine Engineering, BUET, 2024</dd></div>
       <div><dt>Currently</dt><dd>MBA at IBA, University of Dhaka, since March 2025, alongside Python-based research projects</dd></div>
     </dl>
@@ -429,6 +435,15 @@ const LINKS = {
         applied to heat transfer, FEA, hydrostatics, and data-analysis problems. The LCA work
         also taught me to turn environmental, economic, and regulatory data into engineering
         decisions, and I want to pair that habit with high-fidelity simulation.
+      </p>
+      <p>
+        Two group projects at IBA taught me the habit I most want to bring to simulation work:
+        check a result against an independent calculation before trusting it. In the
+        mobile-money paper, re-running the R code in Python exposed two errors and the corrected
+        result was weaker, so we rebuilt the paper around it. In the review-analysis project I
+        compared the sentiment model with a hand-labelled set and with a second model, and
+        reported where they disagreed. In computational mechanics the same roles belong to
+        code-to-code comparison, mesh studies, and experimental data.
       </p>
       <p>
         I am most drawn to groups working on multiphase flow, thermal management, and clean
@@ -488,6 +503,50 @@ const LINKS = {
         </div>
       </article>
 
+      <article class="entry" id="preprint">
+        <h3>Digital financial inclusion, institutional quality and income inequality: evidence from 36 developing economies, 2017 to 2022</h3>
+        <p class="authors">Md. Iftekharul Amin, Walid, <strong>Nasib Asgar</strong> (corresponding author), Alif Bin Hasan, Ittesaf Rahman</p>
+        <p class="venue">Preprint on Research Square. Manuscript prepared for Empirical Economics, not yet submitted.</p>
+        <p>
+          Does the inequality-reducing effect of mobile money depend on how well a country is
+          governed? We built an unbalanced panel of 143 country-years across 36 developing
+          economies and estimated two-way fixed-effects models on the SWIID disposable-income
+          Gini, with a mobile-money index from the IMF Financial Access Survey and a governance
+          index from the six World Bank WGI indicators. This was MBA research at IBA, with
+          Dr. Amin as supervising faculty.
+        </p>
+        <p class="finding">
+          <span class="lead-in">Key finding.</span> There is no average effect (baseline
+          coefficient -0.07, p = 0.68). The interaction of mobile money with institutional
+          quality is negative in all 36 leave-one-country-out runs but not statistically
+          significant (-0.077, p = 0.15). The main result is about method: when the six
+          governance indicators enter separately, four interactions come out positive and two
+          negative, none significant at 5%, while one composite index gives a single stable
+          sign.
+        </p>
+        <figure>
+          <img src="projects/dfi-governance-interactions.png" width="1400" height="579" loading="lazy"
+               alt="Interaction estimates with 95% intervals: six governance indicators entered together split in sign, while the composite index gives one negative estimate." />
+          <figcaption>Left: six governance interactions estimated together. Right: the composite index. The panels use different horizontal scales.</figcaption>
+        </figure>
+        <p>
+          <span class="lead-in">My part.</span> I contributed to the analysis, the independent
+          Python replication of the R code, and the manuscript. Our first draft showed
+          p of about 0.05. The replication found that the standard errors ignored the degrees
+          of freedom used up by the fixed effects, and that the bank-branch control had been
+          built from raw counts instead of branches per 100,000 adults. After fixing both, p
+          moved to about 0.15, and we rewrote the paper around the weaker result. An earlier
+          problem in the IMF data came from the same indicator code appearing under several
+          units, which made the first mobile-money index track country size. Filtering on
+          indicator code and unit label together fixed it.
+        </p>
+        <p class="tools"><b>Methods:</b> two-way fixed effects with clustered standard errors, principal-component indices, leave-one-country-out and collinearity checks, R (plm), Python, Node.js for the journal-format manuscript.</p>
+        <div class="actions">
+          <a href="projects/Mobile_money_inequality_research_summary.pdf" target="_blank" rel="noopener">Research summary (PDF)</a>
+          <a data-link="preprint" href="#" target="_blank" rel="noopener">Preprint on Research Square</a>
+        </div>
+      </article>
+
       <!-- TEMPLATE: copy this block to add a publication, preprint, or manuscript in preparation:
       <article class="entry">
         <h3>Title</h3>
@@ -498,7 +557,7 @@ const LINKS = {
       </article>
       -->
 
-      <p class="pipeline">More manuscripts will be listed here when they reach submission.</p>
+      <p class="pipeline">The mobile-money manuscript will move from preprint to submitted once it goes to the journal.</p>
     </div>
   </div>
 </section>
@@ -522,14 +581,40 @@ const LINKS = {
         <p class="tools"><b>Tools:</b> Maxsurf, AutoCAD, Rhinoceros 3D. <b>Topics:</b> hydrostatic stability, resistance and powering.</p>
       </article>
 
-      <article class="entry">
-        <h3>Multilingual sentiment pipeline for mobile-finance app reviews</h3>
-        <p class="meta"><span class="state active">In progress</span> Independent computational research, in Python.</p>
+      <article class="entry" id="mfs-reviews">
+        <h3>Measuring what users say: NLP on 110,000 reviews of five Bangladeshi mobile finance apps</h3>
+        <p class="meta"><span class="state done">Completed</span> Group project, MBA at IBA, University of Dhaka, 2025 to 2026. I built the pipeline and drove the analysis; the report and slides were group deliverables.</p>
+        <p class="finding">
+          A first pass with a sentiment model put 29.8% of 110,721 Google Play reviews of bKash,
+          Nagad, Rocket, Upay and TAP (May 2018 to August 2026) in the negative class. After
+          post-stratification weighting the figure is 17.0%. Most of the work went into checking
+          how far either number can be trusted.
+        </p>
+        <figure>
+          <img src="projects/mfs-raw-vs-weighted.png" width="1100" height="635" loading="lazy"
+               alt="Bar chart comparing raw and weighted sentiment shares: positive 55.8 raw and 70.2 weighted, neutral 14.3 and 12.8, negative 29.8 and 17.0." />
+          <figcaption>Raw and weighted sentiment shares, n = 110,721. The intervals on the weighted bars reflect sampling error only, not classifier error.</figcaption>
+        </figure>
         <ul>
-          <li>Built a GPU-accelerated ensemble of three transformer models (XLM-RoBERTa family, with an mDeBERTa tiebreaker) over app-review corpora for five mobile-financial-service apps in Bangladesh.</li>
-          <li>Hardened it over several versions with stratified scraping, MinHash LSH deduplication, inter-rater reliability checks (Fleiss' kappa, Krippendorff's alpha), post-stratification, and difference-in-differences.</li>
+          <li>Built the pipeline in Python: stratified scraping, script detection (English, Bengali, Banglish, mixed), a two-model sentiment cascade, post-stratification weights, aspect tagging into eight topics, MinHash near-duplicate detection, and difference-in-differences on 138 app releases.</li>
+          <li>The headline depends on a modelling choice. Widening the neutral band on the polarity score from 0 to 0.30 moves the raw negative share from 32.1% to 24.5%.</li>
+          <li>The two classifiers disagree on 24.1% of English reviews but 57.2% of Bengali and 63.8% of Banglish ones (Cohen's kappa 0.44 on a 2,000-review audit), so the sentiment numbers are weakest where many local users write.</li>
+          <li>Performance is the main complaint (62% of the reviews that mention it are negative), then Security (54%). UI/UX is the only aspect users mostly like (14% negative).</li>
+          <li>Median release effect against competitor controls is +8.5 points, and 33% of releases show a loss. For the 16 releases with at least 300 reviews on both sides the median is +2.5, so I read the pattern as descriptive.</li>
         </ul>
-        <p class="tools"><b>Tools and methods:</b> Python, transformer models, reproducible pipelines, causal inference.</p>
+        <p>
+          <span class="lead-in">Checks and open problems.</span> Against a 600-review hand-labelled
+          set the sentiment model was 66.5% accurate (95% CI 62.6 to 70.2, kappa 0.50), and the
+          churn-intent flag had 15.5% precision (31 of 200), so the raw flag overstates true churn
+          intent about sixfold. These two figures are from the project report. The answer-key IDs
+          for the gold set did not match the annotation sheet, so I did not back-fill any labels
+          from the key. A mismatch between the dashboard's cross-app values and the weighted app
+          table is still unresolved.
+        </p>
+        <p class="tools"><b>Tools and methods:</b> Python, transformer-based classification, bootstrap intervals, inter-rater agreement, effective sample size, MinHash LSH, difference-in-differences.</p>
+        <div class="actions">
+          <a href="projects/MFS_research_summary.pdf" target="_blank" rel="noopener">Project summary (PDF)</a>
+        </div>
       </article>
 
       <article class="entry">
