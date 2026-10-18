@@ -12,15 +12,14 @@ Personal academic portfolio, hosted with GitHub Pages at **https://nasibasgar.gi
    `profile.jpg`
    (Until you do, a simple "NA" monogram is shown — the site still looks fine without it.)
 
-3. **Add your links** — open `index.html` and find the block near the top of `<body>` marked
-   **"✏️ EDIT YOUR LINKS HERE"**. Paste in:
+3. **Add your links** — open `links.js` (the only file with links in it). Paste in:
    - `paper` — the ResearchGate URL of your MARTEC 2024 paper (clicking the publication card opens this)
    - `preprint` — the Research Square page of the mobile-money preprint (hidden until you paste it)
    - `researchgate` — your ResearchGate profile URL
    - `linkedin` — your LinkedIn profile URL
    - `email` — change it here if your contact email ever changes (updates everywhere on the page)
 
-That's it — this is the only place links live; every button on the page reads from it.
+That's it. `links.js` is the only place links live; every button on every page reads from it.
 
 ## 🌐 Enabling GitHub Pages
 
@@ -35,20 +34,26 @@ Use that URL in your emails to professors, e.g. in your signature:
 
 ## ➕ Adding content later
 
-`index.html` contains ready-to-copy commented templates (search for **"✏️ TEMPLATE"**):
+The site has five pages. Each has ready-to-copy commented templates (search for **TEMPLATE**):
 
-- **New publication or manuscript** — in the *Publications* section; copy the template, paste the paper URL into its `href`
-- **New project** — in the *Research & design projects* section; copy the card template
-- **New experience** — in the *Experience & engagement* section
+- `publications.html`: new publication, preprint, or manuscript
+- `projects.html`: new project (put new simulation projects above the group projects)
+- `background.html`: education, skills, experience (including a teaching-assistant template), references
+- `research.html`: research statement and interests
+- `index.html`: the home page (name, at-a-glance facts, contact)
 
-Edit the file directly on GitHub (open `index.html` → pencil icon → commit), and the live site
+Edit a file directly on GitHub (open it, click the pencil icon, commit) and the live site
 updates within a minute or two.
 
 ## 📁 Files
 
 | File | Purpose |
 |------|---------|
-| `index.html` | The whole site — content, styling, and scripts in one file |
+| `index.html` | Home page: main info and contact |
+| `research.html`, `publications.html`, `projects.html`, `background.html` | The inner pages |
+| `style.css`, `site.js` | Shared styling and behaviour |
+| `links.js` | All your links and email, in one place |
+| `projects/` | Figures and PDF summaries used on the pages |
 | `Nasib_Asgar_CV.pdf` | Your CV (you upload this) |
-| `profile.jpg` | Your headshot (you upload this) |
+| `profile.jpg` | Your headshot (you upload this, optional) |
 | `.nojekyll` | Tells GitHub Pages to serve files as-is |

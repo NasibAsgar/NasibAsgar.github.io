@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<meta name="theme-color" content="#f3f4f0" />
+<meta name="description" content="Projects by Nasib Asgar: a 148 TEU inland container vessel design, a multilingual NLP study of mobile finance app reviews, and a shipyard Industry 4.0 study." />
+<meta name="author" content="Nasib Asgar" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Projects | Nasib Asgar" />
+<meta property="og:description" content="Projects by Nasib Asgar: a 148 TEU inland container vessel design, a multilingual NLP study of mobile finance app reviews, and a shipyard Industry 4.0 study." />
+<meta property="og:url" content="https://nasibasgar.github.io/projects.html" />
+<meta name="twitter:card" content="summary" />
+<title>Projects | Nasib Asgar</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav aria-label="Primary">
+  <a href="index.html" class="nav-brand">Nasib Asgar</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="research.html">Research</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="projects.html" aria-current="page">Projects</a></li>
+    <li><a href="background.html">Background</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv">Download CV</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+<section>
+  <div class="sec">
+    <h1 class="page-title">Projects</h1>
+    <div class="sec-body">
+      <p class="page-lede">A vessel design, two data-analysis projects, and a shipyard study.</p>
+      <article class="entry">
+        <h3>Design of a 148 TEU inland container vessel</h3>
+        <p class="meta"><span class="state done">Completed</span> Capstone design at BUET. Supervised by Prof. Dr. Md. Mashud Karim.</p>
+        <ul>
+          <li>Found the principal particulars by iterative optimisation, balancing cargo capacity, hydrostatic stability, resistance, weight, and installed power.</li>
+          <li>Ran stability and hydrostatic analysis in Maxsurf and estimated resistance and powering requirements.</li>
+          <li>Produced structural and general-arrangement drawings in AutoCAD and Rhinoceros&nbsp;3D.</li>
+          <!-- Add one number here (principal dimensions, design speed, installed kW, or number
+               of design iterations). It makes the entry concrete. -->
+        </ul>
+        <p class="tools"><b>Tools:</b> Maxsurf, AutoCAD, Rhinoceros 3D. <b>Topics:</b> hydrostatic stability, resistance and powering.</p>
+      </article>
+
+      <article class="entry" id="mfs-reviews">
+        <h3>Measuring what users say: NLP on 110,000 reviews of five Bangladeshi mobile finance apps</h3>
+        <p class="meta"><span class="state done">Completed</span> Group project, MBA at IBA, University of Dhaka, 2025 to 2026. I built the pipeline and drove the analysis; the report and slides were group deliverables.</p>
+        <p class="finding">
+          A first pass with a sentiment model put 29.8% of 110,721 Google Play reviews (bKash,
+          Nagad, Rocket, Upay, TAP) in the negative class. After post-stratification weighting
+          the figure is 17.0%. Most of the work went into checking how far either number can
+          be trusted.
+        </p>
+        <figure>
+          <img src="projects/mfs-raw-vs-weighted.png" width="1100" height="635" loading="lazy"
+               alt="Bar chart comparing raw and weighted sentiment shares: positive 55.8 raw and 70.2 weighted, neutral 14.3 and 12.8, negative 29.8 and 17.0." />
+          <figcaption>Raw and weighted sentiment shares, n = 110,721. The intervals reflect sampling error only, not classifier error.</figcaption>
+        </figure>
+        <ul>
+          <li>Built the pipeline in Python: scraping, script detection, a two-model sentiment cascade, post-stratification weights, aspect tagging, near-duplicate detection, and difference-in-differences on 138 app releases.</li>
+          <li>The two classifiers disagree on 24.1% of English reviews but 57.2% of Bengali and 63.8% of Banglish ones, so the sentiment numbers are weakest where many local users write.</li>
+          <li>Checked the model against a 600-review hand-labelled set (66.5% accurate, from the project report) and logged the open problems, including a gold-set answer key whose IDs did not match, so I back-filled no labels.</li>
+        </ul>
+        <p class="tools"><b>Tools and methods:</b> Python, bootstrap intervals, inter-rater agreement, effective sample size, MinHash LSH, difference-in-differences.</p>
+        <div class="actions">
+          <a href="projects/MFS_research_summary.pdf" target="_blank" rel="noopener">Project summary (PDF)</a>
+        </div>
+      </article>
+
+      <article class="entry">
+        <h3>Mobile financial services and unplanned spending in Bangladesh</h3>
+        <p class="meta"><span class="state active">In progress</span> Group research project. Survey of 256 respondents.</p>
+        <ul>
+          <li>Analysed the survey data in Python with exploratory factor analysis, regression, mediation, and segmentation.</li>
+          <li>Examines present bias, financial literacy, and buy-now-pay-later use as drivers of unplanned spending.</li>
+        </ul>
+        <p class="tools"><b>Tools and methods:</b> Python, factor analysis, regression and mediation, survey design.</p>
+      </article>
+
+      <article class="entry">
+        <h3>Industry 4.0 in heavy maritime infrastructure</h3>
+        <p class="meta"><span class="state done">Completed</span> Industrial attachment at Chittagong Dry Dock Ltd.</p>
+        <ul>
+          <li>Month-long study mapping candidate yard processes for sensing and automation.</li>
+          <!-- If the study produced a concrete recommendation or figure, add it here. -->
+        </ul>
+        <p class="tools"><b>Topics:</b> Industry 4.0, process mapping, shipyard operations.</p>
+      </article>
+
+      <!-- COMSOL or other simulation projects go here, above the group projects, once ready. -->
+      <!-- TEMPLATE: copy this block to add a project:
+      <article class="entry">
+        <h3>Project title</h3>
+        <p class="meta"><span class="state active">In progress</span> Context, supervisor, or setting.</p>
+        <ul><li>What you did, the tools you used, and ideally one number.</li></ul>
+        <p class="tools"><b>Tools:</b> ...</p>
+      </article>
+      (use class="state done" and the word "Completed" when a project is finished)
+      -->
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-links">
+    <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="projects.html">Projects</a><a href="background.html">Background</a><a href="index.html#contact">Contact</a>
+  </div>
+  Nasib Asgar, B.Sc. Naval Architecture and Marine Engineering, BUET
+</footer>
+
+<script src="links.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

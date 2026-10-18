@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<meta name="theme-color" content="#f3f4f0" />
+<meta name="description" content="Publications by Nasib Asgar: a peer-reviewed MARTEC 2024 paper on life cycle assessment of marine fuels, and a preprint on mobile money and inequality." />
+<meta name="author" content="Nasib Asgar" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Publications | Nasib Asgar" />
+<meta property="og:description" content="Publications by Nasib Asgar: a peer-reviewed MARTEC 2024 paper on life cycle assessment of marine fuels, and a preprint on mobile money and inequality." />
+<meta property="og:url" content="https://nasibasgar.github.io/publications.html" />
+<meta name="twitter:card" content="summary" />
+<title>Publications | Nasib Asgar</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav aria-label="Primary">
+  <a href="index.html" class="nav-brand">Nasib Asgar</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="research.html">Research</a></li>
+    <li><a href="publications.html" aria-current="page">Publications</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="background.html">Background</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv">Download CV</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+<section>
+  <div class="sec">
+    <h1 class="page-title">Publications</h1>
+    <div class="sec-body">
+      <p class="page-lede">One peer-reviewed conference paper and one preprint.</p>
+      <article class="entry" id="martec">
+        <h3>Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh</h3>
+        <p class="authors">Jannatul Ambia Shorna, <strong>Nasib Asgar</strong>, N. M. Golam Zakaria</p>
+        <p class="venue">Proceedings of the International Conference on Marine Technology (MARTEC 2024). Peer-reviewed conference paper, from my undergraduate thesis.</p>
+        <p>
+          A well-to-wake life cycle assessment of candidate alternative fuels for Bangladesh's
+          inland shipping, modelled in SimaPro against environmental-impact and techno-economic
+          criteria, using supply-chain data, emission inventories, and regulatory standards.
+        </p>
+        <!-- STRONGER WITH NUMBERS. Replace the finding below with specifics from your paper,
+             e.g. "Fuel X showed a YY% lower well-to-wake GWP than HFO under local supply-chain
+             conditions." Committees skim for figures. -->
+        <p class="finding">
+          <span class="lead-in">Key finding.</span> Fuel rankings do not transfer: local
+          supply-chain conditions change the well-to-wake carbon intensity of each option. The
+          study identifies the pathway with the strongest combined environmental and economic
+          case for the inland fleet.
+        </p>
+        <p class="tools"><b>Methods:</b> life cycle assessment, well-to-wake analysis, SimaPro, techno-economic evaluation, emission inventories.</p>
+        <div class="actions">
+          <a data-link="paper" href="#" target="_blank" rel="noopener">Read on ResearchGate</a>
+          <button type="button" class="text-btn cite-btn" data-cite="Shorna, J. A., Asgar, N., &amp; Zakaria, N. M. G. (2024). Life Cycle Assessment of Alternative Marine Fuels for Inland Shipping of Bangladesh. Proceedings of the International Conference on Marine Technology (MARTEC 2024).">Copy citation</button>
+        </div>
+      </article>
+
+      <article class="entry" id="preprint">
+        <h3>Digital financial inclusion, institutional quality and income inequality: evidence from 36 developing economies, 2017 to 2022</h3>
+        <p class="authors">Md. Iftekharul Amin, K. M. Walid, <strong>Nasib Asgar</strong> (corresponding author), Alif Bin Hasan, Ittesaf Rahman</p>
+        <p class="venue">Preprint on Research Square. Manuscript prepared for Empirical Economics, not yet submitted.</p>
+        <p>
+          Does the inequality-reducing effect of mobile money depend on how well a country is
+          governed? We estimated two-way fixed-effects models on a panel of 143 country-years
+          across 36 developing economies. MBA research at IBA, with Dr. Amin as supervising
+          faculty.
+        </p>
+        <p class="finding">
+          <span class="lead-in">Key finding.</span> No average effect (p = 0.68). The
+          interaction with institutional quality is negative in all 36 leave-one-country-out
+          runs but not significant (-0.077, p = 0.15). Entering the six governance indicators
+          separately gives signs that split, while one composite index gives a stable estimate.
+        </p>
+        <figure>
+          <img src="projects/dfi-governance-interactions.png" width="1400" height="579" loading="lazy"
+               alt="Interaction estimates with 95% intervals: six governance indicators entered together split in sign, while the composite index gives one negative estimate." />
+          <figcaption>Left: six governance interactions estimated together. Right: the composite index. The panels use different horizontal scales.</figcaption>
+        </figure>
+        <p>
+          <span class="lead-in">My part.</span> I contributed to the analysis, the independent
+          Python replication of the R code, and the manuscript. The replication caught two
+          errors in our first draft, which showed p of about 0.05, and we rewrote the paper
+          around the weaker corrected result.
+        </p>
+        <p class="tools"><b>Methods:</b> two-way fixed effects, clustered standard errors, principal-component indices, R (plm), Python.</p>
+        <div class="actions">
+          <a href="projects/Mobile_money_inequality_research_summary.pdf" target="_blank" rel="noopener">Research summary (PDF)</a>
+          <a data-link="preprint" href="#" target="_blank" rel="noopener">Preprint on Research Square</a>
+        </div>
+      </article>
+
+      <!-- TEMPLATE: copy this block to add a publication, preprint, or manuscript in preparation:
+      <article class="entry">
+        <h3>Title</h3>
+        <p class="authors">Author 1, <strong>Nasib Asgar</strong>, Author 3</p>
+        <p class="venue">Venue, year, or status (for example: manuscript in preparation)</p>
+        <p>One or two sentences on what you did and what you found.</p>
+        <div class="actions"><a href="https://..." target="_blank" rel="noopener">Link</a></div>
+      </article>
+      -->
+
+      <p class="pipeline">The mobile-money manuscript will move from preprint to submitted once it goes to the journal.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-links">
+    <a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="projects.html">Projects</a><a href="background.html">Background</a><a href="index.html#contact">Contact</a>
+  </div>
+  Nasib Asgar, B.Sc. Naval Architecture and Marine Engineering, BUET
+</footer>
+
+<script src="links.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
