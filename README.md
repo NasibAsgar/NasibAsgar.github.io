@@ -1,59 +1,58 @@
-# Nasib Asgar — Ph.D. Applicant Portfolio
+# Nasib Asgar, Ph.D. applicant portfolio
 
 Personal academic portfolio, hosted with GitHub Pages at **https://nasibasgar.github.io**
 
-## ✅ To finish setting up (3 things)
+## Still to do
 
-1. **Upload your CV** — add your CV PDF to the root of this repository, named exactly:
-   `Nasib_Asgar_CV.pdf`
-   (Every "Download CV" button on the site downloads this file.)
+1. **Upload your CV.** Add your CV PDF to the root of this repository, named exactly
+   `Nasib_Asgar_CV.pdf`. Every "Download CV" button on the site points at that file.
 
-2. **Upload your photo** — add a square headshot to the root of this repository, named exactly:
-   `profile.jpg`
-   (Until you do, a simple "NA" monogram is shown — the site still looks fine without it.)
+2. **Add your links.** Open `links.js`, the only file that holds links, and paste in:
+   - `paper`, the ResearchGate URL of your MARTEC 2024 paper
+   - `preprint`, the Research Square page of the mobile money manuscript
+   - `researchgate`, your ResearchGate profile
+   - `linkedin`, your LinkedIn profile
+   - `email`, if your contact address ever changes
 
-3. **Add your links** — open `links.js` (the only file with links in it). Paste in:
-   - `paper` — the ResearchGate URL of your MARTEC 2024 paper (clicking the publication card opens this)
-   - `preprint` — the Research Square page of the mobile-money preprint (hidden until you paste it)
-   - `researchgate` — your ResearchGate profile URL
-   - `linkedin` — your LinkedIn profile URL
-   - `email` — change it here if your contact email ever changes (updates everywhere on the page)
+   Any value still containing the word PASTE is hidden on the live site, along with its row,
+   so a half-finished link is never shown to a professor.
 
-That's it. `links.js` is the only place links live; every button on every page reads from it.
+Your headshot is already in place as `profile.jpg`. To change it, replace that file with
+another square image under the same name.
 
-## 🌐 Enabling GitHub Pages
+## GitHub Pages
 
-Because this repository is named `NasibAsgar.github.io`, GitHub publishes it automatically:
+The repository is named `NasibAsgar.github.io`, so GitHub publishes it automatically.
+If it is not live yet: Settings, then Pages, then set Source to "Deploy from a branch",
+branch `main`, folder `/ (root)`. The site appears at https://nasibasgar.github.io within
+a minute or two of each push.
 
-1. Go to the repository **Settings → Pages**
-2. Under "Build and deployment", set **Source** to `Deploy from a branch`, branch `main`, folder `/ (root)`
-3. Wait a minute, then visit `https://nasibasgar.github.io`
+## Adding content later
 
-Use that URL in your emails to professors, e.g. in your signature:
-> Portfolio: https://nasibasgar.github.io
+Five pages, each with commented templates you can copy. Search any file for TEMPLATE.
 
-## ➕ Adding content later
+- `projects.html` has three sections: capstone project, data analysis, and simulation.
+  New COMSOL and CFD work goes in the simulation section.
+- `publications.html` for a new paper, preprint, or manuscript.
+- `background.html` for education, skills, experience and references. It also holds a
+  template for teaching or tutoring experience, which matters for assistantship decisions.
+- `research.html` for the research statement and interests.
+- `index.html` for the home page: name, at-a-glance facts, and contact.
 
-The site has five pages. Each has ready-to-copy commented templates (search for **TEMPLATE**):
+You can edit a file straight on GitHub. Open it, click the pencil, commit, and the live
+site updates on its own.
 
-- `publications.html`: new publication, preprint, or manuscript
-- `projects.html`: new project (put new simulation projects above the group projects)
-- `background.html`: education, skills, experience (including a teaching-assistant template), references
-- `research.html`: research statement and interests
-- `index.html`: the home page (name, at-a-glance facts, contact)
-
-Edit a file directly on GitHub (open it, click the pencil icon, commit) and the live site
-updates within a minute or two.
-
-## 📁 Files
+## Files
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Home page: main info and contact |
+| `index.html` | Home page: introduction, at-a-glance facts, contact |
 | `research.html`, `publications.html`, `projects.html`, `background.html` | The inner pages |
-| `style.css`, `site.js` | Shared styling and behaviour |
-| `links.js` | All your links and email, in one place |
+| `style.css` | All styling, including the dark theme |
+| `site.js` | Theme toggle, menu, figure lightbox, the sentiment chart, copy-citation |
+| `hull.js` | Draws the ship profile in the home page header |
+| `links.js` | Every link and the contact email, in one place |
+| `profile.jpg` | Headshot shown in the header |
 | `projects/` | Figures and PDF summaries used on the pages |
 | `Nasib_Asgar_CV.pdf` | Your CV (you upload this) |
-| `profile.jpg` | Your headshot (you upload this, optional) |
-| `.nojekyll` | Tells GitHub Pages to serve files as-is |
+| `.nojekyll` | Tells GitHub Pages to serve the files as they are |

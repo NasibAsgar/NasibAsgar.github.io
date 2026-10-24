@@ -3,17 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="color-scheme" content="light" />
-<meta name="theme-color" content="#f3f4f0" />
-<meta name="description" content="Nasib Asgar, Ph.D. applicant in mechanical engineering. Peer-reviewed research in life cycle assessment of alternative fuels; interests in CFD, thermal sciences, and sustainable energy. BUET graduate. Applying for Fall 2027." />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#0e2730" />
+<meta name="description" content="Nasib Asgar, Ph.D. applicant in mechanical engineering. Peer-reviewed research on alternative marine fuels; interests in CFD, thermal sciences, and sustainable energy and materials. BUET graduate. Applying for Fall 2027." />
 <meta name="author" content="Nasib Asgar" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Nasib Asgar, Ph.D. applicant in mechanical engineering" />
-<meta property="og:description" content="Nasib Asgar, Ph.D. applicant in mechanical engineering. Peer-reviewed research in life cycle assessment of alternative fuels; interests in CFD, thermal sciences, and sustainable energy. BUET graduate. Applying for Fall 2027." />
+<meta property="og:description" content="Nasib Asgar, Ph.D. applicant in mechanical engineering. Peer-reviewed research on alternative marine fuels; interests in CFD, thermal sciences, and sustainable energy and materials. BUET graduate. Applying for Fall 2027." />
 <meta property="og:url" content="https://nasibasgar.github.io/" />
 <meta name="twitter:card" content="summary" />
 <title>Nasib Asgar, Ph.D. applicant in mechanical engineering</title>
 
+<script>
+  /* Settle the theme before the first paint so the page never flashes. */
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,7 +35,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;450;500;550;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -39,36 +43,44 @@
 
 <nav aria-label="Primary">
   <a href="index.html" class="nav-brand" aria-current="page">Nasib Asgar</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="research.html">Research</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="background.html">Background</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-    <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv">Download CV</a></li>
-  </ul>
+  <div class="nav-right">
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a6.8 6.8 0 0 0 10.8 10.8Z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv">Download CV</a></li>
+    </ul>
+  </div>
 </nav>
 
 <main id="main">
 <header class="hero" id="top">
+  <canvas id="lines" aria-hidden="true"></canvas>
   <div class="hero-content">
     <div class="hero-copy">
-      <!-- PHOTO: upload a square headshot named 'profile.jpg' to the repo root.
-           Until then nothing is shown (no placeholder). -->
-      <img class="hero-photo" src="profile.jpg" alt="Portrait of Nasib Asgar" width="84" height="84" onerror="this.remove()" />
+      <!-- PHOTO: square headshot, profile.jpg in the repo root. Replace the file to change it.
+           If the file is missing nothing is shown (no placeholder). -->
+      <img class="hero-photo" src="profile.jpg" alt="Portrait of Nasib Asgar" width="96" height="96" onerror="this.remove()" />
 
       <h1 class="hero-name">Nasib Asgar</h1>
       <p class="hero-lede">
-        I'm a naval architecture graduate (BUET, 2024) applying for Ph.D. positions in
-        mechanical engineering for Fall 2027. I want to work on fluid dynamics, thermal
-        sciences, and sustainable energy.
+        I graduated in naval architecture from BUET in 2024, and I am applying for Ph.D.
+        positions in mechanical engineering for Fall 2027. My interests are fluid dynamics,
+        thermal sciences, and sustainable energy and materials.
       </p>
       <p class="hero-bio">
-        My undergraduate research on alternative marine fuels was published at MARTEC 2024,
-        and my capstone took a 148&nbsp;TEU vessel from principal particulars to full
-        drawings. I want to move from systems-level lifecycle models to high-fidelity CFD and
-        heat-transfer simulation.
+        My undergraduate thesis compared alternative fuels for inland ships in Bangladesh and
+        was published at MARTEC&nbsp;2024. For my capstone I worked with two classmates on a
+        148&nbsp;TEU container vessel for the Dhaka to Chattogram route, from the principal
+        particulars through to engine selection. I would like to work on CFD and heat transfer
+        next.
       </p>
       <div class="hero-cta">
         <a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="btn btn-primary">Download CV</a>
@@ -81,13 +93,18 @@
     <dl class="glance">
       <div><dt>Applying for</dt><dd>Ph.D. in mechanical engineering, Fall 2027</dd></div>
       <div><dt>Published</dt><dd><a href="publications.html#martec">Life cycle assessment of alternative marine fuels</a>, MARTEC 2024</dd></div>
-      <div><dt>Preprint</dt><dd><a href="publications.html#preprint">Digital financial inclusion, institutional quality and income inequality</a>, Research Square</dd></div>
+      <div><dt>Capstone</dt><dd><a href="projects.html#capstone">A 148 TEU inland container vessel</a>, from principal particulars to engine selection</dd></div>
       <div><dt>Degree</dt><dd>B.Sc. Naval Architecture and Marine Engineering, BUET, 2024</dd></div>
       <div><dt>Currently</dt><dd>MBA at IBA, University of Dhaka, since March 2025, alongside Python-based research projects</dd></div>
     </dl>
   </div>
 
-  <div class="waterline" aria-hidden="true"></div>
+  <div class="waterline" aria-hidden="true">
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="rgba(220,197,143,0.8)" stroke-width="1.2">
+      <circle cx="17" cy="17" r="11.5"/>
+      <path d="M2 17h30"/>
+    </svg>
+  </div>
 </header>
 
 <section id="explore">
@@ -96,8 +113,8 @@
     <div class="sec-body">
       <div class="pagelist">
         <a href="research.html"><span class="pl-title">Research</span><span class="pl-desc">What I want to work on, and the experience behind it.</span><span class="pl-go">Read</span></a>
-        <a href="publications.html"><span class="pl-title">Publications</span><span class="pl-desc">One conference paper and one preprint.</span><span class="pl-go">Read</span></a>
-        <a href="projects.html"><span class="pl-title">Projects</span><span class="pl-desc">A vessel design, two data-analysis projects, and a shipyard study.</span><span class="pl-go">Read</span></a>
+        <a href="publications.html"><span class="pl-title">Publications</span><span class="pl-desc">A conference paper on marine fuels, and a manuscript under review.</span><span class="pl-go">Read</span></a>
+        <a href="projects.html"><span class="pl-title">Projects</span><span class="pl-desc">A ship design capstone, data analysis work, and simulation.</span><span class="pl-go">Read</span></a>
         <a href="background.html"><span class="pl-title">Background</span><span class="pl-desc">Education, test scores, skills, experience, and references.</span><span class="pl-go">Read</span></a>
       </div>
     </div>
@@ -110,10 +127,9 @@
     <div class="sec-body">
       <p>
         I am applying for Ph.D. positions and Research or Teaching Assistantships for the
-        Fall 2027 intake, in programs focused on mechanical engineering, thermal-fluid
-        sciences, and sustainable energy systems. If your laboratory's work fits, I would
-        welcome a conversation. Transcripts, a statement of purpose, and writing samples are
-        available on request.
+        Fall 2027 intake, in mechanical engineering, thermal-fluid sciences, and sustainable
+        energy and materials. If your laboratory's work fits, I would welcome a conversation.
+        Transcripts, a statement of purpose, and writing samples are available on request.
       </p>
       <dl class="rows">
         <div class="row"><dt>Email</dt><dd><a data-link="email" href="mailto:rahiasgar77@gmail.com" data-link-text>rahiasgar77@gmail.com</a></dd></div>
@@ -135,6 +151,7 @@
 </footer>
 
 <script src="links.js"></script>
+<script src="hull.js"></script>
 <script src="site.js"></script>
 </body>
 </html>

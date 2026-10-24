@@ -3,20 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="color-scheme" content="light" />
-<meta name="theme-color" content="#f3f4f0" />
-<meta name="description" content="Research interests of Nasib Asgar: CFD, thermal sciences, and sustainable energy systems, built on naval architecture and life cycle assessment." />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#0e2730" />
+<meta name="description" content="Research interests of Nasib Asgar: CFD, thermal sciences, and sustainable energy and materials, built on naval architecture and life cycle assessment." />
 <meta name="author" content="Nasib Asgar" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Research | Nasib Asgar" />
-<meta property="og:description" content="Research interests of Nasib Asgar: CFD, thermal sciences, and sustainable energy systems, built on naval architecture and life cycle assessment." />
+<meta property="og:description" content="Research interests of Nasib Asgar: CFD, thermal sciences, and sustainable energy and materials, built on naval architecture and life cycle assessment." />
 <meta property="og:url" content="https://nasibasgar.github.io/research.html" />
 <meta name="twitter:card" content="summary" />
 <title>Research | Nasib Asgar</title>
 
+<script>
+  /* Settle the theme before the first paint so the page never flashes. */
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;450;500;550;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,15 +28,21 @@
 
 <nav aria-label="Primary">
   <a href="index.html" class="nav-brand">Nasib Asgar</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="research.html" aria-current="page">Research</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="background.html">Background</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-    <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv">Download CV</a></li>
-  </ul>
+  <div class="nav-right">
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a6.8 6.8 0 0 0 10.8 10.8Z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="research.html" aria-current="page">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv">Download CV</a></li>
+    </ul>
+  </div>
 </nav>
 
 <main id="main">
@@ -40,64 +50,63 @@
   <div class="sec">
     <h1 class="page-title">Research</h1>
     <div class="sec-body">
-      <p class="page-lede">Computational fluid dynamics, thermal sciences, and sustainable energy.</p>
+      <p class="page-lede">Computational fluid dynamics, thermal sciences, and sustainable energy and materials.</p>
       <p>
-        My research interest sits where computational fluid dynamics, thermal sciences, and
-        sustainable energy systems meet. Naval architecture gave me mechanics applied to large
-        structures moving through water, where thermal, structural, and economic constraints
-        all apply at once.
+        Naval architecture is mechanical engineering applied to ships, and the parts I wanted
+        more of were fluid flow, heat transfer and energy conversion. That is what I want to
+        spend a doctorate on.
       </p>
       <p>
-        My undergraduate thesis, published at MARTEC 2024, was a well-to-wake life cycle
-        assessment of alternative fuels for Bangladesh's inland fleet. Its central lesson was
-        that fuel rankings do not transfer between places: local supply-chain conditions
-        reorder the carbon footprints, so a decarbonisation decision needs an analysis built
-        for the local system. In a Ph.D. I want to work at smaller scales and higher fidelity,
-        coupling CFD, conjugate heat transfer, and combustion modelling to design efficient
-        thermal and energy-conversion systems.
+        My undergraduate thesis, published at MARTEC 2024, compared six alternative fuel systems
+        against diesel for an inland tanker in Bangladesh, using life cycle assessment and life
+        cycle cost analysis over a 25 year service life. It is a systems-level study: it treats
+        the engine as a number. The questions I found myself asking by the end were the ones it
+        could not answer, about what happens inside the combustion chamber and the heat exchanger.
+        In a Ph.D. I want to work at that scale, coupling CFD, conjugate heat transfer and
+        combustion modelling.
       </p>
       <p>
-        I have taken a research question from framing through modelling to a peer-reviewed
-        paper. My working tools are COMSOL, Abaqus, MATLAB, Python, and C++, which I have
-        applied to heat transfer, FEA, hydrostatics, and data-analysis problems.
+        The capstone gave me the other half of the training. Designing a 148 TEU container vessel
+        meant carrying one set of numbers from principal particulars through hydrostatics,
+        stability, Holtrop resistance, propeller design and engine selection, and watching an
+        early assumption change everything downstream. My working tools are COMSOL, Abaqus,
+        MATLAB, Python and C++.
       </p>
       <p>
-        Two group projects at IBA taught me the habit I most want to bring to simulation work:
-        check a result against an independent calculation before trusting it. In the
-        mobile-money paper, re-running the R code in Python exposed two errors and the corrected
-        result was weaker, so we rebuilt the paper around it. In the review-analysis project I
-        compared the sentiment model with a hand-labelled set and with a second model, and
-        reported where they disagreed. In computational mechanics the same roles belong to
-        code-to-code comparison, mesh studies, and experimental data.
-      </p>
-      <p>
-        <span class="lead-in">Why mechanical engineering.</span> Naval architecture is
-        mechanical engineering applied to ships, and fluid flow, heat transfer, and energy
-        conversion were the parts I wanted more of. The MBA added statistics and
-        research-methods work, which the two group projects draw on, but the questions I want
-        to spend a doctorate on are physical ones.
+        <span class="lead-in">Checking a result before trusting it.</span> Two group projects at
+        IBA taught me the habit I most want to bring to simulation work. In the mobile money
+        paper, re-running the R analysis in Python exposed two errors, the corrected result was
+        weaker than the draft, and we rebuilt the paper around it. In the review study I compared
+        the sentiment model against a hand-labelled set and against a second model, then reported
+        where they disagreed instead of picking the friendlier number. In computational mechanics
+        the same job belongs to mesh studies, code-to-code comparison and experimental data.
       </p>
       <p>
         I am most drawn to groups working on multiphase flow, thermal management, and clean
-        combustion or energy conversion. I am also open to additive manufacturing and the
-        control of energy systems.
+        combustion or energy conversion. I am also open to additive manufacturing, materials for
+        energy systems, and the control of energy systems.
       </p>
 
       <div class="interests">
         <div class="interest">
           <h3>Fluid dynamics</h3>
           <p>CFD, multiphase flow, hydrodynamics, aerodynamics</p>
-          <p class="why">Background: <a href="projects.html">the capstone hull design</a> and marine hydrodynamics coursework.</p>
+          <p class="why">Background: <a href="projects.html#capstone">the capstone hull design</a> and marine hydrodynamics coursework.</p>
         </div>
         <div class="interest">
           <h3>Thermal sciences</h3>
           <p>Heat transfer, thermal management, combustion, thermodynamic efficiency</p>
-          <p class="why">Background: heat-transfer modelling in COMSOL and coursework in marine engines and fuels.</p>
+          <p class="why">Background: heat transfer modelling in COMSOL, and coursework in marine engines and fuels.</p>
         </div>
         <div class="interest">
-          <h3>Sustainable energy</h3>
-          <p>Decarbonisation, alternative fuels, energy storage, power generation</p>
+          <h3>Sustainable energy and materials</h3>
+          <p>Decarbonisation, alternative fuels, energy storage, materials for energy systems</p>
           <p class="why">Background: <a href="publications.html#martec">the MARTEC 2024 life cycle assessment</a>.</p>
+        </div>
+        <div class="interest">
+          <h3>Data analysis and programming</h3>
+          <p>Python pipelines, statistical modelling, numerical methods</p>
+          <p class="why">Background: <a href="projects.html#data">two data analysis projects at IBA</a>, built in Python from raw data to results.</p>
         </div>
       </div>
     </div>

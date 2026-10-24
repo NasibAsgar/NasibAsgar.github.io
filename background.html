@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="color-scheme" content="light" />
-<meta name="theme-color" content="#f3f4f0" />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#0e2730" />
 <meta name="description" content="Education, test scores, skills, experience, and references for Nasib Asgar, B.Sc. Naval Architecture and Marine Engineering, BUET." />
 <meta name="author" content="Nasib Asgar" />
 <meta property="og:type" content="website" />
@@ -14,9 +14,13 @@
 <meta name="twitter:card" content="summary" />
 <title>Background | Nasib Asgar</title>
 
+<script>
+  /* Settle the theme before the first paint so the page never flashes. */
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;450;500;550;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,15 +28,21 @@
 
 <nav aria-label="Primary">
   <a href="index.html" class="nav-brand">Nasib Asgar</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="research.html">Research</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="background.html" aria-current="page">Background</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-    <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv">Download CV</a></li>
-  </ul>
+  <div class="nav-right">
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a6.8 6.8 0 0 0 10.8 10.8Z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="background.html" aria-current="page">Background</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv">Download CV</a></li>
+    </ul>
+  </div>
 </nav>
 
 <main id="main">
@@ -44,18 +54,17 @@
       <div class="sub-group">
       <h3 class="sub">Education</h3>
       <p>
-        I completed my B.Sc. in Naval Architecture and Marine Engineering at the Bangladesh
-        University of Engineering and Technology (BUET) in 2024. The curriculum centred on
-        mechanics, fluids, and thermal engineering. My final-year GPA was 3.50, against an
-        overall CGPA of 3.26.
+        I finished my B.Sc. in Naval Architecture and Marine Engineering at BUET in 2024. The
+        curriculum is built on mechanics, fluids and thermal engineering. My final-year GPA was
+        3.50 against an overall CGPA of 3.26.
       </p>
       <!-- Verify the MBA framing and dates below. An unexplained gap after graduation is a
            red flag to committees; this paragraph presents it as deliberate preparation. -->
       <p>
         Since March 2025 I have been studying for an MBA at the Institute of Business
-        Administration (IBA), University of Dhaka, expected in 2027. The quantitative coursework
-        (statistical methods, analytics, techno-economic case work) supports the economic side
-        of my LCA research and keeps me working with data while I prepare for doctoral study.
+        Administration (IBA), University of Dhaka, expected in 2027. The quantitative side of it,
+        statistical methods and analytics, is where the two data analysis projects came from, and
+        it keeps me working with data and code while I prepare for doctoral study.
       </p>
 
       <dl class="rows">
@@ -72,9 +81,9 @@
       <h3 class="sub">Skills</h3>
       <dl class="rows" style="margin-top:0">
         <div class="row"><dt>Programming and math</dt><dd>Python (data and ML pipelines), MATLAB (numerical methods), C++, Fortran</dd></div>
-        <div class="row"><dt>Simulation and FEA</dt><dd>COMSOL (heat transfer), Abaqus (FEA), Maxsurf (stability)</dd></div>
-        <div class="row"><dt>CAD and modelling</dt><dd>Rhinoceros 3D (vessel design), AutoCAD (general-arrangement drawings)</dd></div>
-        <div class="row"><dt>Analysis and statistics</dt><dd>SimaPro (LCA), pandas and SciPy (statistical testing)</dd></div>
+        <div class="row"><dt>Simulation and FEA</dt><dd>COMSOL (heat transfer), Abaqus (FEA), Maxsurf (hydrostatics and stability)</dd></div>
+        <div class="row"><dt>CAD and modelling</dt><dd>Rhinoceros 3D (hull modelling), AutoCAD (general arrangement and structural drawings)</dd></div>
+        <div class="row"><dt>Analysis and statistics</dt><dd>SimaPro (LCA), pandas and SciPy, regression and factor analysis</dd></div>
         <div class="row"><dt>Coursework</dt><dd>Fluid Mechanics, Heat Transfer, Basic Thermal Engineering, Marine Engines and Fuels, Marine Hydrodynamics, Control Engineering, Optimization Methods, Mechanics of Structures, Ship Design, Ship Structure, Shipbuilding Materials, Welding Technology</dd></div>
       </dl>
       </div>
@@ -85,9 +94,9 @@
         <h3>Industrial trainee, Chittagong Dry Dock Ltd.</h3>
         <p class="meta">Industrial attachment</p>
         <p>
-          Documented core fabrication and docking operations (welding, cutting, docking,
-          mooring) under senior engineers on the yard floor, and wrote the Industry 4.0 study
-          listed under projects.
+          A month on the yard floor documenting welding, cutting, docking and mooring operations
+          under senior engineers, which ended in a study of where sensing and automation could
+          fit into the yard's existing processes.
         </p>
       </article>
       <article class="entry">

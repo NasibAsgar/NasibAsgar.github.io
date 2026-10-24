@@ -3,20 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="color-scheme" content="light" />
-<meta name="theme-color" content="#f3f4f0" />
-<meta name="description" content="Projects by Nasib Asgar: a 148 TEU inland container vessel design, a multilingual NLP study of mobile finance app reviews, and a shipyard Industry 4.0 study." />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" content="#0e2730" />
+<meta name="description" content="Projects by Nasib Asgar: a 148 TEU inland container vessel capstone design, and two data analysis projects on mobile financial services in Bangladesh." />
 <meta name="author" content="Nasib Asgar" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Projects | Nasib Asgar" />
-<meta property="og:description" content="Projects by Nasib Asgar: a 148 TEU inland container vessel design, a multilingual NLP study of mobile finance app reviews, and a shipyard Industry 4.0 study." />
+<meta property="og:description" content="Projects by Nasib Asgar: a 148 TEU inland container vessel capstone design, and two data analysis projects on mobile financial services in Bangladesh." />
 <meta property="og:url" content="https://nasibasgar.github.io/projects.html" />
 <meta name="twitter:card" content="summary" />
 <title>Projects | Nasib Asgar</title>
 
+<script>
+  /* Settle the theme before the first paint so the page never flashes. */
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;450;500;550;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,15 +28,21 @@
 
 <nav aria-label="Primary">
   <a href="index.html" class="nav-brand">Nasib Asgar</a>
-  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="research.html">Research</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="projects.html" aria-current="page">Projects</a></li>
-    <li><a href="background.html">Background</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-    <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv">Download CV</a></li>
-  </ul>
+  <div class="nav-right">
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M20.5 14.3A8.5 8.5 0 1 1 9.7 3.5a6.8 6.8 0 0 0 10.8 10.8Z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="projects.html" aria-current="page">Projects</a></li>
+      <li><a href="background.html">Background</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a data-link="cv" href="Nasib_Asgar_CV.pdf" download class="nav-cv">Download CV</a></li>
+    </ul>
+  </div>
 </nav>
 
 <main id="main">
@@ -40,75 +50,118 @@
   <div class="sec">
     <h1 class="page-title">Projects</h1>
     <div class="sec-body">
-      <p class="page-lede">A vessel design, two data-analysis projects, and a shipyard study.</p>
+      <p class="page-lede">A ship design capstone, two data analysis projects, and simulation work.</p>
+      <div class="sub-group" id="capstone">
+      <h3 class="sub">Capstone project</h3>
       <article class="entry">
         <h3>Design of a 148 TEU inland container vessel</h3>
-        <p class="meta"><span class="state done">Completed</span> Capstone design at BUET. Supervised by Prof. Dr. Md. Mashud Karim.</p>
+        <p class="meta"><span class="state done">Completed</span> Ship design project (NAME 338) at BUET, in a group of three. Supervised by Prof. Dr. Md. Mashud Karim.</p>
+        <p>
+          A 148 TEU vessel at 12 knots for the Pangaon to Chattogram run. The route sets the
+          envelope: 75 m length, 4 m draft, 18.5 m air draft. Everything else follows.
+        </p>
         <ul>
-          <li>Found the principal particulars by iterative optimisation, balancing cargo capacity, hydrostatic stability, resistance, weight, and installed power.</li>
-          <li>Ran stability and hydrostatic analysis in Maxsurf and estimated resistance and powering requirements.</li>
-          <li>Produced structural and general-arrangement drawings in AutoCAD and Rhinoceros&nbsp;3D.</li>
-          <!-- Add one number here (principal dimensions, design speed, installed kW, or number
-               of design iterations). It makes the entry concrete. -->
+          <li>75.62 m overall, 14.943 m breadth, 3.78 m draft, block coefficient 0.69, 2,834 tonnes displacement, reached by iterating against a basis ship.</li>
+          <li>Hydrostatics and stability in Maxsurf. Every IMO intact criterion passes in all four loading conditions.</li>
+          <li>Holtrop resistance of 88.76 kN at 12 knots, giving 548 kW effective power.</li>
+          <li>Twin screw. A four-blade 2.268 m propeller at 290 rpm, clearing the Burrill check at zero cavitation, driven by two Yanmar 6AYEM-GT engines at 749 kW each.</li>
+          <li>Twin NACA-0020 rudders to GL rules, plus scantlings, shafting, engine foundation and the general arrangement in AutoCAD and Rhinoceros 3D.</li>
         </ul>
-        <p class="tools"><b>Tools:</b> Maxsurf, AutoCAD, Rhinoceros 3D. <b>Topics:</b> hydrostatic stability, resistance and powering.</p>
+        <p class="tools"><b>Tools:</b> Maxsurf, AutoCAD, Rhinoceros 3D. <b>Topics:</b> hydrostatic stability, resistance and powering, propeller design, machinery selection.</p>
       </article>
+      </div>
+
+      <div class="sub-group" id="data">
+      <h3 class="sub">Data analysis</h3>
+      <p>Two projects from the MBA at IBA. The pipelines, the models and the checks on them are mine.</p>
 
       <article class="entry" id="mfs-reviews">
         <h3>Measuring what users say: NLP on 110,000 reviews of five Bangladeshi mobile finance apps</h3>
-        <p class="meta"><span class="state done">Completed</span> Group project, MBA at IBA, University of Dhaka, 2025 to 2026. I built the pipeline and drove the analysis; the report and slides were group deliverables.</p>
+        <p class="meta"><span class="state done">Completed</span> Group project, MBA at IBA, 2025 to 2026. I built the pipeline and drove the analysis.</p>
         <p class="finding">
-          A first pass with a sentiment model put 29.8% of 110,721 Google Play reviews (bKash,
-          Nagad, Rocket, Upay, TAP) in the negative class. After post-stratification weighting
-          the figure is 17.0%. Most of the work went into checking how far either number can
-          be trusted.
+          A sentiment model put 29.8% of 110,721 Google Play reviews in the negative class.
+          Weighting brings that to 17.0%. Most of the work went into asking how far either
+          number can be trusted.
         </p>
+
         <figure>
-          <img src="projects/mfs-raw-vs-weighted.png" width="1100" height="635" loading="lazy"
-               alt="Bar chart comparing raw and weighted sentiment shares: positive 55.8 raw and 70.2 weighted, neutral 14.3 and 12.8, negative 29.8 and 17.0." />
-          <figcaption>Raw and weighted sentiment shares, n = 110,721. The intervals reflect sampling error only, not classifier error.</figcaption>
+          <div class="chart-card" id="mfsChart">
+            <div class="chart-head">
+              <span class="chart-title">Sentiment shares, n = 110,721</span>
+              <span class="seg" role="group" aria-label="Choose raw or weighted shares">
+                <button type="button" data-view="raw" aria-pressed="true">Raw</button>
+                <button type="button" data-view="weighted" aria-pressed="false">Weighted</button>
+              </span>
+            </div>
+            <div class="bars">
+              <div class="bar-row" data-class="positive">
+                <span class="bar-label">Positive</span>
+                <span class="bar-track"><span class="bar-fill pos"></span></span>
+                <span class="bar-val">55.8%</span>
+              </div>
+              <div class="bar-row" data-class="neutral">
+                <span class="bar-label">Neutral</span>
+                <span class="bar-track"><span class="bar-fill neu"></span></span>
+                <span class="bar-val">14.3%</span>
+              </div>
+              <div class="bar-row" data-class="negative">
+                <span class="bar-label">Negative</span>
+                <span class="bar-track"><span class="bar-fill neg"></span></span>
+                <span class="bar-val">29.8%</span>
+              </div>
+            </div>
+            <p class="chart-note">
+              Switch the view to see where each class goes under weighting. The uncertainty
+              here is sampling error only; classifier error is not in it.
+            </p>
+          </div>
+          <noscript>
+            <img src="projects/mfs-raw-vs-weighted.png" width="1100" height="635"
+                 alt="Bar chart comparing raw and weighted sentiment shares: positive 55.8 raw and 70.2 weighted, neutral 14.3 and 12.8, negative 29.8 and 17.0." />
+          </noscript>
         </figure>
+
         <ul>
-          <li>Built the pipeline in Python: scraping, script detection, a two-model sentiment cascade, post-stratification weights, aspect tagging, near-duplicate detection, and difference-in-differences on 138 app releases.</li>
-          <li>The two classifiers disagree on 24.1% of English reviews but 57.2% of Bengali and 63.8% of Banglish ones, so the sentiment numbers are weakest where many local users write.</li>
-          <li>Checked the model against a 600-review hand-labelled set (66.5% accurate, from the project report) and logged the open problems, including a gold-set answer key whose IDs did not match, so I back-filled no labels.</li>
+          <li>Python pipeline: scraping, script detection, a two-model sentiment cascade, post-stratification weights, near-duplicate detection, and difference-in-differences across 138 app releases.</li>
+          <li>The two classifiers disagree on 24.1% of English reviews but 63.8% of Banglish ones, so the numbers are weakest where many local users write.</li>
+          <li>Against a 600-review hand-labelled set the model is 66.5% accurate. The gold set's answer key had mismatched IDs, so I back-filled no labels.</li>
         </ul>
-        <p class="tools"><b>Tools and methods:</b> Python, bootstrap intervals, inter-rater agreement, effective sample size, MinHash LSH, difference-in-differences.</p>
+        <p class="tools"><b>Tools and methods:</b> Python, bootstrap intervals, inter-rater agreement, MinHash LSH, difference-in-differences.</p>
         <div class="actions">
           <a href="projects/MFS_research_summary.pdf" target="_blank" rel="noopener">Project summary (PDF)</a>
         </div>
       </article>
 
-      <article class="entry">
-        <h3>Mobile financial services and unplanned spending in Bangladesh</h3>
-        <p class="meta"><span class="state active">In progress</span> Group research project. Survey of 256 respondents.</p>
+      <article class="entry" id="unplanned-spending">
+        <h3>Tap, pay, overspend? Present bias and unplanned spending on mobile financial services</h3>
+        <p class="meta"><span class="state done">Completed</span> Buyer Behaviour (M-601), MBA at IBA, August 2026. Group of five, supervised by Dr. Rezwanul Huque Khan.</p>
+        <p class="finding">
+          Across 256 responses, the obvious explanations came out flat: usage intensity
+          (&beta; = 0.079, p = .188), financial prudence (&beta; = -0.069) and financial
+          literacy (p = .444). Present bias held, at &beta; = 0.309 (p &lt; .001).
+        </p>
         <ul>
-          <li>Analysed the survey data in Python with exploratory factor analysis, regression, mediation, and segmentation.</li>
-          <li>Examines present bias, financial literacy, and buy-now-pay-later use as drivers of unplanned spending.</li>
+          <li>Bilingual survey of young urban users, analysed in Python: factor analysis, regression, moderation and mediation, K-means segmentation, logistic classification.</li>
+          <li>Education was the only demographic split that mattered, and it ran against the intuition: the lowest-education group reported the most unplanned spending.</li>
+          <li>Our composite scales came in below the usual reliability thresholds, which the paper reports rather than leaves out.</li>
         </ul>
-        <p class="tools"><b>Tools and methods:</b> Python, factor analysis, regression and mediation, survey design.</p>
+        <p class="tools"><b>Tools and methods:</b> Python, factor analysis, regression, moderation and mediation, K-means clustering, logistic regression.</p>
       </article>
+      </div>
 
-      <article class="entry">
-        <h3>Industry 4.0 in heavy maritime infrastructure</h3>
-        <p class="meta"><span class="state done">Completed</span> Industrial attachment at Chittagong Dry Dock Ltd.</p>
-        <ul>
-          <li>Month-long study mapping candidate yard processes for sensing and automation.</li>
-          <!-- If the study produced a concrete recommendation or figure, add it here. -->
-        </ul>
-        <p class="tools"><b>Topics:</b> Industry 4.0, process mapping, shipyard operations.</p>
-      </article>
-
-      <!-- COMSOL or other simulation projects go here, above the group projects, once ready. -->
-      <!-- TEMPLATE: copy this block to add a project:
+      <div class="sub-group" id="simulation">
+      <h3 class="sub">Simulation</h3>
+      <p>Heat transfer models I am building in COMSOL. I will add them here as they are finished.</p>
+      <!-- TEMPLATE: copy this block into this section as each simulation project is ready:
       <article class="entry">
         <h3>Project title</h3>
         <p class="meta"><span class="state active">In progress</span> Context, supervisor, or setting.</p>
-        <ul><li>What you did, the tools you used, and ideally one number.</li></ul>
-        <p class="tools"><b>Tools:</b> ...</p>
+        <ul><li>What you modelled, how you validated it, and one number.</li></ul>
+        <p class="tools"><b>Tools:</b> COMSOL, ...</p>
       </article>
       (use class="state done" and the word "Completed" when a project is finished)
       -->
+      </div>
     </div>
   </div>
 </section>
