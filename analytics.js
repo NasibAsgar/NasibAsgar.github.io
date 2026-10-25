@@ -10,7 +10,7 @@
    The endpoint lives in ENDPOINT below; see the README for setup.
    ─────────────────────────────────────────────────────────────── */
 (function () {
-  var ENDPOINT = 'PASTE-YOUR-APPS-SCRIPT-URL-HERE';
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxovTQPXebHcY91MpD_K04JRFFj0qTjBCdW8f1aaU9wGsQT32rTwD-4nQBfM6y9WVet/exec';
 
   if (ENDPOINT.indexOf('PASTE') !== -1) return;              // not set up yet
   if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') return;
