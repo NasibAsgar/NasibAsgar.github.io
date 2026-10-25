@@ -7,18 +7,18 @@ Personal academic portfolio, hosted with GitHub Pages at **https://nasibasgar.gi
 1. **Upload your CV.** Add your CV PDF to the root of this repository, named exactly
    `Nasib_Asgar_CV.pdf`. Every "Download CV" button on the site points at that file.
 
-2. **Add your links.** Open `links.js`, the only file that holds links, and paste in:
-   - `paper`, the ResearchGate URL of your MARTEC 2024 paper
-   - `preprint`, the Research Square page of the mobile money manuscript
-   - `researchgate`, your ResearchGate profile
-   - `linkedin`, your LinkedIn profile
-   - `email`, if your contact address ever changes
+2. **Add a Google Scholar link**, once you have a profile. Open `links.js` and replace the
+   `scholar` value. Until then the Scholar row stays hidden, which is why you will not see
+   it on the contact list.
 
-   Any value still containing the word PASTE is hidden on the live site, along with its row,
-   so a half-finished link is never shown to a professor.
+Everything else is in place. Your headshot is `profile.jpg`; replace that file with another
+square image to change it. Your ResearchGate profile, the MARTEC 2024 paper and your LinkedIn
+are already live in `links.js`, which is the only file that holds links.
 
-Your headshot is already in place as `profile.jpg`. To change it, replace that file with
-another square image under the same name.
+The `preprint` entry is deliberately left on a placeholder, so the "Preprint on Research
+Square" link stays hidden on the publications page. Paste a URL there if you ever want it
+shown. That is the general rule: any value containing the word PASTE is hidden on the live
+site, along with its row, so a half-finished link is never shown to a professor.
 
 ## GitHub Pages
 
