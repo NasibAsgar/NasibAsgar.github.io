@@ -299,6 +299,7 @@ footer {
   padding: 1.7rem max(2.5rem, env(safe-area-inset-right)) calc(1.7rem + env(safe-area-inset-bottom)) max(2.5rem, env(safe-area-inset-left));
 }
 footer a { color: #c8d4d9; text-decoration: none; }
+.foot-note { font-size: 12.5px; color: #7e8e96; margin-top: 0.55rem; }
 footer .foot-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; justify-content: center; margin-bottom: 0.7rem; }
 
 /* ── PAGE TITLES ── */
