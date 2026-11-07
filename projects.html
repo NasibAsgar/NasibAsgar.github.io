@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 <meta name="theme-color" content="#0e2730" />
-<meta name="description" content="Projects by Nasib Asgar: a 148 TEU inland container vessel capstone design, and two data analysis projects on mobile financial services in Bangladesh." />
+<meta name="description" content="Projects by Nasib Asgar: a 148 TEU inland container vessel capstone design, two data analysis projects on mobile financial services in Bangladesh, and COMSOL heat-transfer validation studies." />
 <meta name="author" content="Nasib Asgar" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Projects | Nasib Asgar" />
-<meta property="og:description" content="Projects by Nasib Asgar: a 148 TEU inland container vessel capstone design, and two data analysis projects on mobile financial services in Bangladesh." />
+<meta property="og:description" content="Projects by Nasib Asgar: a 148 TEU inland container vessel capstone design, two data analysis projects on mobile financial services in Bangladesh, and COMSOL heat-transfer validation studies." />
 <meta property="og:url" content="https://nasibasgar.github.io/projects.html" />
 <meta name="twitter:card" content="summary" />
 <title>Projects | Nasib Asgar</title>
@@ -151,16 +151,45 @@
 
       <div class="sub-group" id="simulation">
       <h3 class="sub">Simulation</h3>
-      <p>Heat transfer models I am building in COMSOL. I will add them here as they are finished.</p>
-      <!-- TEMPLATE: copy this block into this section as each simulation project is ready:
-      <article class="entry">
-        <h3>Project title</h3>
-        <p class="meta"><span class="state active">In progress</span> Context, supervisor, or setting.</p>
-        <ul><li>What you modelled, how you validated it, and one number.</li></ul>
-        <p class="tools"><b>Tools:</b> COMSOL, ...</p>
+      <p>Heat-transfer models I built in COMSOL. Each one rebuilds a published benchmark from the geometry up, then checks the result against the numbers the source reports.</p>
+
+      <article class="entry" id="cavity-benchmark">
+        <h3>Benchmark natural convection in a differentially heated square cavity</h3>
+        <p class="meta"><span class="state done">Completed</span> Validated against de Vahl Davis and Saha et&nbsp;al. (2008).</p>
+        <p class="finding">
+          The hot-wall Nusselt number came out at 1.118, 2.245, 4.521 and 8.826 for
+          Ra = 10&sup3; to 10&#8310;. The non-dimensional model sits within 0.16% of the
+          published benchmark, the dimensional one within 0.34%.
+        </p>
+        <ul>
+          <li>Built the cavity twice, once non-dimensionally and once with real air properties driven to matching Rayleigh numbers, to confirm the two formulations land on the same answer.</li>
+          <li>Buoyancy went in as a volume force. Nu came from a boundary integral of the wall temperature gradient, evaluated across all four Rayleigh numbers in one run.</li>
+          <li>A third model swapped the hot wall for a sinusoidal profile, T = sin(2&pi;&omega;x), on a mapped mesh, and swept Prandtl number from 0.7 to 7 and frequency &omega; from 0.5 to 2.</li>
+        </ul>
+        <p class="tools"><b>Tools:</b> COMSOL Multiphysics 6.2 (Laminar Flow, Heat Transfer in Fluids), parametric sweeps, custom Nu integration. <b>Topics:</b> natural convection, mesh refinement, benchmark validation.</p>
       </article>
-      (use class="state done" and the word "Completed" when a project is finished)
-      -->
+
+      <article class="entry" id="discrete-heater">
+        <h3>Natural convection from a heated strip on a cavity floor</h3>
+        <p class="meta"><span class="state done">Completed</span> Reproducing Corvaro &amp; Paroncini (2008), numerical and experimental.</p>
+        <ul>
+          <li>Modelled a short heater strip on the floor of an air-filled square cavity (Pr = 0.71), the heater one-fifth of the span and centred on the base.</li>
+          <li>Average Nu over the strip reached 5.13, 6.39 and 6.71 at Ra = 7.6&times;10&#8308;, 2.0&times;10&#8309; and 2.5&times;10&#8309;, three decimals off the reference simulation.</li>
+          <li>The model runs about 5 to 7% above the measured Nu, the same gap the original paper reports between its own simulation and its experiment.</li>
+        </ul>
+        <p class="tools"><b>Tools:</b> COMSOL, nonlocal boundary integration for surface Nu. <b>Topics:</b> discrete heating, numerical and experimental comparison.</p>
+      </article>
+
+      <article class="entry" id="mixed-mhd">
+        <h3>Mixed, conjugate and MHD convection with internal bodies</h3>
+        <p class="meta"><span class="state done">Completed</span> Three cavity cases, each checked against its source paper.</p>
+        <ul>
+          <li>Vented cavity with two rotating cylinders in Cu-water nanofluid (3% particles, Re = 600). As rotation rose from rest to Re<sub>w</sub> = 100, the downstream cylinder's Nu went from 17.3 to 22.5, within 0.45% of Shuvro et&nbsp;al. (2023).</li>
+          <li>Lid-driven cavity with a spinning conducting cylinder, solving the solid and the fluid together. Swept Richardson number from 0.1 to 10 at three rotation rates, and Nu followed the Mahmud et&nbsp;al. (2022) curve from 3.4 to 6.5.</li>
+          <li>Square chamber with a heat-generating steel block under a magnetic field and Joule heating (Tasnim et&nbsp;al. 2023). Swept Rayleigh from 10&sup3; to 10&#8310;, Hartmann number from 0 to 20, and the heat-generation term, with Nu averaged over the block's four faces.</li>
+        </ul>
+        <p class="tools"><b>Tools:</b> COMSOL (Laminar Flow, Heat Transfer in Solids and Fluids, volume forces for the buoyancy, Lorentz and Joule terms), multi-parameter sweeps. <b>Topics:</b> conjugate heat transfer, nanofluids, mixed convection, magnetohydrodynamics.</p>
+      </article>
       </div>
     </div>
   </div>
