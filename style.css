@@ -309,6 +309,7 @@ h1.page-title {
 }
 .page-lede { font-size: 1.2rem; line-height: 1.55; color: var(--ink); margin-bottom: 1.6rem; max-width: 35rem; }
 .sec-body > h3.sub:first-child { margin-top: 0; }
+.sec-body > .sub-group:first-child > h3.sub:first-child { margin-top: 0; }
 .sec-body > .sub-group + .sub-group { margin-top: 3.4rem; }
 
 /* ── PAGE LIST ── */
