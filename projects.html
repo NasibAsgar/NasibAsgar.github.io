@@ -57,14 +57,14 @@
         <h3>Design of a 148 TEU inland container vessel</h3>
         <p class="meta"><span class="state done">Completed</span> Ship design project at BUET, in a group of three.</p>
         <p>
-          We designed a 148 TEU vessel for the Pangaon to Chattogram route at 12 knots. The route
-          limits it to 75 m length, 4 m draft and 18.5 m air draft.
+          We designed a 148 TEU container vessel for the Pangaon to Chattogram route, running at
+          12 knots. The route limits the ship to 75 m in length, 4 m in draft and 18.5 m in air draft.
         </p>
         <ul>
-          <li>The final ship is 75.62 m long and 14.943 m wide, with a 3.78 m draft, a block coefficient of 0.69 and a displacement of 2,834 tonnes.</li>
-          <li>Hydrostatics and stability were done in Maxsurf. The ship meets every IMO intact criterion in all four loading conditions.</li>
-          <li>Holtrop resistance is 88.76 kN at 12 knots, which gives 548 kW of effective power.</li>
-          <li>Two Yanmar 6AYEM-GT engines of 749 kW each drive twin four-blade 2.268 m propellers. The propeller passes the Burrill check with no cavitation.</li>
+          <li>The ship is 75.62 m long overall and 14.943 m wide. Its draft is 3.78 m, its block coefficient is 0.69, and it displaces 2,834 tonnes.</li>
+          <li>We worked out hydrostatics and stability in Maxsurf. The ship passes every IMO intact criterion in all four loading conditions.</li>
+          <li>Holtrop resistance at 12 knots is 88.76 kN, so the effective power is 548 kW.</li>
+          <li>Two Yanmar 6AYEM-GT engines of 749 kW each drive twin four-blade propellers, 2.268 m in diameter. The propeller passes the Burrill check with no cavitation.</li>
         </ul>
         <p class="tools"><b>Tools:</b> Maxsurf, AutoCAD, Rhinoceros 3D.</p>
       </article>
@@ -72,14 +72,14 @@
 
       <div class="sub-group" id="data">
       <h3 class="sub">Data analysis</h3>
-      <p>Two projects from my MBA at IBA. I built the pipelines and models and ran the checks on them.</p>
+      <p>Both projects are from my MBA at IBA. I built the pipelines and models in both and did the checking.</p>
 
       <article class="entry" id="mfs-reviews">
         <h3>Measuring what users say: NLP on 110,000 reviews of five Bangladeshi mobile finance apps</h3>
         <p class="meta"><span class="state done">Completed</span> Group project, MBA at IBA. I built the pipeline and led the analysis.</p>
         <p class="finding">
-          A sentiment model labelled 29.8% of 110,721 Google Play reviews as negative. With
-          post-stratification weighting, that falls to 17.0%. Most of the work went into testing
+          A sentiment model labelled 29.8% of 110,721 Google Play reviews as negative. After
+          post-stratification weighting, the share was 17.0%. Most of the work went into asking
           how far either number can be trusted.
         </p>
 
@@ -121,9 +121,9 @@
         </figure>
 
         <ul>
-          <li>The two classifiers disagree on 24.1% of English reviews but 63.8% of Banglish ones, so the numbers are weakest where many local users write.</li>
-          <li>Against a 600-review hand-labelled set, the model is 66.5% accurate.</li>
-          <li>The Python pipeline also covers scraping, a two-model sentiment cascade, bootstrap intervals, near-duplicate detection with MinHash LSH, and difference-in-differences across 138 app releases.</li>
+          <li>The two classifiers disagree on 24.1% of English reviews and 63.8% of Banglish ones. The numbers are weakest where many local users write.</li>
+          <li>On a 600-review hand-labelled set, the model is 66.5% accurate.</li>
+          <li>The Python pipeline scrapes the reviews, runs a two-model sentiment cascade, finds near-duplicates with MinHash LSH and puts bootstrap intervals on the results. I also ran a difference-in-differences analysis across 138 app releases.</li>
         </ul>
         <div class="actions">
           <a href="projects/MFS_research_summary.pdf" target="_blank" rel="noopener">Project summary (PDF)</a>
@@ -134,32 +134,32 @@
         <h3>Tap, pay, overspend? Present bias and unplanned spending on mobile financial services</h3>
         <p class="meta"><span class="state done">Completed</span> MBA project at IBA, group of five.</p>
         <p class="finding">
-          In a bilingual survey of 256 young urban users, present bias predicted unplanned
+          We surveyed 256 young urban users in two languages. Present bias predicted unplanned
           spending (&beta; = 0.309, p &lt; .001). Usage intensity (&beta; = 0.079, p = .188) and
           financial literacy (p = .444) were not significant, and financial prudence was close to
           zero (&beta; = -0.069).
         </p>
         <ul>
-          <li>Analysed in Python with factor analysis, regression, moderation and mediation, K-means clustering and logistic regression.</li>
-          <li>Our composite scales fell below the usual reliability thresholds, and the paper reports this.</li>
+          <li>We analysed the data in Python with factor analysis, regression, moderation and mediation, K-means clustering and logistic regression.</li>
+          <li>Our composite scales were below the usual reliability thresholds, and the paper says so.</li>
         </ul>
       </article>
       </div>
 
       <div class="sub-group" id="simulation">
       <h3 class="sub">Simulation</h3>
-      <p>Heat-transfer models I built in COMSOL Multiphysics 6.2. Each one rebuilds a published benchmark and checks the result against the source's numbers.</p>
+      <p>These are heat-transfer models I built in COMSOL Multiphysics 6.2. For each one I rebuilt a published benchmark and compared my results with the numbers in the source.</p>
 
       <article class="entry" id="cavity-benchmark">
         <h3>Natural convection in a differentially heated square cavity</h3>
         <p class="meta"><span class="state done">Completed</span> Validated against de Vahl Davis and Saha et&nbsp;al. (2008).</p>
         <p class="finding">
           The hot-wall Nusselt number was 1.118, 2.245, 4.521 and 8.826 for
-          Ra = 10&sup3; to 10&#8310;. The non-dimensional model is within 0.16% of the
-          published benchmark, and the dimensional model is within 0.34%.
+          Ra = 10&sup3; to 10&#8310;. My non-dimensional model is within 0.16% of the
+          benchmark and the dimensional one is within 0.34%.
         </p>
         <ul>
-          <li>I built the cavity twice, once non-dimensionally and once with real air properties set to matching Rayleigh numbers, to check that the two formulations agree.</li>
+          <li>I built the cavity twice, once non-dimensionally and once with real air properties at matching Rayleigh numbers, to see whether the two agree.</li>
         </ul>
       </article>
 
@@ -167,9 +167,9 @@
         <h3>Natural convection from a heated strip on a cavity floor</h3>
         <p class="meta"><span class="state done">Completed</span> Reproduces Corvaro &amp; Paroncini (2008), numerical and experimental.</p>
         <ul>
-          <li>The model has a short heater strip on the floor of an air-filled square cavity (Pr = 0.71). The heater is one-fifth of the span and centred on the base.</li>
-          <li>Average Nu over the strip was 5.13, 6.39 and 6.71 at Ra = 7.6&times;10&#8308;, 2.0&times;10&#8309; and 2.5&times;10&#8309;. These differ from the reference simulation only in the third decimal place.</li>
-          <li>The model runs about 5 to 7% above the measured Nu, the same gap the original paper reports between its own simulation and its experiment.</li>
+          <li>The model has a short heater strip on the floor of an air-filled square cavity (Pr = 0.71). The strip is one-fifth of the span and centred on the base.</li>
+          <li>Average Nu over the strip was 5.13, 6.39 and 6.71 at Ra = 7.6&times;10&#8308;, 2.0&times;10&#8309; and 2.5&times;10&#8309;. These differ from the reference simulation only in the third decimal.</li>
+          <li>My Nu is 5 to 7% above the measured values. The original paper reports the same gap between its own simulation and its experiment.</li>
         </ul>
       </article>
 
@@ -177,9 +177,9 @@
         <h3>Mixed, conjugate and MHD convection with internal bodies</h3>
         <p class="meta"><span class="state done">Completed</span> Three cavity cases, each checked against its source paper.</p>
         <ul>
-          <li>A vented cavity with two rotating cylinders in Cu-water nanofluid (3% particles, Re = 600). As rotation rose from rest to Re<sub>w</sub> = 100, the downstream cylinder's Nu went from 17.3 to 22.5, within 0.45% of the published benchmark.</li>
-          <li>A lid-driven cavity with a spinning conducting cylinder, solving the solid and the fluid together. Nu followed the Mahmud et&nbsp;al. (2022) curve from 3.4 to 6.5 as Richardson number went from 0.1 to 10.</li>
-          <li>A square chamber with a heat-generating steel block under a magnetic field and Joule heating (Tasnim et&nbsp;al. 2023). Nu was averaged over the block's four faces across Rayleigh numbers from 10&sup3; to 10&#8310; and Hartmann numbers from 0 to 20.</li>
+          <li>A vented cavity with two rotating cylinders in Cu-water nanofluid (3% particles, Re = 600). As rotation went from rest to Re<sub>w</sub> = 100, the downstream cylinder's Nu rose from 17.3 to 22.5, within 0.45% of the published benchmark.</li>
+          <li>A lid-driven cavity with a spinning conducting cylinder, with solid and fluid solved together. Nu followed the Mahmud et&nbsp;al. (2022) curve from 3.4 to 6.5 as Richardson number went from 0.1 to 10.</li>
+          <li>A square chamber with a heat-generating steel block under a magnetic field and Joule heating (Tasnim et&nbsp;al. 2023). I swept Rayleigh number from 10&sup3; to 10&#8310; and Hartmann number from 0 to 20, and averaged Nu over the block's four faces.</li>
         </ul>
       </article>
       </div>
