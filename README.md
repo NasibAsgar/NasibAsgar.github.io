@@ -4,10 +4,7 @@ Personal academic portfolio, hosted with GitHub Pages at **https://nasibasgar.gi
 
 ## Still to do
 
-1. **Upload your CV.** Add your CV PDF to the root of this repository, named exactly
-   `Nasib_Asgar_CV.pdf`. Every "Download CV" button on the site points at that file.
-
-2. **Add a Google Scholar link**, once you have a profile. Open `links.js` and replace the
+1. **Add a Google Scholar link**, once you have a profile. Open `links.js` and replace the
    `scholar` value. Until then the Scholar row stays hidden, which is why you will not see
    it on the contact list.
 
@@ -105,5 +102,5 @@ but it is the reason not to reuse that URL for anything that matters.
 | `visit-logger.gs` | The Apps Script half of that, pasted into the spreadsheet |
 | `profile.jpg` | Headshot shown in the header |
 | `projects/` | Figures and PDF summaries used on the pages |
-| `Nasib_Asgar_CV.pdf` | Your CV (you upload this) |
+| `Nasib_Asgar_CV.pdf` | Your CV |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
